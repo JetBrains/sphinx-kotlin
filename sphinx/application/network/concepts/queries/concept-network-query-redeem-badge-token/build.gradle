@@ -13,5 +13,37 @@ dependencies {
     // needed to override moshi's use of 1.4.31
     implementation deps.kotlin.reflect
     implementation deps.square.moshi
-    kapt kaptDeps.square.moshiCodegen
+//    implementation('com.squareup:kotlinpoet') {
+//        version {
+//            strictly '1.13.0'
+//        }
+//    }
+//    implementation('com.squareup:kotlinpoet-ksp') {
+//        version {
+//            strictly '1.13.0'
+//        }
+//    }
+//    implementation('org.jetbrains.kotlinx:kotlinx-metadata-jvm') {
+//        version {
+//            strictly '0.6.0'
+//        }
+//    }
+//    kapt kaptDeps.square.moshiCodegen
+//    kapt('com.squareup:kotlinpoet') {
+//        version {
+//            strictly '1.13.0'
+//        }
+//    }
+//    kapt("com.squareup:kotlinpoet-ksp") {
+//        version {
+//            strictly '1.13.0'
+//        }
+//    }
+//    kapt('org.jetbrains.kotlinx:kotlinx-metadata-jvm') {
+//        version {
+//            strictly '0.6.0'
+//        }
+//    }
+
 }
+

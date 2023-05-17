@@ -7,6 +7,9 @@ buildscript {
         mavenCentral()
         google()
         gradlePluginPortal()
+        maven {
+            url "https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev/"
+        }
     }
 
     dependencies {
@@ -30,6 +33,9 @@ allprojects {
         maven { url "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases" }
         maven { url 'https://jitpack.io' }
         maven { url "https://chaquo.com/maven" }
+        maven {
+            url "https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev/"
+        }
     }
 
     tasks.withType(Test) {
@@ -56,11 +62,13 @@ allprojects {
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
         kotlinOptions {
             jvmTarget = JavaVersion.VERSION_1_8
+//            languageVersion = "1.5"
+//            apiVersion = "1.5"
             freeCompilerArgs += [
                     "-Xinline-classes",
-                    "-Xopt-in=kotlin.RequiresOptIn",
-                    '-Xopt-in=kotlin.time.ExperimentalTime',
-                    '-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi',
+                    "-opt-in=kotlin.RequiresOptIn",
+                    '-opt-in=kotlin.time.ExperimentalTime',
+                    '-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi',
             ]
         }
     }

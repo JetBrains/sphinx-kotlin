@@ -2194,7 +2194,7 @@ abstract class SphinxRepository(
             coreDB.getSphinxDatabaseQueries()
                 .messagesSearchByTerm(
                     chatId,
-                    "%${term.lowercase()}%"
+//                    "%${term.lowercase()}%"
                 )
                 .asFlow()
                 .mapToList(io)

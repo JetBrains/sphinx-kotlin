@@ -1,3 +1,20 @@
+plugins{
+    id ("com.gradle.enterprise") version "3.7.2"
+}
+
+gradleEnterprise {
+    server = "https://ge.jetbrains.com/"
+    buildScan {
+        publishAlways()
+
+        obfuscation {
+            hostname { host -> "concealed" }
+            username { name -> "concealed" }
+            ipAddresses { adresses -> ["0", "0", "0", "0"] }
+        }
+
+    }
+}
 rootProject.name = "Sphinx"
 
 ////////////////////////////////

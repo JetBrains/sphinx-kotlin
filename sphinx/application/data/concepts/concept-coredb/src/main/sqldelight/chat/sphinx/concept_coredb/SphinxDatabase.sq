@@ -678,7 +678,7 @@ AND (
     type = 32
 )
 ORDER BY date DESC
-LIMIT ?;
+LIMIT 10;
 
 messageGetAllToShowByChatId:
 SELECT *
@@ -739,7 +739,7 @@ SELECT *
 FROM messageDbo
 WHERE chat_id = ?
 AND status != 5
-AND LOWER(message_content_decrypted) LIKE ?
+AND LOWER(message_content_decrypted)
 ORDER BY date DESC;
 
 messageUpdateSeenByChatId:
