@@ -246,14 +246,16 @@ class TorManagerAndroid(
             return bool
         }
 
-        @Synchronized
+//        @Synchronized
+        // @Synchronized annotation is not applicable to suspend functions and lambdas
         suspend fun dispatchRequirementChange(required: Boolean) {
             for (listener in listeners) {
                 listener.onTorRequirementChange(required)
             }
         }
 
-        @Synchronized
+//        @Synchronized
+        // @Synchronized annotation is not applicable to suspend functions and lambdas
         suspend fun dispatchSocksProxyAddressChange(socksProxyAddress: SocksProxyAddress?) {
             for (listener in listeners) {
                 listener.onTorSocksProxyAddressChange(socksProxyAddress)

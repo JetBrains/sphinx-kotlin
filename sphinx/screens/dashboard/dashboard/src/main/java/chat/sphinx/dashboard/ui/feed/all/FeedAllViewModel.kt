@@ -117,6 +117,7 @@ internal class FeedAllViewModel @Inject constructor(
 
     override fun feedSelected(feed: Feed) {
         @Exhaustive
+        //'when' expression must be exhaustive, add necessary 'Twitter' branch or 'else' branch instead
         when (feed.feedType) {
             is FeedType.Podcast -> {
                 goToPodcastPlayer(feed.chatId, feed.id, feed.feedUrl)
@@ -128,6 +129,7 @@ internal class FeedAllViewModel @Inject constructor(
                 goToNewsletterDetail(feed.chatId, feed.feedUrl)
             }
             is FeedType.Unknown -> {}
+            is FeedType.Twitter -> {}
         }
     }
 

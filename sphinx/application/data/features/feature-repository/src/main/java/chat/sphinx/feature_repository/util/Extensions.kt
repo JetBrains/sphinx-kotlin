@@ -410,7 +410,8 @@ fun TransactionCallbacks.upsertMessage(
         false.toFlagged()
     )
 
-    if (dto.type.toMessageType()?.isInvoicePayment()) {
+    //Type mismatch: inferred type is Boolean? but Boolean was expected
+    if (dto.type.toMessageType()?.isInvoicePayment() == true) {
         dto.payment_hash?.toLightningPaymentHash()?.let {
             queries.messageUpdateInvoiceAsPaidByPaymentHash(it)
         }

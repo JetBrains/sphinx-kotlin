@@ -102,7 +102,7 @@ dependencies {
 
     implementation deps.chrisbanes.insetter
 
-    implementation deps.androidx.lifecycle.hilt
+//    implementation deps.androidx.lifecycle.hilt
     implementation deps.google.hilt
     kapt kaptDeps.google.hilt
 

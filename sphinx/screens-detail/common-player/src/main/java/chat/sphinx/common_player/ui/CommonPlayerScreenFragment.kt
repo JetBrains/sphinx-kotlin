@@ -147,15 +147,15 @@ internal class CommonPlayerScreenFragment : SideEffectFragment<
         binding.apply {
             includeLayoutBoostFireworks.apply {
                 lottieAnimationView.addAnimatorListener(object : Animator.AnimatorListener{
-                    override fun onAnimationEnd(animation: Animator?) {
+                    override fun onAnimationEnd(animation: Animator) {
                         root.gone
                     }
 
-                    override fun onAnimationRepeat(animation: Animator?) {}
+                    override fun onAnimationRepeat(animation: Animator) {}
 
-                    override fun onAnimationCancel(animation: Animator?) {}
+                    override fun onAnimationCancel(animation: Animator) {}
 
-                    override fun onAnimationStart(animation: Animator?) {}
+                    override fun onAnimationStart(animation: Animator) {}
                 })
             }
 

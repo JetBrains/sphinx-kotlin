@@ -61,7 +61,7 @@ dependencies {
   implementation project(path: ':sphinx:activity:features:feature-view-model-coordinator')
   api project(path: ':sphinx:screens-detail:podcast-player:podcast-player-view-model-coordinator')
 
-  implementation deps.androidx.lifecycle.hilt
+//  implementation deps.androidx.lifecycle.hilt
   implementation deps.androidx.recyclerView
 
   implementation deps.google.hilt

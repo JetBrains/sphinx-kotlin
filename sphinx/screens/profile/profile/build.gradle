@@ -61,7 +61,7 @@ dependencies {
 
     implementation deps.jncryptor
 
-    implementation deps.androidx.lifecycle.hilt
+//    implementation deps.androidx.lifecycle.hilt
     implementation deps.google.hilt
     implementation deps.bip39.sdk
     implementation deps.jna.sdk

@@ -70,7 +70,7 @@ dependencies {
 
     implementation deps.androidx.swipeRefreshLayout
     implementation deps.androidx.recyclerView
-    implementation deps.androidx.lifecycle.hilt
+//    implementation deps.androidx.lifecycle.hilt
     implementation deps.google.hilt
     implementation deps.lottie.sdk
     implementation deps.square.moshi

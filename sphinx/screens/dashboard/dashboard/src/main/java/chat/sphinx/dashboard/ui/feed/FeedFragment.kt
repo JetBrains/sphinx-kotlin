@@ -77,7 +77,8 @@ internal class FeedFragment : SideEffectFragment<
         override fun handleOnBackPressed() {
             if (
                 parentFragment is DashboardFragment &&
-                (parentFragment as DashboardFragment)?.closeDrawerIfOpen()
+                //Type mismatch: inferred type is Boolean? but Boolean was expected
+                (parentFragment as DashboardFragment)?.closeDrawerIfOpen() == true
             ) {
                 return
             } else if (

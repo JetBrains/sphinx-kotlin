@@ -24,7 +24,8 @@ data class TribeMemberProfileExtrasDto(
     val post: List<TribeMemberProfilePostDto>?,
     val tribes: List<ProfileAttributeDto>?,
 ) {
-    val codingLanguages: String
+//    Type mismatch: inferred type is String? but String was expected
+    val codingLanguages: String?
         get() {
             if (coding_languages?.isNotEmpty() == true) {
                 return coding_languages?.joinToString(",") {

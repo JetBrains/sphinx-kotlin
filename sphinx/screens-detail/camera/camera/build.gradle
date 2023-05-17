@@ -58,7 +58,7 @@ dependencies {
     implementation deps.google.material
 
     implementation deps.androidx.concurrent.futures
-    implementation deps.androidx.lifecycle.hilt
+//    implementation deps.androidx.lifecycle.hilt
     implementation deps.google.hilt
     kapt kaptDeps.google.hilt
 }

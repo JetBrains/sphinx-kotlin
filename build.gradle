@@ -69,6 +69,7 @@ allprojects {
                     "-opt-in=kotlin.RequiresOptIn",
                     '-opt-in=kotlin.time.ExperimentalTime',
                     '-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi',
+                    '-Xmetadata-version=1.8'
             ]
         }
     }

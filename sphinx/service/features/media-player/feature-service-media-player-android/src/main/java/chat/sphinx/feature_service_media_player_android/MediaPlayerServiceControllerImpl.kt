@@ -80,6 +80,7 @@ internal class MediaPlayerServiceControllerImpl(
     override suspend fun submitAction(userAction: UserAction) {
         playActionSound(userAction)
 
+       //'when' expression must be exhaustive, add necessary 'is SetPaymentsDestinations', 'is TrackPodcastConsumed' branches or 'else' branch instead
         binder.value?.processUserAction(userAction) ?: when (userAction) {
             is UserAction.AdjustSpeed -> {
                 userAction.contentFeedStatus.apply {
@@ -142,6 +143,9 @@ internal class MediaPlayerServiceControllerImpl(
                 }
                 listenerHandler.dispatch(getCurrentState())
             }
+
+            is UserAction.SetPaymentsDestinations -> TODO()
+            is UserAction.TrackPodcastConsumed -> TODO()
         }
     }
 

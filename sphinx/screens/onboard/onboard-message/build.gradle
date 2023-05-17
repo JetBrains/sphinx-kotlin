@@ -36,7 +36,7 @@ dependencies {
     implementation project(path: ':kotlin:concepts:authentication:concept-authentication')
     implementation project(path: ':kotlin:encoders:base64')
 
-    implementation deps.androidx.lifecycle.hilt
+//    implementation deps.androidx.lifecycle.hilt
     implementation deps.google.hilt
 
     // Sphinx

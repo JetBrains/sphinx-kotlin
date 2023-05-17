@@ -31,7 +31,8 @@ inline fun Context.getRandomHexCode(): String {
 @ColorRes
 @Suppress("NOTHING_TO_INLINE")
 inline fun Context.getRandomColorRes(): Int {
-    return listOf<@ColorRes Int>(
+    // This annotation is not applicable to target 'type usage' return listOf<@ColorRes Int>
+    return listOf<@receiver:ColorRes Int>(
         R.color.randomColor1,
         R.color.randomColor2,
         R.color.randomColor3,
