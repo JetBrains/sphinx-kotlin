@@ -160,7 +160,7 @@ internal class PaymentTemplateFragment: SideEffectFragment<
                 if (templateImagesViewState != viewState) {
                     templateImagesViewState = viewState
 
-                    @Exhaustive
+                    //@Exhaustive
                     when (viewState) {
                         is TemplateImagesViewState.LoadingTemplateImages -> {
                             binding.layoutConstraintProgressBarLoadingTemplates.visible
@@ -190,7 +190,7 @@ internal class PaymentTemplateFragment: SideEffectFragment<
                 currentTemplateViewStateJob?.cancel()
                 currentTemplateViewStateDisposable?.dispose()
 
-                @Exhaustive
+                //@Exhaustive
                 when (viewState) {
                     is SelectedTemplateViewState.Idle -> {
                         lifecycleScope.launch(viewModel.mainImmediate) {

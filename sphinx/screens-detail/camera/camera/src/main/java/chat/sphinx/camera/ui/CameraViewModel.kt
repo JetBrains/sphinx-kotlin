@@ -206,7 +206,7 @@ internal class CameraViewModel @Inject constructor(
     override fun onCleared() {
         super.onCleared()
         if (successResponseJob == null) {
-            @Exhaustive
+            //@Exhaustive
             when (val vs = currentCapturePreviewViewState) {
                 is CapturePreviewViewState.None -> {}
                 is CapturePreviewViewState.Preview.ImagePreview -> {

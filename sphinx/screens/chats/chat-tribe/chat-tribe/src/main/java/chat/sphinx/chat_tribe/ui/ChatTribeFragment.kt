@@ -167,7 +167,7 @@ internal class ChatTribeFragment: ChatFragment<
         lifecycleScope.launch(viewModel.mainImmediate) {
             try {
                 viewModel.feedDataStateFlow.collect { data ->
-                    @Exhaustive
+                    //@Exhaustive
                     when (data) {
                         is TribeFeedData.Loading -> {}
                         is TribeFeedData.Result -> {
@@ -518,7 +518,7 @@ internal class ChatTribeFragment: ChatFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             tribeFeedViewModel.boostAnimationViewStateContainer.collect { viewState ->
-                @Exhaustive
+                //@Exhaustive
                 when (viewState) {
                     is BoostAnimationViewState.Idle -> {}
 
@@ -595,6 +595,8 @@ internal class ChatTribeFragment: ChatFragment<
                                 root.visible
                             })
                         }
+
+                        else -> {}
                     }
                 }
             }
@@ -604,7 +606,7 @@ internal class ChatTribeFragment: ChatFragment<
             tribeFeedViewModel.contributionsViewStateContainer.collect { viewState ->
                 headerBinding.apply {
 
-                    @Exhaustive
+                    //@Exhaustive
                     when (viewState) {
                         is PodcastContributionsViewState.Contributions -> {
                             textViewChatHeaderContributionsIcon.visible
@@ -703,7 +705,7 @@ internal class ChatTribeFragment: ChatFragment<
             viewModel.tribeMemberProfileViewStateContainer.collect { viewState ->
 
                 tribeMemberProfileBinding.includeLayoutTribeMemberProfileDetails.apply {
-                    @Exhaustive
+                    //@Exhaustive
                     when (viewState) {
                         is TribeMemberProfileViewState.Closed -> {
                             includeLayoutTribeProfileInfoContainer.constraintLayoutTribeRecyclerRow.gone
@@ -843,7 +845,7 @@ internal class ChatTribeFragment: ChatFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.tribeMemberDataViewStateContainer.collect { viewState ->
-                @Exhaustive
+                //@Exhaustive
                 when (viewState) {
                     is TribeMemberDataViewState.Idle -> {
                         tribePopupBinding.root.gone
@@ -981,7 +983,7 @@ internal class ChatTribeFragment: ChatFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.messageMentionsViewStateContainer.collect { viewState ->
-                @Exhaustive
+                //@Exhaustive
                 when (viewState) {
                     is MessageMentionsViewState.MessageMentions -> {
                         if (viewState.mentions.isNotEmpty()) {

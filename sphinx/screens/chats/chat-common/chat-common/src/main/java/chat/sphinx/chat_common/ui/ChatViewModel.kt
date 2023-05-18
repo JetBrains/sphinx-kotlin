@@ -606,7 +606,7 @@ abstract class ChatViewModel<ARGS : NavArgs>(
 
         viewModelScope.launch(mainImmediate) {
             // TODO: Implement
-            @Exhaustive
+            //@Exhaustive
             when (link) {
                 is NodeDescriptor -> {
 
@@ -977,7 +977,7 @@ abstract class ChatViewModel<ARGS : NavArgs>(
                     if (chat.notify?.isMuteChat() == true) NotificationLevel.SeeAll else NotificationLevel.MuteChat
                 val response = chatRepository.setNotificationLevel(chat, newLevel)
 
-                @Exhaustive
+                //@Exhaustive
                 when (response) {
                     is Response.Error -> {
                         submitSideEffect(
@@ -1227,7 +1227,7 @@ abstract class ChatViewModel<ARGS : NavArgs>(
                 messageUUID = messageUUID,
             )
 
-            @Exhaustive
+            //@Exhaustive
             when (response) {
                 is Response.Error -> {
                     submitSideEffect(
@@ -1319,7 +1319,7 @@ abstract class ChatViewModel<ARGS : NavArgs>(
     internal fun chatMenuOptionCamera() {
         viewModelScope.launch(mainImmediate) {
             val response = cameraCoordinator.submitRequest(CameraRequest)
-            @Exhaustive
+            //@Exhaustive
             when (response) {
                 is Response.Error -> {}
                 is Response.Success -> {
@@ -1467,7 +1467,7 @@ abstract class ChatViewModel<ARGS : NavArgs>(
     private fun openCamera() {
         viewModelScope.launch(mainImmediate) {
             val response = cameraCoordinator.submitRequest(CameraRequest)
-            @Exhaustive
+            //@Exhaustive
             when (response) {
                 is Response.Error -> {}
                 is Response.Success -> {
@@ -1987,7 +1987,7 @@ abstract class ChatViewModel<ARGS : NavArgs>(
         val sideEffect = ChatSideEffect.AlertConfirmPayAttachment {
             payAttachmentJob = viewModelScope.launch(mainImmediate) {
 
-                @Exhaustive
+                //@Exhaustive
                 when (val response = messageRepository.payAttachment(message)) {
                     is Response.Error -> {
                         submitSideEffect(ChatSideEffect.Notify(response.cause.message))
@@ -2015,7 +2015,7 @@ abstract class ChatViewModel<ARGS : NavArgs>(
         val sideEffect = ChatSideEffect.AlertConfirmPayInvoice {
             payInvoiceJob = viewModelScope.launch(mainImmediate) {
 
-                @Exhaustive
+                //@Exhaustive
                 when (val response = messageRepository.payPaymentRequest(message)) {
                     is Response.Error -> {
                         submitSideEffect(ChatSideEffect.Notify(

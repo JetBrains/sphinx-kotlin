@@ -34,7 +34,7 @@ internal class ToAuthenticationView private constructor(
             null,
             navOptions {
                 anim {
-                    @Exhaustive
+                    //@Exhaustive
                     when (authenticationStateManager.authenticationStateFlow.value) {
                         is AuthenticationState.NotRequired -> {
                             enter = R_navigation.anim.slide_in_bottom

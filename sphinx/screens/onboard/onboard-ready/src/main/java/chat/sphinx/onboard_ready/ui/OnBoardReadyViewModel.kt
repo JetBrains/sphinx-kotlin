@@ -71,7 +71,7 @@ internal class OnBoardReadyViewModel @Inject constructor(
                 pubKey,
                 lightningRouteHint
             ).collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     LoadResponse.Loading ->
                         viewStateContainer.updateViewState(OnBoardReadyViewState.Saving)
@@ -140,7 +140,7 @@ internal class OnBoardReadyViewModel @Inject constructor(
             tribeInfo.amount = tribeInfo.price_to_join
 
             chatRepository.joinTribe(tribeInfo).collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when(loadResponse) {
                     LoadResponse.Loading -> {}
 

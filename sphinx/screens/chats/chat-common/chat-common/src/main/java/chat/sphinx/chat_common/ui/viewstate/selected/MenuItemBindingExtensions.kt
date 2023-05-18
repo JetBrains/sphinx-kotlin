@@ -17,7 +17,7 @@ import io.matthewnelson.android_feature_screens.util.visible
 @Suppress("NOTHING_TO_INLINE")
 internal inline fun LayoutSelectedMessageBinding.setMenuColor(viewState: MessageHolderViewState) {
     includeLayoutSelectedMessageMenu.apply {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             is MessageHolderViewState.Received -> {
                 layoutConstraintSelectedMessageMenuItemContainer

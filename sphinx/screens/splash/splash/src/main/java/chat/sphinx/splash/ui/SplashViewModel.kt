@@ -55,7 +55,7 @@ internal class SplashViewModel @Inject constructor(
                 updateLastLoginTimeOnSuccess = true
             )?.let {
 
-                @Exhaustive
+                //@Exhaustive
                 when (onBoardStep) {
                     is OnBoardStep.Step1_WelcomeMessage -> {
                         navigator.toOnBoardMessageScreen(onBoardStep)
@@ -82,7 +82,7 @@ internal class SplashViewModel @Inject constructor(
                     authenticationCoordinator.submitAuthenticationRequest(
                         AuthenticationRequest.LogIn()
                     ).firstOrNull().let { response ->
-                        @Exhaustive
+                        //@Exhaustive
                         when (response) {
                             null,
                             is AuthenticationResponse.Failure -> {
@@ -92,7 +92,7 @@ internal class SplashViewModel @Inject constructor(
                             }
                             is AuthenticationResponse.Success.Authenticated -> {
 
-                                @Exhaustive
+                                //@Exhaustive
                                 when (onBoardStep) {
                                     is OnBoardStep.Step1_WelcomeMessage -> {
                                         navigator.toOnBoardMessageScreen(onBoardStep)
@@ -122,7 +122,7 @@ internal class SplashViewModel @Inject constructor(
 
                 } else {
 
-                    @Exhaustive
+                    //@Exhaustive
                     when (onBoardStep) {
                         is OnBoardStep.Step1_WelcomeMessage -> {
                             navigator.toOnBoardMessageScreen(onBoardStep)

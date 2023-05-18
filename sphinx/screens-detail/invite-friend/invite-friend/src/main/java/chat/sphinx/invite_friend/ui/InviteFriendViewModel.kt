@@ -38,7 +38,7 @@ internal class InviteFriendViewModel @Inject constructor(
     init {
         viewModelScope.launch(mainImmediate) {
             networkQueryInvite.getLowestNodePrice().collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {}
 
@@ -80,7 +80,7 @@ internal class InviteFriendViewModel @Inject constructor(
             }
 
             contactRepository.createNewInvite(nickname, message).collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {
                         updateViewState(InviteFriendViewState.InviteCreationLoading)

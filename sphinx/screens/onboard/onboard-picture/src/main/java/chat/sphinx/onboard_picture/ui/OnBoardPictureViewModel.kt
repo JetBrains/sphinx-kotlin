@@ -53,7 +53,7 @@ internal class OnBoardPictureViewModel @Inject constructor(
         refreshJob = if (refreshContacts) {
             viewModelScope.launch(mainImmediate) {
                 contactRepository.networkRefreshContacts.collect { response ->
-                    @Exhaustive
+                    //@Exhaustive
                     when (response) {
                         is LoadResponse.Loading -> {
                         }
@@ -105,7 +105,7 @@ internal class OnBoardPictureViewModel @Inject constructor(
                         contentLength = contentLength,
                     )
 
-                    @Exhaustive
+                    //@Exhaustive
                     when (response) {
                         is Response.Error -> {
                             submitSideEffect(OnBoardPictureSideEffect.NotifyUploadError)

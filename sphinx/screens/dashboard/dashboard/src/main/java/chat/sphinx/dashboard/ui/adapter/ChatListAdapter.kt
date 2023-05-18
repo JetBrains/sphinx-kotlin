@@ -215,7 +215,7 @@ internal class ChatListAdapter(
         init {
             binding.layoutConstraintChatHolder.setOnClickListener {
                 dChat?.let { dashboardChat ->
-                    @Exhaustive
+                    //@Exhaustive
                     when (dashboardChat) {
                         is DashboardChat.Active.Conversation -> {
                             lifecycleOwner.lifecycleScope.launch {

@@ -374,7 +374,7 @@ internal class PodcastPlayerFragment : SideEffectFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: PodcastPlayerViewState) {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             is PodcastPlayerViewState.Idle -> {}
 
@@ -647,7 +647,7 @@ internal class PodcastPlayerFragment : SideEffectFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.boostAnimationViewStateContainer.collect { viewState ->
-                @Exhaustive
+                //@Exhaustive
                 when (viewState) {
                     is BoostAnimationViewState.Idle -> {}
 

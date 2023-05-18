@@ -181,7 +181,7 @@ internal class JoinTribeViewModel @Inject constructor(
             }
 
             chatRepository.joinTribe(tribeInfo).collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when(loadResponse) {
                     LoadResponse.Loading ->
                         updateViewState(JoinTribeViewState.JoiningTribe)

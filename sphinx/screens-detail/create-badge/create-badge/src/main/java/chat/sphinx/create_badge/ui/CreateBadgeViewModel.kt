@@ -114,7 +114,7 @@ internal class CreateBadgeViewModel @Inject constructor(
                             ),
                             updatedBadge.isActive
                         ).collect { loadResponse ->
-                            @Exhaustive
+                            //@Exhaustive
                             when (loadResponse) {
                                 is Response.Error -> {
                                     updateViewState(CreateBadgeViewState.ToggleBadge(badge))

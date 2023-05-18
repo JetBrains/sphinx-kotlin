@@ -236,7 +236,7 @@ class CommonPlayerScreenViewModel @Inject constructor(
 
         viewModelScope.launch(mainImmediate) {
             getPodcast()?.let { podcast ->
-                @Exhaustive
+                //@Exhaustive
                 when (serviceState) {
                     is MediaPlayerServiceState.ServiceActive.MediaState.Playing -> {
                         podcast.playingEpisodeUpdate(

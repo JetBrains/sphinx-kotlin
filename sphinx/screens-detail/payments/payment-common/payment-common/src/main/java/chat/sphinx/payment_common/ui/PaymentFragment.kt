@@ -177,7 +177,7 @@ abstract class PaymentFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.amountViewStateContainer.collect { viewState ->
-                @Exhaustive
+                //@Exhaustive
                 when (viewState) {
                     is AmountViewState.Idle -> {}
 

@@ -364,7 +364,7 @@ internal class VideoFeedWatchScreenFragment : SideEffectFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: VideoFeedScreenViewState) {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             is VideoFeedScreenViewState.Idle -> {}
 
@@ -436,7 +436,7 @@ internal class VideoFeedWatchScreenFragment : SideEffectFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.boostAnimationViewStateContainer.collect { viewState ->
-                @app.cash.exhaustive.Exhaustive
+                //@app.cash.exhaustive.Exhaustive
                 when (viewState) {
                     is BoostAnimationViewState.Idle -> {}
 
@@ -452,7 +452,7 @@ internal class VideoFeedWatchScreenFragment : SideEffectFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.selectedVideoStateContainer.collect { viewState ->
-                @Exhaustive
+                //@Exhaustive
                 when (viewState) {
                     is SelectedVideoViewState.Idle -> {}
 
@@ -504,7 +504,7 @@ internal class VideoFeedWatchScreenFragment : SideEffectFragment<
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.loadingVideoStateContainer.collect { viewState ->
                 binding.includeLayoutVideoPlayer.apply {
-                    @Exhaustive
+                    //@Exhaustive
                     when (viewState) {
                         is LoadingVideoViewState.Idle -> {}
 

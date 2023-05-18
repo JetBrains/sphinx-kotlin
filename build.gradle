@@ -62,14 +62,16 @@ allprojects {
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
         kotlinOptions {
             jvmTarget = JavaVersion.VERSION_1_8
-//            languageVersion = "1.5"
-//            apiVersion = "1.5"
+            languageVersion = "2.0"
+            apiVersion = "2.0"
             freeCompilerArgs += [
                     "-Xinline-classes",
                     "-opt-in=kotlin.RequiresOptIn",
                     '-opt-in=kotlin.time.ExperimentalTime',
                     '-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi',
-                    '-Xmetadata-version=1.8'
+                    //moschi and dagger are metadata-incompatible with 1.9
+                    '-Xmetadata-version=1.8',
+                    '-Xrender-internal-diagnostic-names'
             ]
         }
     }

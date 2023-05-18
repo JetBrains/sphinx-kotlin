@@ -346,7 +346,7 @@ abstract class ChatFragment<
 
                     val attachmentViewState = viewModel.getAttachmentSendViewStateFlow().value
 
-                    @Exhaustive
+                    //@Exhaustive
                     when (attachmentViewState) {
                         is AttachmentSendViewState.Idle -> {
                             sendMessageBuilder.setAttachmentInfo(null)
@@ -884,7 +884,7 @@ abstract class ChatFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: ChatMenuViewState) {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             is ChatMenuViewState.Closed -> {
                 menuBinding.root.setTransitionDuration(250)
@@ -935,7 +935,7 @@ abstract class ChatFragment<
                 }
                 messageReplyViewStateDisposables.clear()
 
-                @Exhaustive
+                //@Exhaustive
                 when (viewState) {
                     is MessageReplyViewState.ReplyingDismissed -> {
                         sendMessageBuilder.setReplyUUID(null)
@@ -1066,7 +1066,7 @@ abstract class ChatFragment<
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.chatHeaderViewStateContainer.collect { viewState ->
 
-                @Exhaustive
+                //@Exhaustive
                 when (viewState) {
                     is ChatHeaderViewState.Idle -> {}
                     is ChatHeaderViewState.Initialized -> {
@@ -1120,7 +1120,7 @@ abstract class ChatFragment<
                 headerInitialHolderViewStateDisposables.clear()
 
                 headerBinding.layoutChatInitialHolder.apply {
-                    @Exhaustive
+                    //@Exhaustive
                     when (viewState) {
                         is InitialHolderViewState.Initials -> {
                             imageViewChatPicture.gone
@@ -1174,7 +1174,7 @@ abstract class ChatFragment<
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.checkRoute.collect { loadResponse ->
                 headerBinding.textViewChatHeaderConnectivity.apply {
-                    @Exhaustive
+                    //@Exhaustive
                     when (loadResponse) {
                         is LoadResponse.Loading -> {
                             setTextColorExt(R.color.washedOutReceivedText)
@@ -1198,7 +1198,7 @@ abstract class ChatFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.getSelectedMessageViewStateFlow().collect { viewState ->
-                @Exhaustive
+                //@Exhaustive
                 when (viewState) {
                     is SelectedMessageViewState.None -> {
                         selectedMessageBinding.apply {
@@ -1375,7 +1375,7 @@ abstract class ChatFragment<
                 attachmentSendViewStateDisposables.clear()
 
                 attachmentSendBinding.apply {
-                    @Exhaustive
+                    //@Exhaustive
                     when (viewState) {
                         is AttachmentSendViewState.Idle -> {
                             root.gone
@@ -1524,7 +1524,7 @@ abstract class ChatFragment<
                 fullScreenViewStateDisposables.clear()
 
                 attachmentFullscreenBinding.apply {
-                    @Exhaustive
+                    //@Exhaustive
                     when (viewState) {
                         is AttachmentFullscreenViewState.Idle -> {
                             root.gone
@@ -1620,7 +1620,7 @@ abstract class ChatFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.messagesSearchViewStateContainer.collect { viewState ->
-                @Exhaustive
+                //@Exhaustive
                 when (viewState) {
                     is MessagesSearchViewState.Idle -> {
                         headerBinding.root.visible

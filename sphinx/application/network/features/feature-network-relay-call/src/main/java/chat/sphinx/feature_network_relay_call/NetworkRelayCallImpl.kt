@@ -87,7 +87,7 @@ private suspend inline fun RelayDataHandler.retrieveRelayData(
 {
     val response = retrieveRelayUrlAndToken(method, path, bodyJsonString)
 
-    @Exhaustive
+//    @Exhaustive
     when(response) {
         is Response.Error -> {
             throw Exception(response.message)
@@ -699,7 +699,7 @@ class NetworkRelayCallImpl(
 
         flow.collect { loadResponse ->
 
-            @Exhaustive
+//            @Exhaustive
             when (loadResponse) {
                 is LoadResponse.Loading -> {
                     emit(loadResponse)
@@ -750,7 +750,7 @@ class NetworkRelayCallImpl(
 
         flow.collect { loadResponse ->
 
-            @Exhaustive
+//            @Exhaustive
             when (loadResponse) {
                 is LoadResponse.Loading -> {
                     emit(loadResponse)

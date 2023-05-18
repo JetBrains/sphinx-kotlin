@@ -468,7 +468,7 @@ internal class DashboardFragment : MotionLayoutFragment<
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.networkStateFlow.collect { (loadResponse, screenInit) ->
                 binding.layoutDashboardHeader.let { dashboardHeader ->
-                    @Exhaustive
+                    //@Exhaustive
                     when (loadResponse) {
                         is LoadResponse.Loading -> {
                             dashboardHeader.progressBarDashboardHeaderNetwork.invisibleIfFalse(screenInit)
@@ -551,7 +551,7 @@ internal class DashboardFragment : MotionLayoutFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: DashboardMotionViewState) {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             DashboardMotionViewState.DrawerCloseNavBarHidden -> {
                 binding.layoutMotionDashboard.setTransitionDuration(150)
@@ -680,7 +680,7 @@ internal class DashboardFragment : MotionLayoutFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.deepLinkPopupViewStateContainer.collect { viewState ->
-                @Exhaustive
+                //@Exhaustive
                 when (viewState) {
                     is DeepLinkPopupViewState.ExternalAuthorizePopup -> {
                         binding.layoutDashboardPopup.layoutDashboardAuthorizePopup.apply {
@@ -844,7 +844,7 @@ internal class DashboardFragment : MotionLayoutFragment<
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.chatListFooterButtonsViewStateContainer.collect { viewState ->
                 binding.layoutDashboardNavDrawer.let { navDrawer ->
-                    @Exhaustive
+                    //@Exhaustive
                     when (viewState) {
                         is ChatListFooterButtonsViewState.Idle -> {
                             navDrawer.layoutButtonAddFriend.layoutConstraintButtonAddFriend.gone

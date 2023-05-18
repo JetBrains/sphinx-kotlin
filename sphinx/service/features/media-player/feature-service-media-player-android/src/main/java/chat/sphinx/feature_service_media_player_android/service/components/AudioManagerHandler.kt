@@ -8,7 +8,8 @@ import androidx.media.AudioFocusRequestCompat
 import androidx.media.AudioManagerCompat
 import chat.sphinx.feature_service_media_player_android.service.MediaPlayerService
 
-internal abstract class AudioManagerHandler(
+//internal, workaround for KT-58757
+abstract class AudioManagerHandler(
     protected val mediaPlayerService: MediaPlayerService,
 ): AudioManager.OnAudioFocusChangeListener {
 

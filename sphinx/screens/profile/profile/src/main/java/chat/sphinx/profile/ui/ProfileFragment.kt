@@ -460,7 +460,7 @@ internal class ProfileFragment: SideEffectFragment<
     override suspend fun onViewStateFlowCollect(viewState: ProfileViewState) {
         binding.apply {
 
-            @Exhaustive
+            //@Exhaustive
             when (viewState) {
                 is ProfileViewState.Advanced -> {
                     includeProfileTabsHolder.apply {
@@ -491,7 +491,7 @@ internal class ProfileFragment: SideEffectFragment<
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.updatingImageViewStateContainer.collect { viewState ->
                 binding.includeProfileNamePictureHolder.apply {
-                    @Exhaustive
+                    //@Exhaustive
                     when (viewState) {
                         is UpdatingImageViewState.Idle -> {}
                         is UpdatingImageViewState.UpdatingImage -> {

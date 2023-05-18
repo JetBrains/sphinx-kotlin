@@ -61,7 +61,7 @@ abstract class ContactFragment<
     abstract val userColorsHelper: UserColorsHelper
 
     override suspend fun onViewStateFlowCollect(viewState: ContactViewState) {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             is ContactViewState.Idle -> {}
 

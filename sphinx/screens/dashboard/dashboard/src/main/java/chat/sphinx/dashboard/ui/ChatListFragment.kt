@@ -206,7 +206,7 @@ internal class ChatListFragment : SideEffectFragment<
     override suspend fun onViewStateFlowCollect(viewState: ChatListViewState) {
         viewModel.chatListFooterButtonsViewStateContainer.collect { viewState ->
             binding.layoutSearchBar.includeLayoutButtonAddTribe.apply {
-                @Exhaustive
+//                @Exhaustive
                 when (viewState) {
                     is ChatListFooterButtonsViewState.Idle -> {
                         root.gone

@@ -125,7 +125,8 @@ internal class TribePreviewDataRetriever(val tribeJoinLink: TribeJoinLink): Link
             ChatHost(tribeJoinLink.tribeHost),
             ChatUUID(tribeJoinLink.tribeUUID)
         ).collect { response ->
-            @Exhaustive
+            //@Exhaustive
+            //This annotation is not applicable to target 'expression'
             when (response) {
                 is LoadResponse.Loading -> {}
                 is chat.sphinx.kotlin_response.Response.Error -> {}

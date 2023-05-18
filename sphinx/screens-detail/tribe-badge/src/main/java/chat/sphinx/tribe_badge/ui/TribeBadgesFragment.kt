@@ -52,7 +52,7 @@ internal class TribeBadgesFragment: SideEffectDetailFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: TribeBadgesViewState) {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             is TribeBadgesViewState.Idle -> {}
             is TribeBadgesViewState.Loading -> {

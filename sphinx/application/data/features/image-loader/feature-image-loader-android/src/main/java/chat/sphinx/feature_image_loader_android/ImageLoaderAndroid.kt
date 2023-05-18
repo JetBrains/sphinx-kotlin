@@ -149,7 +149,7 @@ class ImageLoaderAndroid(
                 request.placeholder(placeholderRes)
             }
             it.transformation?.let { transform ->
-                @Exhaustive
+                //@Exhaustive
                 when (transform) {
                     is Transformation.Blur -> {
                         request.transformations(
@@ -184,7 +184,7 @@ class ImageLoaderAndroid(
             }
 
             it.transition.let { transition ->
-                @Exhaustive
+                //@Exhaustive
                 when (transition) {
                     is Transition.CrossFade -> {
                         request.transition(

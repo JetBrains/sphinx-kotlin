@@ -81,7 +81,7 @@ internal class NotificationLevelFragment: SideEffectDetailFragment<
             val selectedColor = root.context.getColor(R.color.primaryBlue)
             val unselectedColor = root.context.getColor(android.R.color.transparent)
 
-            @Exhaustive
+            //@Exhaustive
             when(viewState) {
                 is NotificationLevelViewState.ChatNotificationLevel -> {
                     binding.notificationLevelSeeAllContainer.setBackgroundColor(

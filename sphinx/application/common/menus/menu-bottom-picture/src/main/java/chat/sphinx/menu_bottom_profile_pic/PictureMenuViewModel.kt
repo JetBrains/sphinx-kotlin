@@ -56,12 +56,12 @@ class PictureMenuHandler(
         cameraJob = viewModel.viewModelScope.launch(mainImmediate) {
             val response = cameraCoordinator.submitRequest(CameraRequest)
 
-            @Exhaustive
+//            @Exhaustive
             when (response) {
                 is Response.Error -> {}
                 is Response.Success -> {
 
-                    @Exhaustive
+//                    @Exhaustive
                     when (response.value) {
                         is CameraResponse.Image -> {
 
@@ -120,7 +120,7 @@ class PictureMenuHandler(
 
                 crType.toMediaType().let { mType ->
 
-                    @Exhaustive
+                    //@Exhaustive
                     when (mType) {
                         is MediaType.Image -> {
                             val stream: InputStream? = try {

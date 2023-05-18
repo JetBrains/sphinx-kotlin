@@ -88,10 +88,10 @@ internal class ChatViewStateContainer(
                 viewStateFlow.value.originalList
             }
 
-            @Exhaustive
+            //@Exhaustive
             when (filter) {
                 is ChatFilter.UseCurrent -> {
-                    @Exhaustive
+                    //@Exhaustive
                     when (val viewState = viewStateFlow.value) {
                         is ChatViewState.ListMode -> {
                             super.updateViewState(

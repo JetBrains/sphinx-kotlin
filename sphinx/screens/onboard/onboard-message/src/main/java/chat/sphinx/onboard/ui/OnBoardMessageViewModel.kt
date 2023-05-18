@@ -57,7 +57,7 @@ internal class OnBoardMessageViewModel @Inject constructor(
             authenticationCoordinator.submitAuthenticationRequest(
                 AuthenticationRequest.LogIn()
             ).firstOrNull().let { response ->
-                @Exhaustive
+                //@Exhaustive
                 when (response) {
                     null,
                     is AuthenticationResponse.Failure -> {

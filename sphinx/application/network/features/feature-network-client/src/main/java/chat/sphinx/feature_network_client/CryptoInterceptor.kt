@@ -76,7 +76,8 @@ class CryptoInterceptor: Interceptor {
         request: Request
     ): Response {
 
-        @Exhaustive
+        //@Exhaustive
+//        This annotation is not applicable to target 'expression'
         when (scheme) {
             is CryptoScheme.Decrypt -> {
                 val response: Response = chain.proceed(request)
@@ -87,7 +88,8 @@ class CryptoInterceptor: Interceptor {
 
                 val responseBody: ResponseBody = response.body ?: return response
 
-                @Exhaustive
+                //@Exhaustive
+//                This annotation is not applicable to target 'expression'
                 when (scheme) {
                     CryptoScheme.Decrypt.JNCryptor -> {
 

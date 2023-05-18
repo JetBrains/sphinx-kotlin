@@ -126,7 +126,7 @@ internal class ScannerFragment: SideEffectDetailFragment<
 
     override suspend fun onViewStateFlowCollect(viewState: ScannerViewState) {
         binding.apply {
-            @Exhaustive
+            //@Exhaustive
             when (viewState) {
                 is ScannerViewState.LayoutVisibility -> {
                     includeScannerHeader.textViewDetailScreenHeaderNavBack.goneIfFalse(viewState.showBackButton)

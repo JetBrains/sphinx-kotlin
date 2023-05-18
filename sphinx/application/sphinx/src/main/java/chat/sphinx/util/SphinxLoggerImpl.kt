@@ -9,7 +9,7 @@ import io.matthewnelson.build_config.BuildConfigDebug
 class SphinxLoggerImpl(private val buildConfigDebug: BuildConfigDebug): SphinxLogger() {
 
     override fun log(tag: String, message: String, type: LogType, throwable: Throwable?) {
-        @Exhaustive
+        //@Exhaustive
         when (type) {
             LogType.Debug -> {
                 if (buildConfigDebug.value) {

@@ -115,7 +115,7 @@ internal class OnBoardPictureFragment: SideEffectFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.userInfoViewStateContainer.collect { viewState ->
-                @Exhaustive
+                //@Exhaustive
                 when (viewState) {
                     is OnBoardPictureViewState.Idle -> {
                     }

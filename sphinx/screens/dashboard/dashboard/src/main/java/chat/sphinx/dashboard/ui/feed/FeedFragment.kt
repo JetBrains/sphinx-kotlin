@@ -229,7 +229,7 @@ internal class FeedFragment : SideEffectFragment<
 
     override suspend fun onViewStateFlowCollect(viewState: FeedViewState) {
         binding.layoutFeedSearch.apply {
-            @Exhaustive
+            //@Exhaustive
             when (viewState) {
                 is FeedViewState.Idle -> {
                     root.gone

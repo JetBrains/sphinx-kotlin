@@ -133,7 +133,7 @@ internal class ProfileViewModel @Inject constructor(
                         contentLength = contentLength,
                     )
 
-                    @Exhaustive
+                    //@Exhaustive
                     when (response) {
                         is Response.Error -> {
                             updatingImageViewStateContainer.updateViewState(
@@ -181,7 +181,7 @@ internal class ProfileViewModel @Inject constructor(
             authenticationCoordinator.submitAuthenticationRequest(
                 AuthenticationRequest.ResetPassword()
             ).firstOrNull()?.let { response ->
-                @Exhaustive
+                //@Exhaustive
                 when (response) {
                     is AuthenticationResponse.Failure -> {
                         // handle
@@ -353,7 +353,7 @@ internal class ProfileViewModel @Inject constructor(
                 var transportKey: RsaPublicKey? = null
 
                 networkQueryRelayKeys.getRelayTransportKey(relayUrl).collect { loadResponse ->
-                    @javax.annotation.meta.Exhaustive
+                    //@javax.annotation.meta.Exhaustive
                     when (loadResponse) {
                         is LoadResponse.Loading -> {}
                         is Response.Error -> {}
@@ -372,7 +372,7 @@ internal class ProfileViewModel @Inject constructor(
                 lightningRepository.getAccountBalanceAll(
                     Triple(Pair(authorizationToken, transportToken), null, relayUrl)
                 ).collect { loadResponse ->
-                    @Exhaustive
+                    //@Exhaustive
                     when (loadResponse) {
                         is LoadResponse.Loading -> {
                         }
@@ -430,7 +430,7 @@ internal class ProfileViewModel @Inject constructor(
                     }
                 })
             ).firstOrNull().let { response ->
-                @Exhaustive
+                //@Exhaustive
                 when (response) {
                     null,
                     is AuthenticationResponse.Failure -> {
@@ -440,7 +440,7 @@ internal class ProfileViewModel @Inject constructor(
                         authenticationCoordinator.submitAuthenticationRequest(
                             AuthenticationRequest.GetEncryptionKey()
                         ).firstOrNull().let { keyResponse ->
-                            @Exhaustive
+                            //@Exhaustive
                             when (keyResponse) {
                                 null,
                                 is AuthenticationResponse.Failure -> {

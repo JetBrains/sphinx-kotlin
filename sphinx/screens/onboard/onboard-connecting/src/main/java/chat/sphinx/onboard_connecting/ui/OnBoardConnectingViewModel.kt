@@ -188,7 +188,7 @@ internal class OnBoardConnectingViewModel @Inject constructor(
                 var transportKey: RsaPublicKey? = null
 
                 networkQueryRelayKeys.getRelayTransportKey(relayUrl).collect { loadResponse ->
-                    @Exhaustive
+                    //@Exhaustive
                     when (loadResponse) {
                         is LoadResponse.Loading -> {}
                         is Response.Error -> {}
@@ -255,7 +255,7 @@ internal class OnBoardConnectingViewModel @Inject constructor(
 
     private suspend fun redeemInvite(input: InviteString) {
         networkQueryInvite.redeemInvite(input).collect { loadResponse ->
-            @Exhaustive
+            //@Exhaustive
             when (loadResponse) {
                 is LoadResponse.Loading -> {}
                 is Response.Error -> {
@@ -291,7 +291,7 @@ internal class OnBoardConnectingViewModel @Inject constructor(
         var transportKey: RsaPublicKey? = null
 
         networkQueryRelayKeys.getRelayTransportKey(relayUrl).collect { loadResponse ->
-            @Exhaustive
+            //@Exhaustive
             when (loadResponse) {
                 is LoadResponse.Loading -> {}
                 is Response.Error -> {}
@@ -427,7 +427,7 @@ internal class OnBoardConnectingViewModel @Inject constructor(
             }
         }
 
-        @Exhaustive
+        //@Exhaustive
         when (generateTokenResponse) {
             is LoadResponse.Loading -> {}
             is Response.Error -> {
@@ -498,7 +498,7 @@ internal class OnBoardConnectingViewModel @Inject constructor(
         }
 
         networkQueryRelayKeys.getRelayHMacKey().collect { loadResponse ->
-            @Exhaustive
+            //@Exhaustive
             when (loadResponse) {
                 is LoadResponse.Loading -> {}
                 is Response.Error -> {
@@ -562,7 +562,7 @@ internal class OnBoardConnectingViewModel @Inject constructor(
                         PostHMacKeyDto(encryptionResponse.value.value),
                         relayData
                     ).collect { loadResponse ->
-                        @Exhaustive
+                        //@Exhaustive
                         when (loadResponse) {
                             is LoadResponse.Loading -> {
                             }

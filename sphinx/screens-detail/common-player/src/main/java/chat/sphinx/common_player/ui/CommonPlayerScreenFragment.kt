@@ -304,7 +304,7 @@ internal class CommonPlayerScreenFragment : SideEffectFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: RecommendationsPodcastPlayerViewState) {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             is RecommendationsPodcastPlayerViewState.Idle -> {}
 
@@ -612,7 +612,7 @@ internal class CommonPlayerScreenFragment : SideEffectFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.boostAnimationViewStateContainer.collect { viewState ->
-                @Exhaustive
+                //@Exhaustive
                 when (viewState) {
                     is BoostAnimationViewState.Idle -> {}
 
@@ -656,7 +656,7 @@ internal class CommonPlayerScreenFragment : SideEffectFragment<
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.playerViewStateContainer.collect { viewState ->
                 binding.apply {
-                    @Exhaustive
+                    //@Exhaustive
                     when (viewState) {
                         is PlayerViewState.Idle -> {}
 

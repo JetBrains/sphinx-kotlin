@@ -113,7 +113,7 @@ internal class PaymentReceiveViewModel @Inject constructor(
                 )
 
                 networkQueryLightning.postRequestPayment(postRequestPaymentDto).collect { loadResponse ->
-                    @Exhaustive
+                    //@Exhaustive
                     when (loadResponse) {
                         is LoadResponse.Loading -> {}
                         is Response.Error -> {
@@ -150,7 +150,7 @@ internal class PaymentReceiveViewModel @Inject constructor(
 
                 val response = messageRepository.sendPaymentRequest(requestPayment)
 
-                @Exhaustive
+                //@Exhaustive
                 when (response) {
                     is Response.Error -> {
                         submitSideEffect(

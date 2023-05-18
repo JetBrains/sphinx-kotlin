@@ -70,7 +70,7 @@ abstract class ViewModelCoordinatorImpl<BackType: Any, Request: Any, Success: An
                     _requestSharedFlow.emit(holder)
 
                     _responseSharedFlow.collect { responseFlow ->
-                        @Exhaustive
+//                        @Exhaustive
                         when (responseFlow) {
                             is Response.Error -> {
                                 if (responseFlow.cause.requestHolder.uuid == holder.uuid) {

@@ -78,7 +78,7 @@ internal class PaymentReceiveFragment: PaymentFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: PaymentReceiveViewState) {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             is PaymentReceiveViewState.Idle -> {}
 

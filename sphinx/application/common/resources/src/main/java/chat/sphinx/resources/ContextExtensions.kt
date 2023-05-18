@@ -5,7 +5,7 @@ import android.content.res.ColorStateList
 import android.content.res.Resources
 import android.view.inputmethod.InputMethodManager
 import androidx.annotation.ColorInt
-import androidx.annotation.ColorRes
+//import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.viewbinding.ViewBinding
@@ -32,7 +32,7 @@ inline fun Context.getRandomHexCode(): String {
 @Suppress("NOTHING_TO_INLINE")
 inline fun Context.getRandomColorRes(): Int {
     // This annotation is not applicable to target 'type usage' return listOf<@ColorRes Int>
-    return listOf<@receiver:ColorRes Int>(
+    return listOf<@ColorRes Int>(
         R.color.randomColor1,
         R.color.randomColor2,
         R.color.randomColor3,

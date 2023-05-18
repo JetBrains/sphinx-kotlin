@@ -192,7 +192,8 @@ class MemeServerTokenHandlerImpl(
             var challenge: AuthenticationChallenge? = null
 
             networkQueryMemeServer.askAuthentication(mediaHost).collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
+                // This annotation is not applicable to target 'expression'
                 when (loadResponse) {
                     is LoadResponse.Loading -> {}
                     is Response.Error -> {
@@ -211,7 +212,8 @@ class MemeServerTokenHandlerImpl(
                     var sig: AuthenticationSig? = null
 
                     networkQueryMemeServer.signChallenge(nnChallenge).collect { loadResponse ->
-                        @Exhaustive
+                        //@Exhaustive
+                        // This annotation is not applicable to target 'expression'
                         when (loadResponse) {
                             is LoadResponse.Loading -> {}
                             is Response.Error -> {
@@ -231,7 +233,8 @@ class MemeServerTokenHandlerImpl(
                             nodePubKey,
                             mediaHost,
                         ).collect { loadResponse ->
-                            @Exhaustive
+                           // @Exhaustive
+                            // This annotation is not applicable to target 'expression'
                             when (loadResponse) {
                                 is LoadResponse.Loading -> {}
                                 is Response.Error -> {

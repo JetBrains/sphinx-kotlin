@@ -198,7 +198,7 @@ class SocketIOManagerImpl(
 
             } ?: buildSocket(relayData).let { response ->
 
-                @Exhaustive
+                //@Exhaustive
                 when (response) {
                     is Response.Error -> {
                         return response
@@ -226,7 +226,7 @@ class SocketIOManagerImpl(
     ): Response<SocketInstanceHolder, ResponseError> {
         val nnRelayData: Triple<Pair<AuthorizationToken, TransportToken?>, RequestSignature?, RelayUrl> = relayData
             ?: relayDataHandler.retrieveRelayUrlAndToken().let { response ->
-                @Exhaustive
+                //@Exhaustive
                 when (response) {
                     is Response.Error -> {
                         try {

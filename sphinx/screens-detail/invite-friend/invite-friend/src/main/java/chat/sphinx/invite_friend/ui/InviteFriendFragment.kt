@@ -73,7 +73,7 @@ internal class InviteFriendFragment : SideEffectDetailFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: InviteFriendViewState) {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             is InviteFriendViewState.Idle -> {}
 

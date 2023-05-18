@@ -77,7 +77,7 @@ internal class OnBoardMessageFragment: SideEffectFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: OnBoardMessageViewState) {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             is OnBoardMessageViewState.Idle -> {
                 binding.welcomeGetStartedProgress.gone

@@ -144,7 +144,7 @@ internal class JoinTribeFragment: SideEffectDetailFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: JoinTribeViewState) {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             is JoinTribeViewState.LoadingTribe -> {
                 binding.loadingTribeInfoContent.goneIfFalse(true)

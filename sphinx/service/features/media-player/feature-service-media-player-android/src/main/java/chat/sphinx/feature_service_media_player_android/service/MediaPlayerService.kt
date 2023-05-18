@@ -36,7 +36,8 @@ import kotlinx.coroutines.flow.collect
 import java.util.*
 import kotlin.collections.ArrayList
 
-internal abstract class MediaPlayerService: SphinxService() {
+//internal, workaround for KT-58757
+abstract class MediaPlayerService: SphinxService() {
 
     companion object {
         const val TAG = "MediaPlayerService"
@@ -176,7 +177,7 @@ internal abstract class MediaPlayerService: SphinxService() {
 
         @Synchronized
         fun processUserAction(userAction: UserAction) {
-            @Exhaustive
+            //@Exhaustive
             when (userAction) {
                 is UserAction.AdjustSpeed -> {
 
@@ -741,7 +742,7 @@ internal abstract class MediaPlayerService: SphinxService() {
         notification
         rebindJob = serviceLifecycleScope.launch {
             foregroundStateManager.foregroundStateFlow.collect { foregroundState ->
-                @Exhaustive
+                //@Exhaustive
                 when (foregroundState) {
                     ForegroundState.Background -> {
                         // AndroidOS automatically unbinds service when

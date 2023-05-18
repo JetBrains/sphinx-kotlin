@@ -82,7 +82,7 @@ internal class AuthenticationFragment: SideEffectFragment<
 
     private inner class BackPressHandler(context: Context): CloseAppOnBackPress(context) {
         override fun handleOnBackPressed() {
-            @Exhaustive
+            //@Exhaustive
             when (this@AuthenticationFragment.viewModelContainer.handleDeviceBackPress()) {
                 is AuthenticationViewModelContainer.HandleBackPressResponse.Minimize -> {
                     super.handleOnBackPressed()

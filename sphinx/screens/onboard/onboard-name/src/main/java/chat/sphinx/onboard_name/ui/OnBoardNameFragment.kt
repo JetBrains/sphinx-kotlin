@@ -65,7 +65,7 @@ internal class OnBoardNameFragment: SideEffectFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: OnBoardNameViewState) {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             is OnBoardNameViewState.Idle -> {}
             is OnBoardNameViewState.Saving -> {

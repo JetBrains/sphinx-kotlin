@@ -116,7 +116,7 @@ internal class FeedAllViewModel @Inject constructor(
         get() = _feedsHolderViewStateFlow
 
     override fun feedSelected(feed: Feed) {
-        @Exhaustive
+        //@Exhaustive
         //'when' expression must be exhaustive, add necessary 'Twitter' branch or 'else' branch instead
         when (feed.feedType) {
             is FeedType.Podcast -> {

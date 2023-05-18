@@ -194,7 +194,7 @@ class FeedViewModel @Inject constructor(
                     currentItemId = null
                 )
 
-                @Exhaustive
+                //@Exhaustive
                 when (response) {
                     is Response.Success -> {
                         feedRepository.getFeedById(response.value).firstOrNull()?.let { feed ->

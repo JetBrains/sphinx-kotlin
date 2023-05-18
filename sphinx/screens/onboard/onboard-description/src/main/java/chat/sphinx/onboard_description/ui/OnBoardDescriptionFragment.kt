@@ -55,7 +55,7 @@ internal class OnBoardDescriptionFragment: SideEffectFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: OnBoardDescriptionViewState) {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             is OnBoardDescriptionViewState.Idle -> { }
             is OnBoardDescriptionViewState.NewUser -> {

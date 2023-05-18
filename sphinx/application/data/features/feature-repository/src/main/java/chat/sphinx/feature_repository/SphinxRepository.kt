@@ -230,7 +230,7 @@ abstract class SphinxRepository(
     @Suppress("BlockingMethodInNonBlockingContext")
     override suspend fun onSocketIOMessageReceived(msg: SphinxSocketIOMessage) {
         coreDB.getSphinxDatabaseQueriesOrNull()?.let { queries ->
-            @Exhaustive
+            //@Exhaustive
             when (msg) {
                 is SphinxSocketIOMessage.Type.Contact -> {
                     contactLock.withLock {
@@ -581,7 +581,7 @@ abstract class SphinxRepository(
         flow {
             networkQueryChat.getChats().collect { loadResponse ->
 
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is Response.Error -> {
                         emit(loadResponse)
@@ -820,7 +820,7 @@ abstract class SphinxRepository(
         flow {
             networkQueryContact.getContacts().collect { loadResponse ->
 
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is Response.Error -> {
                         emit(loadResponse)
@@ -925,7 +925,7 @@ abstract class SphinxRepository(
                 lastSeenContactsDateResolved
             ).collect { loadResponse ->
 
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is Response.Error -> {
                         emit(loadResponse)
@@ -1114,7 +1114,7 @@ abstract class SphinxRepository(
         applicationScope.launch(mainImmediate) {
 
             networkQueryContact.createContact(postContactDto).collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     LoadResponse.Loading -> {
                     }
@@ -1169,7 +1169,7 @@ abstract class SphinxRepository(
                 contactKey,
                 photoUrl
             ).collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {
                     }
@@ -1222,7 +1222,7 @@ abstract class SphinxRepository(
                             tip_amount = tipAmount?.value
                         )
                     ).collect { loadResponse ->
-                        @Exhaustive
+                        //@Exhaustive
                         when (loadResponse) {
                             is LoadResponse.Loading -> {
                             }
@@ -1267,7 +1267,7 @@ abstract class SphinxRepository(
                         route_hint = routeHint?.value
                     )
                 ).collect { loadResponse ->
-                    @Exhaustive
+                    //@Exhaustive
                     when (loadResponse) {
                         is LoadResponse.Loading -> {
                         }
@@ -1305,7 +1305,7 @@ abstract class SphinxRepository(
                 networkQueryContact.exchangeKeys(
                     contactId,
                 ).collect { loadResponse ->
-                    @Exhaustive
+                    //@Exhaustive
                     when (loadResponse) {
                         is LoadResponse.Loading -> {}
                         is Response.Error -> {}
@@ -1333,7 +1333,7 @@ abstract class SphinxRepository(
                             owner.id,
                             PutContactDto(device_id = deviceId.value)
                         ).collect { loadResponse ->
-                            @Exhaustive
+                            //@Exhaustive
                             when (loadResponse) {
                                 is LoadResponse.Loading -> {
                                 }
@@ -1390,7 +1390,7 @@ abstract class SphinxRepository(
                             contact_key = publicKey
                         )
                     ).collect { loadResponse ->
-                        @Exhaustive
+                        //@Exhaustive
                         when (loadResponse) {
                             is LoadResponse.Loading -> {
                             }
@@ -1443,7 +1443,7 @@ abstract class SphinxRepository(
                     memeServerHost = memeServerHost,
                 )
 
-                @Exhaustive
+                //@Exhaustive
                 when (networkResponse) {
                     is Response.Error -> {
                         response = networkResponse
@@ -1476,7 +1476,7 @@ abstract class SphinxRepository(
                                 PutContactDto(photo_url = newUrl.value)
                             ).collect { loadResponse ->
 
-                                @Exhaustive
+                                //@Exhaustive
                                 when (loadResponse) {
                                     is LoadResponse.Loading -> {
                                     }
@@ -1573,7 +1573,7 @@ abstract class SphinxRepository(
                     dispatcher = default,
                 )
 
-                @Exhaustive
+                //@Exhaustive
                 when (encryptionResponse) {
                     is Response.Error -> {}
 
@@ -1583,7 +1583,7 @@ abstract class SphinxRepository(
                                 encryptionResponse.value.value
                             )
                         ).collect { loadResponse ->
-                            @Exhaustive
+                            //@Exhaustive
                             when (loadResponse) {
                                 is LoadResponse.Loading -> {}
 
@@ -1653,7 +1653,7 @@ abstract class SphinxRepository(
                     memeServerHost = memeServerHost,
                 )
 
-                @Exhaustive
+                //@Exhaustive
                 when (networkResponse) {
                     is Response.Error -> {
                         response = networkResponse
@@ -1670,7 +1670,7 @@ abstract class SphinxRepository(
                             )
                         ).collect { loadResponse ->
 
-                            @Exhaustive
+                            //@Exhaustive
                             when (loadResponse) {
                                 is LoadResponse.Loading -> {
                                 }
@@ -1726,7 +1726,7 @@ abstract class SphinxRepository(
                     my_alias = alias?.value
                 )
             ).collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {
                     }
@@ -1801,7 +1801,7 @@ abstract class SphinxRepository(
     override val networkRefreshBalance: Flow<LoadResponse<Boolean, ResponseError>> by lazy {
         flow {
             networkQueryLightning.getBalance().collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {
                         emit(loadResponse)
@@ -1865,7 +1865,7 @@ abstract class SphinxRepository(
         networkQueryLightning.getBalanceAll(
             relayData
         ).collect { loadResponse ->
-            @Exhaustive
+            //@Exhaustive
             when (loadResponse) {
                 is LoadResponse.Loading -> {
                     emit(loadResponse)
@@ -1943,7 +1943,7 @@ abstract class SphinxRepository(
 
                 val response = decryptMessageContent(messageContent)
 
-                @Exhaustive
+                //@Exhaustive
                 when (response) {
                     is Response.Error -> {
                         messageDboPresenterMapper.mapFrom(messageDbo).let { message ->
@@ -2001,7 +2001,7 @@ abstract class SphinxRepository(
                         if (decrypted == null) {
                             val response = decryptMediaKey(MediaKey(key.value))
 
-                            @Exhaustive
+                            //@Exhaustive
                             when (response) {
                                 is Response.Error -> {
                                     MessageMediaDboWrapper(mediaDbo).also {
@@ -2426,7 +2426,7 @@ abstract class SphinxRepository(
                         dispatcher = default,
                     )
 
-                    @Exhaustive
+                    //@Exhaustive
                     when (response) {
                         is Response.Error -> {
                             LOG.e(TAG, response.message, response.exception)
@@ -2454,7 +2454,7 @@ abstract class SphinxRepository(
                             dispatcher = default,
                         )
 
-                        @Exhaustive
+                        //@Exhaustive
                         when (response) {
                             is Response.Error -> {
                                 LOG.e(TAG, response.message, response.exception)
@@ -2623,7 +2623,7 @@ abstract class SphinxRepository(
                     MediaHost.DEFAULT,
                 )
 
-                @Exhaustive
+                //@Exhaustive
                 when (response) {
                     is Response.Error -> {
                         LOG.e(TAG, response.message, response.exception)
@@ -2702,7 +2702,7 @@ abstract class SphinxRepository(
                         dispatcher = default,
                     )
 
-                    @Exhaustive
+                    //@Exhaustive
                     when (response) {
                         is Response.Error -> {
                             LOG.e(TAG, response.message, response.exception)
@@ -2722,7 +2722,7 @@ abstract class SphinxRepository(
                     dispatcher = default,
                 )
 
-                @Exhaustive
+                //@Exhaustive
                 when (response) {
                     is Response.Error -> {
                         LOG.e(TAG, response.message, response.exception)
@@ -2762,7 +2762,7 @@ abstract class SphinxRepository(
                         dispatcher = default,
                     )
 
-                    @Exhaustive
+                    //@Exhaustive
                     when (response) {
                         is Response.Error -> {
                             LOG.e(TAG, response.message, response.exception)
@@ -2781,7 +2781,7 @@ abstract class SphinxRepository(
                     dispatcher = default,
                 )
 
-                @Exhaustive
+                //@Exhaustive
                 when (response) {
                     is Response.Error -> {
                         LOG.e(TAG, response.message, response.exception)
@@ -2808,7 +2808,7 @@ abstract class SphinxRepository(
         val queries = coreDB.getSphinxDatabaseQueries()
 
         networkQueryMessage.sendMessage(postMessageDto).collect { loadResponse ->
-            @Exhaustive
+            //@Exhaustive
             when (loadResponse) {
                 is LoadResponse.Loading -> {
                 }
@@ -2995,7 +2995,7 @@ abstract class SphinxRepository(
                 }
             } else {
                 networkQueryMessage.deleteMessage(message.id).collect { loadResponse ->
-                    @Exhaustive
+                    //@Exhaustive
                     when (loadResponse) {
                         is LoadResponse.Loading -> {
                         }
@@ -3081,7 +3081,7 @@ abstract class SphinxRepository(
                             dispatcher = default,
                         )
 
-                        @Exhaustive
+                        //@Exhaustive
                         when (encResponse) {
                             is Response.Error -> {
                                 LOG.e(TAG, encResponse.message, encResponse.exception)
@@ -3104,7 +3104,7 @@ abstract class SphinxRepository(
                                 dispatcher = default,
                             )
 
-                            @Exhaustive
+                            //@Exhaustive
                             when (encResponse) {
                                 is Response.Error -> {
                                     LOG.e(TAG, encResponse.message, encResponse.exception)
@@ -3142,7 +3142,7 @@ abstract class SphinxRepository(
                 networkQueryMessage.sendKeySendPayment(
                     postPaymentDto,
                 ).collect { loadResponse ->
-                    @Exhaustive
+                    //@Exhaustive
                     when (loadResponse) {
                         is LoadResponse.Loading -> {
                         }
@@ -3159,7 +3159,7 @@ abstract class SphinxRepository(
                 networkQueryMessage.sendPayment(
                     postPaymentDto,
                 ).collect { loadResponse ->
-                    @Exhaustive
+                    //@Exhaustive
                     when (loadResponse) {
                         is LoadResponse.Loading -> {
                         }
@@ -3278,7 +3278,7 @@ abstract class SphinxRepository(
                     reply_uuid = messageUUID.value
                 )
             ).collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {
                     }
@@ -3388,7 +3388,7 @@ abstract class SphinxRepository(
                             dispatcher = default,
                         )
 
-                        @Exhaustive
+                        //@Exhaustive
                         when (encResponse) {
                             is Response.Error -> {
                                 LOG.e(TAG, encResponse.message, encResponse.exception)
@@ -3411,7 +3411,7 @@ abstract class SphinxRepository(
                                 dispatcher = default,
                             )
 
-                            @Exhaustive
+                            //@Exhaustive
                             when (encResponse) {
                                 is Response.Error -> {
                                     LOG.e(TAG, encResponse.message, encResponse.exception)
@@ -3434,7 +3434,7 @@ abstract class SphinxRepository(
             )
 
             networkQueryMessage.sendPaymentRequest(postRequestPaymentDto).collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {
                     }
@@ -3496,7 +3496,7 @@ abstract class SphinxRepository(
                 networkQueryMessage.payPaymentRequest(
                     putPaymentRequestDto,
                 ).collect { loadResponse ->
-                    @Exhaustive
+                    //@Exhaustive
                     when (loadResponse) {
                         is LoadResponse.Loading -> {
                         }
@@ -3553,7 +3553,7 @@ abstract class SphinxRepository(
                         price,
                         mediaToken
                     ).collect { loadResponse ->
-                        @Exhaustive
+                        //@Exhaustive
                         when (loadResponse) {
                             is LoadResponse.Loading -> {
                             }
@@ -3671,7 +3671,7 @@ abstract class SphinxRepository(
                     contentLength = imgFile.length(),
                     memeServerHost = memeServerHost,
                 )
-                @Exhaustive
+                //@Exhaustive
                 when (networkResponse) {
                     is Response.Error -> {
                         LOG.e(TAG, "Failed to upload image: ", networkResponse.exception)
@@ -3685,7 +3685,7 @@ abstract class SphinxRepository(
             }
 
             networkQueryChat.joinTribe(tribeDto).collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     LoadResponse.Loading -> {
                     }
@@ -3730,7 +3730,7 @@ abstract class SphinxRepository(
         tags: String?
     ): Flow<List<TribeDto>> = flow {
         networkQueryDiscoverTribes.getAllDiscoverTribes(page, itemsPerPage, searchTerm, tags).collect { response ->
-            @Exhaustive
+            //@Exhaustive
             when(response) {
                 is LoadResponse.Loading -> {}
                 is Response.Error -> {}
@@ -3847,7 +3847,7 @@ abstract class SphinxRepository(
             feedUrl,
             chatUUID
         ).collect { response ->
-            @Exhaustive
+            //@Exhaustive
             when (response) {
                 is LoadResponse.Loading -> {}
 
@@ -3914,7 +3914,7 @@ abstract class SphinxRepository(
             feed.feedUrl,
             null
         ).collect { response ->
-            @Exhaustive
+            //@Exhaustive
             when (response) {
                 is LoadResponse.Loading -> {}
 
@@ -4033,7 +4033,7 @@ abstract class SphinxRepository(
                     subscribed = false.toSubscribed(),
                     currentItemId = null
                 )
-                @Exhaustive
+                //@Exhaustive
                 when (response) {
                     is Response.Error -> {
                         emit(null)
@@ -4232,7 +4232,7 @@ abstract class SphinxRepository(
 
         applicationScope.launch(mainImmediate) {
             networkQueryFeedSearch.getFeedRecommendations().collect { response ->
-                @Exhaustive
+                //@Exhaustive
                 when (response) {
                     is LoadResponse.Loading -> {}
                     is Response.Error -> {}
@@ -4654,7 +4654,7 @@ abstract class SphinxRepository(
             searchTerm,
             feedType
         ).collect { response ->
-            @Exhaustive
+            //@Exhaustive
             when (response) {
                 is LoadResponse.Loading -> {}
 
@@ -4760,7 +4760,7 @@ abstract class SphinxRepository(
             var contentFeedStatuses: List<ContentFeedStatusDto> = listOf()
 
             networkQueryFeedStatus.getFeedStatuses().collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {}
                     is Response.Error -> {}
@@ -4847,7 +4847,7 @@ abstract class SphinxRepository(
                     )
                 ).collect { response ->
 
-                    @Exhaustive
+                    //@Exhaustive
                     when (response) {
                         is LoadResponse.Loading -> {
                         }
@@ -5094,7 +5094,7 @@ abstract class SphinxRepository(
                         MessageContent(content)
                     )
 
-                    @Exhaustive
+                    //@Exhaustive
                     when (decrypted) {
                         is Response.Error -> {
                             // Only log it if there is an exception
@@ -5139,7 +5139,7 @@ abstract class SphinxRepository(
                         MediaKey(mediaKey)
                     )
 
-                    @Exhaustive
+                    //@Exhaustive
                     when (decrypted) {
                         is Response.Error -> {
                             // Only log it if there is an exception
@@ -5183,7 +5183,7 @@ abstract class SphinxRepository(
         applicationScope.launch(mainImmediate) {
             networkQueryContact.createNewInvite(nickname, welcomeMessage)
                 .collect { loadResponse ->
-                    @Exhaustive
+                    //@Exhaustive
                     when (loadResponse) {
                         is LoadResponse.Loading -> {
                         }
@@ -5224,7 +5224,7 @@ abstract class SphinxRepository(
 
         delay(25L)
         networkQueryInvite.payInvite(invite.inviteString).collect { loadResponse ->
-            @Exhaustive
+            //@Exhaustive
             when (loadResponse) {
                 is LoadResponse.Loading -> {
                 }
@@ -5556,7 +5556,7 @@ abstract class SphinxRepository(
                         contentLength = imgFile.length(),
                         memeServerHost = memeServerHost,
                     )
-                    @Exhaustive
+                    //@Exhaustive
                     when (networkResponse) {
                         is Response.Error -> {
                             LOG.e(TAG, "Failed to upload image: ", networkResponse.exception)
@@ -5641,7 +5641,7 @@ abstract class SphinxRepository(
                         contentLength = imgFile.length(),
                         memeServerHost = memeServerHost,
                     )
-                    @Exhaustive
+                    //@Exhaustive
                     when (networkResponse) {
                         is Response.Error -> {
                             LOG.e(TAG, "Failed to upload image: ", networkResponse.exception)
@@ -5839,7 +5839,7 @@ abstract class SphinxRepository(
                         contentLength = imgFile.length(),
                         memeServerHost = memeServerHost,
                     )
-                    @Exhaustive
+                    //@Exhaustive
                     when (networkResponse) {
                         is Response.Error -> {
                             LOG.e(TAG, "Failed to upload image: ", networkResponse.exception)
@@ -5968,7 +5968,7 @@ abstract class SphinxRepository(
                     end_date = endDate
                 )
             ).collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {
                     }
@@ -6021,7 +6021,7 @@ abstract class SphinxRepository(
                     end_date = endDate
                 )
             ).collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {
                     }
@@ -6060,7 +6060,7 @@ abstract class SphinxRepository(
             networkQuerySubscription.putRestartSubscription(
                 subscriptionId
             ).collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {
                     }
@@ -6099,7 +6099,7 @@ abstract class SphinxRepository(
             networkQuerySubscription.putPauseSubscription(
                 subscriptionId
             ).collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {
                     }
@@ -6137,7 +6137,7 @@ abstract class SphinxRepository(
             networkQuerySubscription.deleteSubscription(
                 subscriptionId
             ).collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {
                     }
@@ -6575,7 +6575,7 @@ abstract class SphinxRepository(
         memeServerTokenHandler.retrieveAuthenticationToken(memeServerHost)?.let { token ->
             networkQueryMemeServer.getPaymentTemplates(token, moshi = moshi)
                 .collect { loadResponse ->
-                    @Exhaustive
+                    //@Exhaustive
                     when (loadResponse) {
                         is LoadResponse.Loading -> {
                         }
@@ -6613,7 +6613,7 @@ abstract class SphinxRepository(
                 networkQueryRelayKeys.getRelayTransportKey(
                     relayUrl
                 ).collect { loadResponse ->
-                    @Exhaustive
+                    //@Exhaustive
                     when (loadResponse) {
                         is LoadResponse.Loading -> {}
                         is Response.Error -> {}
@@ -6646,7 +6646,7 @@ abstract class SphinxRepository(
                 return@launch
             }
             networkQueryRelayKeys.getRelayHMacKey().collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {}
                     is Response.Error -> {
@@ -6710,7 +6710,7 @@ abstract class SphinxRepository(
                     networkQueryRelayKeys.addRelayHMacKey(
                         PostHMacKeyDto(encryptionResponse.value.value)
                     ).collect { loadResponse ->
-                        @Exhaustive
+                        //@Exhaustive
                         when (loadResponse) {
                             is LoadResponse.Loading -> {}
                             is Response.Error -> {}
@@ -7239,7 +7239,7 @@ abstract class SphinxRepository(
             networkQueryFeedStatus.saveFeedStatuses(
                 PostFeedStatusDto(contentFeedStatuses)
             ).collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {}
                     is Response.Error -> {}
@@ -7313,7 +7313,7 @@ abstract class SphinxRepository(
     ) {
         applicationScope.launch(io) {
             networkQueryFeedStatus.getFeedStatuses().collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {}
                     is Response.Error -> {}
@@ -7337,7 +7337,7 @@ abstract class SphinxRepository(
     ) {
        applicationScope.launch(io) {
            networkQueryFeedStatus.getByFeedId(feedId).collect { loadResponse ->
-               @Exhaustive
+               //@Exhaustive
                when (loadResponse) {
                    is LoadResponse.Loading -> {}
                    is Response.Error -> {}

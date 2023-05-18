@@ -246,7 +246,7 @@ internal class TribeFeedViewModel @Inject constructor(
             initialized = true
         }
 
-        @Exhaustive
+        //@Exhaustive
         when (data) {
             is TribeFeedData.Result.NoFeed -> { /* no-op */}
             is TribeFeedData.Result.FeedData -> {

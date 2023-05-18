@@ -22,7 +22,9 @@ ext.versions = [
     'hilt': '2.43.2',
 
     'hiltJetpack': '1.0.0-alpha03',
-    'kotlin': '1.9.0-dev-6761',
+//    'kotlin': '1.9.0-dev-6976',
+    'kotlin': '1.9.0-Beta-104',
+
 
 //    'kotlin': '1.5.21',
     'moshi': '1.14.0',
@@ -44,8 +46,9 @@ ext.versions = [
  * */
 ext.deps = [
     androidx: [
-        annotation: "androidx.annotation:annotation:1.2.0",
-        appCompat: "androidx.appcompat:appcompat:1.6.0",
+//        annotation: "androidx.annotation:annotation:1.2.0",
+            annotation: "androidx.annotation:annotation:1.6.0",
+            appCompat: "androidx.appcompat:appcompat:1.6.0",
 //duplicated classes in classpath
 //        appCompat: "androidx.appcompat:appcompat:1.3.0",
         camera: [

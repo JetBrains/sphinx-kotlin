@@ -1,3 +1,6 @@
+@file:Suppress("INVISIBLE_REFERENCE")
+//workaround for KT-58719
+
 package chat.sphinx.feature_repository_android
 
 import androidx.paging.PagingConfig
@@ -40,6 +43,7 @@ import chat.sphinx.wrapper_common.message.MessageId
 import chat.sphinx.wrapper_contact.Contact
 import com.squareup.moshi.Moshi
 import com.squareup.sqldelight.android.paging3.QueryPagingSource
+
 import io.matthewnelson.concept_authentication.data.AuthenticationStorage
 import io.matthewnelson.concept_coroutines.CoroutineDispatchers
 import io.matthewnelson.concept_media_cache.MediaCacheHandler

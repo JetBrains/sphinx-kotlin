@@ -90,7 +90,7 @@ internal class OnBoardConnectFragment: SideEffectFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: OnBoardConnectViewState) {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             is OnBoardConnectViewState.Idle -> { }
             is OnBoardConnectViewState.NewUser -> {
@@ -115,7 +115,7 @@ internal class OnBoardConnectFragment: SideEffectFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.submitButtonViewStateContainer.collect { viewState ->
-                @Exhaustive
+                //@Exhaustive
                 when (viewState) {
                     is OnBoardConnectSubmitButtonViewState.Disabled -> {
                         binding.apply {

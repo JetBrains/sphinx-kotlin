@@ -285,7 +285,7 @@ internal class ChatContactViewModel @Inject constructor(
 
         networkFlow?.let { flow ->
             flow.collect { response ->
-                @Exhaustive
+                //@Exhaustive
                 when (response) {
                     LoadResponse.Loading -> {}
                     is Response.Error -> {

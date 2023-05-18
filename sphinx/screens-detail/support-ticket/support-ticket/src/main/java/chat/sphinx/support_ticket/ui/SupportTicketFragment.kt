@@ -84,7 +84,7 @@ internal class SupportTicketFragment: SideEffectDetailFragment<
 
     override suspend fun onViewStateFlowCollect(viewState: SupportTicketViewState) {
         binding.includeSupportTicketLayout.apply {
-            @Exhaustive
+            //@Exhaustive
             when(viewState) {
                 is SupportTicketViewState.Empty -> {
                     logsDivider.gone

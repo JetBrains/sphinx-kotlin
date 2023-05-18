@@ -108,7 +108,7 @@ internal class TribeMembersListViewModel @Inject constructor(
         ).collect{ loadResponse ->
             val firstPage = (page == 0)
 
-            @Exhaustive
+            //@Exhaustive
             when (loadResponse) {
                 is LoadResponse.Loading -> {
                     updateViewState(

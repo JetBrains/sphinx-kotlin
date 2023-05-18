@@ -65,7 +65,7 @@ internal class ScannerViewModel @Inject constructor(
                                 filter.checkData(scannerResponse.value)
                             }
 
-                            @Exhaustive
+                            //@Exhaustive
                             when (returned) {
                                 is Response.Error -> {
                                     if (returned.cause.isNotEmpty()) {

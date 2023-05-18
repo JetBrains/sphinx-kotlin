@@ -56,7 +56,7 @@ internal class ChatListFooterAdapter(
 
             onStopSupervisor.scope.launch(viewModel.mainImmediate) {
                 viewModel.chatListFooterButtonsViewStateContainer.collect { viewState ->
-                    @Exhaustive
+                    //@Exhaustive
                     when (viewState) {
                         is ChatListFooterButtonsViewState.Idle -> {
                             binding.layoutButtonAddFriend.layoutConstraintButtonAddFriend.gone

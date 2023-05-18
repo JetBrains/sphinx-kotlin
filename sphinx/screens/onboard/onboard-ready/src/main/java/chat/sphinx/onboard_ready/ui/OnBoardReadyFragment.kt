@@ -56,7 +56,7 @@ internal class OnBoardReadyFragment: SideEffectFragment<
 
         lifecycleScope.launch(viewModel.mainImmediate) {
             viewModel.getBalances().collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when (loadResponse) {
                     LoadResponse.Loading -> {}
                     is Response.Error -> {
@@ -100,7 +100,7 @@ internal class OnBoardReadyFragment: SideEffectFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: OnBoardReadyViewState) {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             is OnBoardReadyViewState.Idle -> {}
             is OnBoardReadyViewState.Saving -> {
