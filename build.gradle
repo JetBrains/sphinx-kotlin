@@ -8,7 +8,7 @@ buildscript {
         google()
         gradlePluginPortal()
         maven {
-            url "https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev/"
+            url kotlin_repo_url
         }
     }
 
@@ -34,7 +34,7 @@ allprojects {
         maven { url 'https://jitpack.io' }
         maven { url "https://chaquo.com/maven" }
         maven {
-            url "https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev/"
+            url kotlin_repo_url
         }
     }
 
@@ -62,8 +62,10 @@ allprojects {
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
         kotlinOptions {
             jvmTarget = JavaVersion.VERSION_1_8
-            languageVersion = "2.0"
-            apiVersion = "2.0"
+            languageVersion = kotlin_language_version
+            logger.info("""[COMMUNITY_PROJECT_BUILD] Configured Kotlin Language version: '$languageVersion' for project ${project.name} """)
+            apiVersion = kotlin_api_version
+            logger.info("""[COMMUNITY_PROJECT_BUILD] Configured Kotlin Api version: '$apiVersion' for project ${project.name} """)
             freeCompilerArgs += [
                     "-Xinline-classes",
                     "-opt-in=kotlin.RequiresOptIn",

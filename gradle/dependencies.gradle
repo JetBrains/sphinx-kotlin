@@ -22,9 +22,7 @@ ext.versions = [
     'hilt': '2.43.2',
 
     'hiltJetpack': '1.0.0-alpha03',
-    'kotlin': '1.9.20-dev-2577',
-//    'kotlin': '1.9.0-Beta-104',
-
+    'kotlin': "$kotlin_version" ?: "1.9.0-Beta",
 
 //    'kotlin': '1.5.21',
     'moshi': '1.14.0',
