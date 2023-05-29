@@ -627,7 +627,7 @@ internal class ChatTribeFragment: ChatFragment<
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.pinedMessagePopupViewState.collect { viewState ->
                 layoutChatPinPopupBinding.apply {
-                    @Exhaustive
+                    //@Exhaustive
                     when(viewState) {
                         is PinedMessagePopupViewState.Idle -> {
                             root.goneIfFalse(false)
@@ -654,7 +654,7 @@ internal class ChatTribeFragment: ChatFragment<
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.pinedMessageDataViewState.collect { viewState ->
                 layoutBottomPinned.apply {
-                    @Exhaustive
+                    //@Exhaustive
                     when (viewState) {
                         is PinedMessageDataViewState.Idle -> {
                             binding.includeChatPinedMessageHeader.root.goneIfFalse(false)
@@ -740,7 +740,7 @@ internal class ChatTribeFragment: ChatFragment<
 
         onStopSupervisor.scope.launch(tribeAppViewModel.mainImmediate) {
             tribeAppViewModel.webAppViewStateContainer.collect { viewState ->
-                @Exhaustive
+                //@Exhaustive
                 when (viewState) {
                     is WebAppViewState.NoApp -> {
                         binding.includeChatTribeHeader.imageViewChatWebView.gone
@@ -788,7 +788,7 @@ internal class ChatTribeFragment: ChatFragment<
         onStopSupervisor.scope.launch(tribeAppViewModel.mainImmediate) {
             tribeAppViewModel.webViewViewStateContainer.collect { viewState ->
 
-                @Exhaustive
+                //@Exhaustive
                 when(viewState) {
                     is WebViewViewState.Idle -> {
                         tribeAppBinding.includeLayoutTribeAppDetails.layoutConstraintAuthorizePopup.gone
@@ -828,7 +828,7 @@ internal class ChatTribeFragment: ChatFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.messagesSearchViewStateContainer.collect { viewState ->
-                @Exhaustive
+                //@Exhaustive
                 when (viewState) {
                     is MessagesSearchViewState.Idle -> {
                         binding.layoutConstraintChatHeader.visible

@@ -2076,7 +2076,7 @@ abstract class SphinxRepository(
             emitAll(
                 (
                     if (limit > 0) {
-                        queries.messageGetAllToShowByChatIdWithLimit(chatId, limit)
+                        queries.messageGetAllToShowByChatIdWithLimit(chatId) //, limit
                     } else {
                         queries.messageGetAllToShowByChatId(chatId)
                     }
@@ -2253,7 +2253,7 @@ abstract class SphinxRepository(
         chatId: ChatId
     ) {
         networkQueryMessage.getMessage(messageUUID).collect { loadResponse ->
-            @Exhaustive
+            //@Exhaustive
             when (loadResponse) {
                 is LoadResponse.Loading -> {}
                 is Response.Error -> {}
@@ -5714,7 +5714,7 @@ abstract class SphinxRepository(
                 chatId,
                 pinMessageDto
             ).collect { loadResponse ->
-                @Exhaustive
+                //@Exhaustive
                 when(loadResponse) {
                     is LoadResponse.Loading -> {}
                     is Response.Error -> {
