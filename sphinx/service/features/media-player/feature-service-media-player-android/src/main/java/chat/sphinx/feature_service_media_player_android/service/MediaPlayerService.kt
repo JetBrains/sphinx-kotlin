@@ -36,8 +36,7 @@ import kotlinx.coroutines.flow.collect
 import java.util.*
 import kotlin.collections.ArrayList
 
-//internal, workaround for KT-58757
-abstract class MediaPlayerService: SphinxService() {
+internal abstract class MediaPlayerService: SphinxService() {
 
     companion object {
         const val TAG = "MediaPlayerService"

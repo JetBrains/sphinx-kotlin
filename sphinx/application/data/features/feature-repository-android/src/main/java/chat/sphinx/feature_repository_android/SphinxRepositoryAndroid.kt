@@ -1,6 +1,3 @@
-@file:Suppress("INVISIBLE_REFERENCE")
-//workaround for KT-58719
-
 package chat.sphinx.feature_repository_android
 
 import androidx.paging.PagingConfig
