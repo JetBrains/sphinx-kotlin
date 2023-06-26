@@ -134,7 +134,7 @@ internal class DeleteChatMediaFragment: SideEffectDetailFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: DeleteChatMediaViewState) {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             is DeleteChatMediaViewState.Loading -> {}
             is DeleteChatMediaViewState.ChatList -> {

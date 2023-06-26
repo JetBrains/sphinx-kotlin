@@ -146,7 +146,7 @@ internal class ManageStorageFragment: SideEffectDetailFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: ManageStorageViewState) {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             is ManageStorageViewState.Loading -> {
                 loadingStorage()

@@ -143,7 +143,7 @@ internal class DeletePodcastDetailFragment: SideEffectDetailFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: DeleteMediaDetailViewState) {
-        @Exhaustive
+        //@Exhaustive
         when (viewState) {
             is DeleteMediaDetailViewState.Idle -> {}
             is DeleteMediaDetailViewState.EpisodeList -> {
