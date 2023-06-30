@@ -1,0 +1,140 @@
+diff --git a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreCoordinator.kt b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreCoordinator.kt
+index 0e11f1b..c936719 100644
+--- a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreCoordinator.kt
++++ b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreCoordinator.kt
+@@ -48,7 +48,7 @@ abstract class AuthenticationCoreCoordinator(
+     override suspend fun submitAuthenticationRequest(
+         request: AuthenticationRequest
+     ): Flow<AuthenticationResponse> {
+-        @Exhaustive
++        //@Exhaustive
+         when (request) {
+             is AuthenticationRequest.GetEncryptionKey -> {
+                 when (authenticationManager.authenticationStateFlow.value) {
+@@ -61,6 +61,8 @@ abstract class AuthenticationCoreCoordinator(
+                             return flowOf(
+                                 AuthenticationResponse.Failure(request)
+                             )
++                        } else {
++
+                         }
+                     }
+                     else -> {
+diff --git a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreManager.kt b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreManager.kt
+index c940ce8..c864b43 100644
+--- a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreManager.kt
++++ b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreManager.kt
+@@ -70,7 +70,7 @@ abstract class AuthenticationCoreManager(
+         state: AuthenticationState,
+         encryptionKey: EncryptionKey?
+     ) {
+-        @Exhaustive
++        //@Exhaustive
+         when (state) {
+             is AuthenticationState.NotRequired -> {
+                 encryptionKey?.let { nnKey ->
+diff --git a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/components/AuthenticationProcessor.kt b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/components/AuthenticationProcessor.kt
+index e76cf6d..622bb47 100644
+--- a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/components/AuthenticationProcessor.kt
++++ b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/components/AuthenticationProcessor.kt
+@@ -152,7 +152,7 @@ internal class AuthenticationProcessor private constructor(
+     ): Flow<AuthenticateFlowResponse> = flow {
+         emit(AuthenticateFlowResponse.Notify.DecryptingEncryptionKey)
+         validatePinEntry(AES256CBC_PBKDF2_HMAC_SHA256(), pinEntry).let { response ->
+-            @Exhaustive
++            //@Exhaustive
+             when (response) {
+ 
+                 is PinValidationResponse.PinEntryIsValid -> {
+@@ -526,7 +526,7 @@ internal class AuthenticationProcessor private constructor(
+                     break
+                 }
+ 
+-                @Exhaustive
++                //@Exhaustive
+                 when (request) {
+                     is AuthenticationRequest.LogIn -> {
+ 
+diff --git a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/data/AuthenticationCoreStorage.kt b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/data/AuthenticationCoreStorage.kt
+index 55a62a5..5c5e255 100644
+--- a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/data/AuthenticationCoreStorage.kt
++++ b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/data/AuthenticationCoreStorage.kt
+@@ -27,14 +27,14 @@ abstract class AuthenticationCoreStorage: AuthenticationStorage {
+     protected abstract suspend fun retrieveCredentialString(): CredentialString?
+ 
+     @JvmSynthetic
+-    @Synchronized
++    //@Synchronized
+     internal suspend fun saveCredentials(credentials: Credentials) {
+         saveCredentialString(CredentialString(credentials.toString()))
+         delay(25L)
+     }
+ 
+     @JvmSynthetic
+-    @Synchronized
++    //@Synchronized
+     internal suspend fun retrieveCredentials(): String? =
+         retrieveCredentialString()?.value
+ }
+diff --git a/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/components/ConfirmPressAction.kt b/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/components/ConfirmPressAction.kt
+index af72e9c..e593819 100644
+--- a/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/components/ConfirmPressAction.kt
++++ b/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/components/ConfirmPressAction.kt
+@@ -33,7 +33,7 @@ internal class ConfirmPressAction {
+     @Synchronized
+     fun updateAction(newAction: Action) {
+         action.let { currentAction ->
+-            @Exhaustive
++            //@Exhaustive
+             when (currentAction) {
+                 is Action.Authenticate -> {}
+                 is Action.ResetPassword -> {
+diff --git a/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/ui/AuthenticationViewModelContainer.kt b/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/ui/AuthenticationViewModelContainer.kt
+index 5e67aab..b53c381 100644
+--- a/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/ui/AuthenticationViewModelContainer.kt
++++ b/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/ui/AuthenticationViewModelContainer.kt
+@@ -200,7 +200,7 @@ class AuthenticationViewModelContainer<T>(
+ 
+         confirmPressJob = viewModelScope.launch(dispatchers.default) {
+             confirmPressAction.getAction().let { action ->
+-                @Exhaustive
++                //@Exhaustive
+                 when (action) {
+                     is ConfirmPressAction.Action.Authenticate -> {
+                         processResponseFlow(
+@@ -270,7 +270,7 @@ class AuthenticationViewModelContainer<T>(
+         }
+ 
+         responseFlow.collect { response ->
+-            @Exhaustive
++            //@Exhaustive
+             when (response) {
+                 is AuthenticateFlowResponse.Success -> {
+                     _authenticationFinishedStateFlow.value = response.requests
+@@ -358,7 +358,7 @@ class AuthenticationViewModelContainer<T>(
+     private suspend fun processAuthenticateError(
+         error: AuthenticateFlowResponse.Error.Authenticate
+     ) {
+-        @Exhaustive
++        //@Exhaustive
+         when (error) {
+             AuthenticateFlowResponse.Error.Authenticate.InvalidPasswordEntrySize -> {
+                 // Will never ever happen from here b/c confirm button does not
+@@ -371,7 +371,7 @@ class AuthenticationViewModelContainer<T>(
+     private suspend fun processResetPinError(
+         error: AuthenticateFlowResponse.Error.ResetPassword
+     ) {
+-        @Exhaustive
++        //@Exhaustive
+         when (error) {
+             AuthenticateFlowResponse.Error.ResetPassword.NewPasswordEntryWasNull -> {
+                 // TODO: Implement
+@@ -403,7 +403,7 @@ class AuthenticationViewModelContainer<T>(
+     private suspend fun processSetPinFirstTimeError(
+         error: AuthenticateFlowResponse.Error.SetPasswordFirstTime
+     ) {
+-        @Exhaustive
++        //@Exhaustive
+         when (error) {
+             AuthenticateFlowResponse.Error.SetPasswordFirstTime.InvalidNewPasswordEntrySize -> {
+                 // TODO: Implement
