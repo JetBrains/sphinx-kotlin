@@ -1,27 +1,65 @@
-Subject: [PATCH] Get rid of app.cash.exhaustive
----
-Index: 
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/ b/
---- a/	(revision 9d98c7c3fa34533f7e8dc0ebd637cb825298897a)
-+++ b/	
-@@ -1,1 +1,1 @@
--1697c51be0bb11a0ed398c2d8f537da0db3d91c1
-\ No newline at end of file
-+f750fdeb70722d82ea9feaadf8ea78a378d95d9a
-\ No newline at end of file
-Index: kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/data/AuthenticationCoreStorage.kt
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
+diff --git a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreCoordinator.kt b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreCoordinator.kt
+index 0e11f1b..c936719 100644
+--- a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreCoordinator.kt
++++ b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreCoordinator.kt
+@@ -48,7 +48,7 @@ abstract class AuthenticationCoreCoordinator(
+     override suspend fun submitAuthenticationRequest(
+         request: AuthenticationRequest
+     ): Flow<AuthenticationResponse> {
+-        @Exhaustive
++        //@Exhaustive
+         when (request) {
+             is AuthenticationRequest.GetEncryptionKey -> {
+                 when (authenticationManager.authenticationStateFlow.value) {
+@@ -61,6 +61,8 @@ abstract class AuthenticationCoreCoordinator(
+                             return flowOf(
+                                 AuthenticationResponse.Failure(request)
+                             )
++                        } else {
++
+                         }
+                     }
+                     else -> {
+diff --git a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreManager.kt b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreManager.kt
+index c940ce8..c864b43 100644
+--- a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreManager.kt
++++ b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreManager.kt
+@@ -70,7 +70,7 @@ abstract class AuthenticationCoreManager(
+         state: AuthenticationState,
+         encryptionKey: EncryptionKey?
+     ) {
+-        @Exhaustive
++        //@Exhaustive
+         when (state) {
+             is AuthenticationState.NotRequired -> {
+                 encryptionKey?.let { nnKey ->
+diff --git a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/components/AuthenticationProcessor.kt b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/components/AuthenticationProcessor.kt
+index e76cf6d..622bb47 100644
+--- a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/components/AuthenticationProcessor.kt
++++ b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/components/AuthenticationProcessor.kt
+@@ -152,7 +152,7 @@ internal class AuthenticationProcessor private constructor(
+     ): Flow<AuthenticateFlowResponse> = flow {
+         emit(AuthenticateFlowResponse.Notify.DecryptingEncryptionKey)
+         validatePinEntry(AES256CBC_PBKDF2_HMAC_SHA256(), pinEntry).let { response ->
+-            @Exhaustive
++            //@Exhaustive
+             when (response) {
+ 
+                 is PinValidationResponse.PinEntryIsValid -> {
+@@ -526,7 +526,7 @@ internal class AuthenticationProcessor private constructor(
+                     break
+                 }
+ 
+-                @Exhaustive
++                //@Exhaustive
+                 when (request) {
+                     is AuthenticationRequest.LogIn -> {
+ 
 diff --git a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/data/AuthenticationCoreStorage.kt b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/data/AuthenticationCoreStorage.kt
---- a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/data/AuthenticationCoreStorage.kt	(revision f750fdeb70722d82ea9feaadf8ea78a378d95d9a)
-+++ b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/data/AuthenticationCoreStorage.kt	(date 1695128541027)
-@@ -27,14 +27,14 @@
+index 55a62a5..5c5e255 100644
+--- a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/data/AuthenticationCoreStorage.kt
++++ b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/data/AuthenticationCoreStorage.kt
+@@ -27,14 +27,14 @@ abstract class AuthenticationCoreStorage: AuthenticationStorage {
      protected abstract suspend fun retrieveCredentialString(): CredentialString?
  
      @JvmSynthetic
@@ -38,15 +76,11 @@ diff --git a/kotlin/features/authentication/feature-authentication-core/src/main
      internal suspend fun retrieveCredentials(): String? =
          retrieveCredentialString()?.value
  }
-Index: kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/components/ConfirmPressAction.kt
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
 diff --git a/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/components/ConfirmPressAction.kt b/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/components/ConfirmPressAction.kt
---- a/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/components/ConfirmPressAction.kt	(revision f750fdeb70722d82ea9feaadf8ea78a378d95d9a)
-+++ b/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/components/ConfirmPressAction.kt	(date 1695128541043)
-@@ -33,7 +33,7 @@
+index af72e9c..e593819 100644
+--- a/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/components/ConfirmPressAction.kt
++++ b/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/components/ConfirmPressAction.kt
+@@ -33,7 +33,7 @@ internal class ConfirmPressAction {
      @Synchronized
      fun updateAction(newAction: Action) {
          action.let { currentAction ->
@@ -55,49 +89,11 @@ diff --git a/kotlin/features/authentication/feature-authentication-view/src/main
              when (currentAction) {
                  is Action.Authenticate -> {}
                  is Action.ResetPassword -> {
-Index: kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreManager.kt
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreManager.kt b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreManager.kt
---- a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreManager.kt	(revision f750fdeb70722d82ea9feaadf8ea78a378d95d9a)
-+++ b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreManager.kt	(date 1695128541039)
-@@ -70,7 +70,7 @@
-         state: AuthenticationState,
-         encryptionKey: EncryptionKey?
-     ) {
--        @Exhaustive
-+        //@Exhaustive
-         when (state) {
-             is AuthenticationState.NotRequired -> {
-                 encryptionKey?.let { nnKey ->
-Index: build.gradle
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/build.gradle b/build.gradle
---- a/build.gradle	(revision f750fdeb70722d82ea9feaadf8ea78a378d95d9a)
-+++ b/build.gradle	(date 1695128800035)
-@@ -12,7 +12,7 @@
-         classpath KAplugin.google.hilt
-         classpath KAplugin.gradleVersions
-         classpath KAplugin.kotlin.gradle
--        classpath KAplugin.square.exhaustive
-+//        classpath KAplugin.square.exhaustive
- 
-         // NOTE: Do not place your application dependencies here; they belong
-         // in the individual module build.gradle files
-Index: kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/ui/AuthenticationViewModelContainer.kt
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
 diff --git a/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/ui/AuthenticationViewModelContainer.kt b/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/ui/AuthenticationViewModelContainer.kt
---- a/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/ui/AuthenticationViewModelContainer.kt	(revision f750fdeb70722d82ea9feaadf8ea78a378d95d9a)
-+++ b/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/ui/AuthenticationViewModelContainer.kt	(date 1695128541047)
-@@ -200,7 +200,7 @@
+index 5e67aab..b53c381 100644
+--- a/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/ui/AuthenticationViewModelContainer.kt
++++ b/kotlin/features/authentication/feature-authentication-view/src/main/java/io/matthewnelson/feature_authentication_view/ui/AuthenticationViewModelContainer.kt
+@@ -200,7 +200,7 @@ class AuthenticationViewModelContainer<T>(
  
          confirmPressJob = viewModelScope.launch(dispatchers.default) {
              confirmPressAction.getAction().let { action ->
@@ -106,7 +102,7 @@ diff --git a/kotlin/features/authentication/feature-authentication-view/src/main
                  when (action) {
                      is ConfirmPressAction.Action.Authenticate -> {
                          processResponseFlow(
-@@ -270,7 +270,7 @@
+@@ -270,7 +270,7 @@ class AuthenticationViewModelContainer<T>(
          }
  
          responseFlow.collect { response ->
@@ -115,7 +111,7 @@ diff --git a/kotlin/features/authentication/feature-authentication-view/src/main
              when (response) {
                  is AuthenticateFlowResponse.Success -> {
                      _authenticationFinishedStateFlow.value = response.requests
-@@ -358,7 +358,7 @@
+@@ -358,7 +358,7 @@ class AuthenticationViewModelContainer<T>(
      private suspend fun processAuthenticateError(
          error: AuthenticateFlowResponse.Error.Authenticate
      ) {
@@ -124,7 +120,7 @@ diff --git a/kotlin/features/authentication/feature-authentication-view/src/main
          when (error) {
              AuthenticateFlowResponse.Error.Authenticate.InvalidPasswordEntrySize -> {
                  // Will never ever happen from here b/c confirm button does not
-@@ -371,7 +371,7 @@
+@@ -371,7 +371,7 @@ class AuthenticationViewModelContainer<T>(
      private suspend fun processResetPinError(
          error: AuthenticateFlowResponse.Error.ResetPassword
      ) {
@@ -133,7 +129,7 @@ diff --git a/kotlin/features/authentication/feature-authentication-view/src/main
          when (error) {
              AuthenticateFlowResponse.Error.ResetPassword.NewPasswordEntryWasNull -> {
                  // TODO: Implement
-@@ -403,7 +403,7 @@
+@@ -403,7 +403,7 @@ class AuthenticationViewModelContainer<T>(
      private suspend fun processSetPinFirstTimeError(
          error: AuthenticateFlowResponse.Error.SetPasswordFirstTime
      ) {
@@ -142,76 +138,3 @@ diff --git a/kotlin/features/authentication/feature-authentication-view/src/main
          when (error) {
              AuthenticateFlowResponse.Error.SetPasswordFirstTime.InvalidNewPasswordEntrySize -> {
                  // TODO: Implement
-Index: kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreCoordinator.kt
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreCoordinator.kt b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreCoordinator.kt
---- a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreCoordinator.kt	(revision f750fdeb70722d82ea9feaadf8ea78a378d95d9a)
-+++ b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/AuthenticationCoreCoordinator.kt	(date 1695128541031)
-@@ -48,7 +48,7 @@
-     override suspend fun submitAuthenticationRequest(
-         request: AuthenticationRequest
-     ): Flow<AuthenticationResponse> {
--        @Exhaustive
-+        //@Exhaustive
-         when (request) {
-             is AuthenticationRequest.GetEncryptionKey -> {
-                 when (authenticationManager.authenticationStateFlow.value) {
-@@ -61,6 +61,8 @@
-                             return flowOf(
-                                 AuthenticationResponse.Failure(request)
-                             )
-+                        } else {
-+
-                         }
-                     }
-                     else -> {
-Index: gradle/dependencies.gradle
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/gradle/dependencies.gradle b/gradle/dependencies.gradle
---- a/gradle/dependencies.gradle	(revision f750fdeb70722d82ea9feaadf8ea78a378d95d9a)
-+++ b/gradle/dependencies.gradle	(date 1695128800027)
-@@ -73,9 +73,9 @@
-     kotlin: [
-         gradle: "org.jetbrains.kotlin:kotlin-gradle-plugin:${KAversions.kotlin}",
-     ],
--    square: [
--        exhaustive: "app.cash.exhaustive:exhaustive-gradle:0.2.0",
--    ],
-+//    square: [
-+//        exhaustive: "app.cash.exhaustive:exhaustive-gradle:0.2.0",
-+//    ],
- ]
- 
- /**
-Index: kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/components/AuthenticationProcessor.kt
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/components/AuthenticationProcessor.kt b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/components/AuthenticationProcessor.kt
---- a/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/components/AuthenticationProcessor.kt	(revision f750fdeb70722d82ea9feaadf8ea78a378d95d9a)
-+++ b/kotlin/features/authentication/feature-authentication-core/src/main/java/io/matthewnelson/feature_authentication_core/components/AuthenticationProcessor.kt	(date 1695128541019)
-@@ -152,7 +152,7 @@
-     ): Flow<AuthenticateFlowResponse> = flow {
-         emit(AuthenticateFlowResponse.Notify.DecryptingEncryptionKey)
-         validatePinEntry(AES256CBC_PBKDF2_HMAC_SHA256(), pinEntry).let { response ->
--            @Exhaustive
-+            //@Exhaustive
-             when (response) {
- 
-                 is PinValidationResponse.PinEntryIsValid -> {
-@@ -526,7 +526,7 @@
-                     break
-                 }
- 
--                @Exhaustive
-+                //@Exhaustive
-                 when (request) {
-                     is AuthenticationRequest.LogIn -> {
- 
