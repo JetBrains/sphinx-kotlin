@@ -1,6 +1,6 @@
 package chat.sphinx.feature_link_preview
 
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_network_query_chat.NetworkQueryChat
 import chat.sphinx.kotlin_response.LoadResponse
 import chat.sphinx.wrapper_chat.ChatHost

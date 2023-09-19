@@ -2,7 +2,7 @@ package chat.sphinx.activitymain
 
 import android.net.Uri
 import androidx.lifecycle.viewModelScope
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.activitymain.navigation.drivers.AuthenticationNavigationDriver
 import chat.sphinx.activitymain.navigation.drivers.DetailNavigationDriver
 import chat.sphinx.activitymain.navigation.drivers.PrimaryNavigationDriver

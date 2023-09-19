@@ -42,7 +42,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import javax.annotation.meta.Exhaustive
+// import javax.annotation.meta.Exhaustive
 import javax.inject.Inject
 
 internal inline val OnBoardConnectingFragmentArgs.restoreCode: RedemptionCode.AccountRestoration?

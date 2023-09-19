@@ -19,7 +19,7 @@ import chat.sphinx.wrapper_chat.isOnlyMentions
 import chat.sphinx.wrapper_chat.isSeeAll
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import javax.annotation.meta.Exhaustive
+// import javax.annotation.meta.Exhaustive
 
 @AndroidEntryPoint
 internal class NotificationLevelFragment: SideEffectDetailFragment<

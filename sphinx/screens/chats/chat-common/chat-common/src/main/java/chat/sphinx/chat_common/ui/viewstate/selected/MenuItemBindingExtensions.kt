@@ -2,7 +2,7 @@ package chat.sphinx.chat_common.ui.viewstate.selected
 
 import androidx.annotation.MainThread
 import androidx.core.content.ContextCompat
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.chat_common.R
 import chat.sphinx.chat_common.databinding.LayoutSelectedMessageBinding
 import chat.sphinx.chat_common.databinding.LayoutSelectedMessageMenuItemBinding

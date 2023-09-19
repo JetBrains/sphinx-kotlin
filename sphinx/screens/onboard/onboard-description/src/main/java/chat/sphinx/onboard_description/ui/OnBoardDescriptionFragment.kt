@@ -20,7 +20,7 @@ import io.matthewnelson.android_feature_screens.ui.sideeffect.SideEffectFragment
 import io.matthewnelson.android_feature_viewmodel.currentViewState
 import io.matthewnelson.android_feature_viewmodel.updateViewState
 import kotlinx.coroutines.launch
-import javax.annotation.meta.Exhaustive
+// import javax.annotation.meta.Exhaustive
 
 @AndroidEntryPoint
 internal class OnBoardDescriptionFragment: SideEffectFragment<

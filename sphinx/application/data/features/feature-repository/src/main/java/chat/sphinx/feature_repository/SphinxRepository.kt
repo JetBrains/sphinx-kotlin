@@ -1,6 +1,6 @@
 package chat.sphinx.feature_repository
 
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_coredb.CoreDB
 import chat.sphinx.concept_crypto_rsa.RSA
 import chat.sphinx.concept_meme_input_stream.MemeInputStreamHandler

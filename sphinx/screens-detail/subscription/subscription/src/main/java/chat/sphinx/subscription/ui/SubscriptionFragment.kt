@@ -27,7 +27,7 @@ import io.matthewnelson.concept_views.viewstate.collect
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
-import javax.annotation.meta.Exhaustive
+// import javax.annotation.meta.Exhaustive
 
 @AndroidEntryPoint
 internal class SubscriptionFragment: SideEffectDetailFragment<

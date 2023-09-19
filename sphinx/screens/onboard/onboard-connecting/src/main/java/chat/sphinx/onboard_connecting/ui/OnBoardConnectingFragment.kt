@@ -27,7 +27,7 @@ import io.matthewnelson.android_feature_viewmodel.updateViewState
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import javax.annotation.meta.Exhaustive
+// import javax.annotation.meta.Exhaustive
 import javax.inject.Inject
 
 @AndroidEntryPoint

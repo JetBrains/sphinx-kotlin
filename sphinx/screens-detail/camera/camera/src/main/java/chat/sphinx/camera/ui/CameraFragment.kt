@@ -23,7 +23,7 @@ import androidx.core.util.Consumer
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import by.kirich1409.viewbindingdelegate.viewBinding
 import chat.sphinx.camera.R
 import chat.sphinx.camera.databinding.FragmentCameraBinding

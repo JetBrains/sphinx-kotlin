@@ -7,7 +7,7 @@ import io.matthewnelson.concept_views.viewstate.ViewStateContainer
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
-import javax.annotation.meta.Exhaustive
+// import javax.annotation.meta.Exhaustive
 
 internal sealed class AddressBookViewState: ViewState<AddressBookViewState>() {
 

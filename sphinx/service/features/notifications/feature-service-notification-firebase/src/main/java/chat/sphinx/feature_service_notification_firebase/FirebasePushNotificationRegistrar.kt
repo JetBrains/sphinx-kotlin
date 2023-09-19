@@ -1,6 +1,6 @@
 package chat.sphinx.feature_service_notification_firebase
 
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_repository_contact.ContactRepository
 import chat.sphinx.concept_service_notification.PushNotificationRegistrar
 import chat.sphinx.kotlin_response.Response

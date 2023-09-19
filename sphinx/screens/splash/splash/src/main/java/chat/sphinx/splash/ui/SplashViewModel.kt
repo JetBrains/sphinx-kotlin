@@ -2,7 +2,7 @@ package chat.sphinx.splash.ui
 
 import android.util.Log
 import androidx.lifecycle.viewModelScope
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_background_login.BackgroundLoginHandler
 import chat.sphinx.concept_relay.RelayDataHandler
 import chat.sphinx.concept_repository_actions.ActionsRepository

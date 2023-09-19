@@ -18,7 +18,7 @@ import chat.sphinx.newsletter_detail.ui.adapter.NewsletterItemsListAdapter
 import chat.sphinx.screen_detail_fragment.BaseDetailFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import javax.annotation.meta.Exhaustive
+// import javax.annotation.meta.Exhaustive
 import javax.inject.Inject
 
 @AndroidEntryPoint

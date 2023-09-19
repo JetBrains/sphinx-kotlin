@@ -1,6 +1,6 @@
 package chat.sphinx.feature_socket_io
 
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_network_client.NetworkClient
 import chat.sphinx.concept_network_client.NetworkClientClearedListener
 import chat.sphinx.concept_network_query_message.model.MessageDto

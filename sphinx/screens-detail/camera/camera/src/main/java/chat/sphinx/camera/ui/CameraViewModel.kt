@@ -7,7 +7,7 @@ import android.hardware.camera2.CameraManager
 import android.hardware.camera2.CameraMetadata
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.viewModelScope
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.camera.coordinator.CameraViewModelCoordinator
 import chat.sphinx.camera.model.CameraItem
 import chat.sphinx.camera.model.LensFacing

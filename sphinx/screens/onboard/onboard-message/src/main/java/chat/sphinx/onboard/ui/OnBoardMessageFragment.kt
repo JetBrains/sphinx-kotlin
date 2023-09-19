@@ -27,7 +27,7 @@ import io.matthewnelson.android_feature_screens.navigation.CloseAppOnBackPress
 import io.matthewnelson.android_feature_screens.ui.sideeffect.SideEffectFragment
 import io.matthewnelson.android_feature_screens.util.gone
 import io.matthewnelson.android_feature_screens.util.visible
-import javax.annotation.meta.Exhaustive
+// import javax.annotation.meta.Exhaustive
 
 @AndroidEntryPoint
 internal class OnBoardMessageFragment: SideEffectFragment<
