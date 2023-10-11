@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.dashboard.databinding.LayoutChatListChatsFooterBinding
 import chat.sphinx.dashboard.ui.ChatListViewModel
 import chat.sphinx.dashboard.ui.viewstates.ChatListFooterButtonsViewState

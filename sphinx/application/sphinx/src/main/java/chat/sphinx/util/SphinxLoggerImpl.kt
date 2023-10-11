@@ -1,7 +1,7 @@
 package chat.sphinx.util
 
 import android.util.Log
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.logger.LogType
 import chat.sphinx.logger.SphinxLogger
 import io.matthewnelson.build_config.BuildConfigDebug

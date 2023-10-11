@@ -182,7 +182,7 @@ ext.plugin = [
     ],
     mavenPublish: "com.vanniktech:gradle-maven-publish-plugin:0.13.0",
     square: [
-        exhaustive: "app.cash.exhaustive:exhaustive-gradle:0.2.0",
+        // exhaustive: "app.cash.exhaustive:exhaustive-gradle:0.2.0",
         sqlDelight: "com.squareup.sqldelight:gradle-plugin:${versions.sqlDelight}"
     ],
 ]

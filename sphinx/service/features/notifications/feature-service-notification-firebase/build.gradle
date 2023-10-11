@@ -8,7 +8,7 @@ buildscript {
 }
 
 plugins {
-    id 'app.cash.exhaustive'
+    // id 'app.cash.exhaustive'
     id 'com.android.library'
     id 'dagger.hilt.android.plugin'
     id 'kotlin-android'

@@ -1,6 +1,6 @@
 package chat.sphinx.feature_network_client
 
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_network_client_crypto.CryptoScheme
 import chat.sphinx.concept_network_client_crypto.isCryptoHeader
 import chat.sphinx.concept_network_client_crypto.retrieveCryptoScheme
