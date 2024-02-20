@@ -73,8 +73,7 @@ allprojects {
                     '-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi',
                     //moschi and dagger are metadata-incompatible with 1.9
                     '-Xmetadata-version=1.8',
-                    '-Xrender-internal-diagnostic-names',
-                    '-Xuse-kapt4'
+                    '-Xrender-internal-diagnostic-names'
             ]
         }
     }
