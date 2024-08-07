@@ -8,7 +8,7 @@ internal sealed class SelectedMessageViewState: ViewState<SelectedMessageViewSta
 
     object None: SelectedMessageViewState()
 
-    @ExposedCopyVisibility
+    @Suppress("DataClassPrivateConstructor")
     data class SelectedMessage private constructor(
         val messageHolderViewState: MessageHolderViewState,
         val holderYPos: Px,
