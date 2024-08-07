@@ -116,7 +116,7 @@ sealed class RedemptionCode {
         }
 
 
-        @Suppress("DataClassPrivateConstructor")
+        @ExposedCopyVisibility
         data class NodeInvite private constructor(
             val ip: RelayUrl,
             val password: String,
@@ -132,7 +132,7 @@ sealed class RedemptionCode {
 
         }
 
-        @Suppress("DataClassPrivateConstructor")
+        @ExposedCopyVisibility
         data class SwarmConnect private constructor(
             val ip: RelayUrl,
             val pubKey: String,
@@ -147,7 +147,7 @@ sealed class RedemptionCode {
             }
         }
 
-        @Suppress("DataClassPrivateConstructor")
+        @ExposedCopyVisibility
         data class SwarmClaim private constructor(
             val ip: RelayUrl,
             val token: String,
