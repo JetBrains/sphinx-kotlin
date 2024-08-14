@@ -8,8 +8,7 @@ internal sealed class SelectedMessageViewState: ViewState<SelectedMessageViewSta
 
     object None: SelectedMessageViewState()
 
-    @Suppress("DataClassPrivateConstructor")
-    data class SelectedMessage private constructor(
+    data class SelectedMessage constructor(
         val messageHolderViewState: MessageHolderViewState,
         val holderYPos: Px,
         val bubbleCenterXPos: Px,

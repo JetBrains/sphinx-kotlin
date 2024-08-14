@@ -6,10 +6,10 @@ import chat.sphinx.wrapper_relay.RelayUrl
 import chat.sphinx.wrapper_relay.TransportToken
 import chat.sphinx.wrapper_rsa.RsaPublicKey
 
-@Suppress("DataClassPrivateConstructor", "ClassName")
+@Suppress("ClassName")
 sealed class OnBoardStep {
 
-    data class Step1_WelcomeMessage private constructor(
+    data class Step1_WelcomeMessage constructor(
         val relayUrl: RelayUrl,
         val authorizationToken: AuthorizationToken,
         val transportKey: RsaPublicKey?,
@@ -31,7 +31,7 @@ sealed class OnBoardStep {
 
     }
 
-    data class Step2_Name private constructor(val inviterData: OnBoardInviterData): OnBoardStep() {
+    data class Step2_Name constructor(val inviterData: OnBoardInviterData): OnBoardStep() {
 
         companion object {
             @JvmSynthetic
@@ -40,7 +40,7 @@ sealed class OnBoardStep {
         }
     }
 
-    data class Step3_Picture private constructor(val inviterData: OnBoardInviterData): OnBoardStep() {
+    data class Step3_Picture constructor(val inviterData: OnBoardInviterData): OnBoardStep() {
 
         companion object {
             @JvmSynthetic
@@ -49,7 +49,7 @@ sealed class OnBoardStep {
         }
     }
 
-    data class Step4_Ready private constructor(val inviterData: OnBoardInviterData): OnBoardStep() {
+    data class Step4_Ready constructor(val inviterData: OnBoardInviterData): OnBoardStep() {
 
         companion object {
             @JvmSynthetic
