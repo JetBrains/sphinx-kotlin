@@ -2,8 +2,7 @@ package chat.sphinx.concept_image_loader
 
 import chat.sphinx.wrapper_view.Px
 
-@Suppress("DataClassPrivateConstructor")
-data class ImageLoaderOptions private constructor(
+data class ImageLoaderOptions constructor(
     val transformation: Transformation?,
     val transition: Transition,
     val errorResId: Int?,

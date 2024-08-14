@@ -55,7 +55,7 @@ sealed class RedemptionCode {
         }
     }
 
-        class AccountRestoration private constructor(
+        class AccountRestoration constructor(
             private val byteArrayToDecrypt: ByteArray
         ) : RedemptionCode() {
 
@@ -67,7 +67,7 @@ sealed class RedemptionCode {
                     AccountRestoration(byteArrayToDecrypt)
             }
 
-            class DecryptedRestorationCode private constructor(
+            class DecryptedRestorationCode constructor(
                 val privateKey: Password,
                 val publicKey: Password,
                 val relayUrl: RelayUrl,
@@ -116,8 +116,7 @@ sealed class RedemptionCode {
         }
 
 
-        @Suppress("DataClassPrivateConstructor")
-        data class NodeInvite private constructor(
+        data class NodeInvite constructor(
             val ip: RelayUrl,
             val password: String,
         ) : RedemptionCode() {
@@ -132,8 +131,7 @@ sealed class RedemptionCode {
 
         }
 
-        @Suppress("DataClassPrivateConstructor")
-        data class SwarmConnect private constructor(
+        data class SwarmConnect constructor(
             val ip: RelayUrl,
             val pubKey: String,
         ) : RedemptionCode() {
@@ -147,8 +145,7 @@ sealed class RedemptionCode {
             }
         }
 
-        @Suppress("DataClassPrivateConstructor")
-        data class SwarmClaim private constructor(
+        data class SwarmClaim constructor(
             val ip: RelayUrl,
             val token: String,
         ) : RedemptionCode() {
