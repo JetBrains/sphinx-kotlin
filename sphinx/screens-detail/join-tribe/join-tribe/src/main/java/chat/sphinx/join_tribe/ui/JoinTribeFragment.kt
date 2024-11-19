@@ -40,7 +40,7 @@ internal class JoinTribeFragment: SideEffectDetailFragment<
 {
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var imageLoader: ImageLoader<ImageView>
+    lateinit var imageLoader: ImageLoader<ImageView>
 
     override val viewModel: JoinTribeViewModel by viewModels()
     override val binding: FragmentJoinTribeBinding by viewBinding(FragmentJoinTribeBinding::bind)

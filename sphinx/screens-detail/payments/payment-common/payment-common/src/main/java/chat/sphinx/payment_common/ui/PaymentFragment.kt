@@ -64,7 +64,7 @@ abstract class PaymentFragment<
 
     @Inject
     @Suppress("ProtectedInFinal", "PropertyName")
-    protected lateinit var userColorsHelper: UserColorsHelper
+    lateinit var userColorsHelper: UserColorsHelper
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

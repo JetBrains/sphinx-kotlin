@@ -9,7 +9,7 @@ import android.os.Environment
 import android.os.StatFs
 import android.webkit.URLUtil
 import androidx.lifecycle.viewModelScope
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import chat.sphinx.camera_view_model_coordinator.request.CameraRequest
 import chat.sphinx.camera_view_model_coordinator.response.CameraResponse
 import chat.sphinx.concept_background_login.BackgroundLoginHandler
@@ -151,8 +151,7 @@ internal class ProfileViewModel @Inject constructor(
                         fileName = fileName,
                         contentLength = contentLength,
                     )
-
-                    @Exhaustive
+//@Exhaustive
                     when (response) {
                         is Response.Error -> {
                             updatingImageViewStateContainer.updateViewState(
@@ -207,7 +206,7 @@ internal class ProfileViewModel @Inject constructor(
             authenticationCoordinator.submitAuthenticationRequest(
                 AuthenticationRequest.ResetPassword()
             ).firstOrNull()?.let { response ->
-                @Exhaustive
+//@Exhaustive
                 when (response) {
                     is AuthenticationResponse.Failure -> {
                         // handle
@@ -448,7 +447,7 @@ internal class ProfileViewModel @Inject constructor(
                 lightningRepository.getAccountBalanceAll(
                     Triple(Pair(authorizationToken, transportToken), null, relayUrl)
                 ).collect { loadResponse ->
-                    @Exhaustive
+//@Exhaustive
                     when (loadResponse) {
                         is LoadResponse.Loading -> {
                         }
@@ -506,7 +505,7 @@ internal class ProfileViewModel @Inject constructor(
                     }
                 })
             ).firstOrNull().let { response ->
-                @Exhaustive
+//@Exhaustive
                 when (response) {
                     null,
                     is AuthenticationResponse.Failure -> {
@@ -516,7 +515,7 @@ internal class ProfileViewModel @Inject constructor(
                         authenticationCoordinator.submitAuthenticationRequest(
                             AuthenticationRequest.GetEncryptionKey()
                         ).firstOrNull().let { keyResponse ->
-                            @Exhaustive
+//@Exhaustive
                             when (keyResponse) {
                                 null,
                                 is AuthenticationResponse.Failure -> {

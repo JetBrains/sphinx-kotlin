@@ -33,7 +33,7 @@ internal class NewsletterDetailFragment: BaseDetailFragment<
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var imageLoader: ImageLoader<ImageView>
+    lateinit var imageLoader: ImageLoader<ImageView>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

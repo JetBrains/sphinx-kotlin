@@ -51,7 +51,7 @@ internal class OnBoardConnectFragment: SideEffectFragment<
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var signerManager: SignerManager
+    lateinit var signerManager: SignerManager
 
     private val bottomMenuSigner: BottomSignerMenu by lazy(LazyThreadSafetyMode.NONE) {
         BottomSignerMenu(

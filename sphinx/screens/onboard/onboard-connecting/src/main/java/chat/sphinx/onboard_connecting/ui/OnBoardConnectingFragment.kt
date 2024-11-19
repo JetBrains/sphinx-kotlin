@@ -51,7 +51,7 @@ internal class OnBoardConnectingFragment: MotionLayoutFragment<
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var signerManager: SignerManager
+    lateinit var signerManager: SignerManager
 
     private val imageLoader: ImageLoader<ImageView>
         get() = imageLoaderInj

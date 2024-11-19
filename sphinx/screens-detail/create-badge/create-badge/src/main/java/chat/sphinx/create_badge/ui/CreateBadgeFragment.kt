@@ -34,8 +34,8 @@ internal class CreateBadgeFragment: SideEffectDetailFragment<
     override val binding: FragmentCreateBadgeBinding by viewBinding(FragmentCreateBadgeBinding::bind)
 
     @Inject
-    @Suppress("ProtectedInFinal")
-    protected lateinit var imageLoader: ImageLoader<ImageView>
+//    @Suppress("ProtectedInFinal")
+    lateinit var imageLoader: ImageLoader<ImageView>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

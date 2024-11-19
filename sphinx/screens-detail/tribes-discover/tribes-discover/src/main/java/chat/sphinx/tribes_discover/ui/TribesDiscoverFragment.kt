@@ -52,7 +52,7 @@ internal class TribesDiscoverFragment: SideEffectFragment<
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var imageLoader: ImageLoader<ImageView>
+    lateinit var imageLoader: ImageLoader<ImageView>
 
     override val viewModel: TribesDiscoverViewModel by viewModels()
     override val binding: FragmentTribesDiscoverBinding by viewBinding(FragmentTribesDiscoverBinding::bind)

@@ -92,7 +92,7 @@ internal class NewContactViewModel @Inject constructor(
                 lightningNodePubKey,
                 lightningRouteHint
             ).collect { loadResponse ->
-                @app.cash.exhaustive.Exhaustive
+                //@app.cash.exhaustive.Exhaustive
                 when(loadResponse) {
                     LoadResponse.Loading -> {
                         viewStateContainer.updateViewState(ContactViewState.Saving)

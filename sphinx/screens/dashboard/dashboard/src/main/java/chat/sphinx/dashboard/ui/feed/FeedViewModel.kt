@@ -2,7 +2,7 @@ package chat.sphinx.dashboard.ui.feed
 
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.viewModelScope
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_repository_actions.ActionsRepository
 import chat.sphinx.concept_repository_feed.FeedRepository
 import chat.sphinx.dashboard.navigation.DashboardNavigator
@@ -193,8 +193,7 @@ class FeedViewModel @Inject constructor(
                     subscribed = false.toSubscribed(),
                     currentItemId = null
                 )
-
-                @Exhaustive
+//@Exhaustive
                 when (response) {
                     is Response.Success -> {
                         feedRepository.getFeedById(response.value).firstOrNull()?.let { feed ->

@@ -72,7 +72,7 @@ internal class VideoFeedWatchScreenFragment : SideEffectFragment<
         >(R.layout.fragment_video_watch_screen) {
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var imageLoader: ImageLoader<ImageView>
+    lateinit var imageLoader: ImageLoader<ImageView>
 
     private val imageLoaderOptions: ImageLoaderOptions by lazy {
         ImageLoaderOptions.Builder()
@@ -493,7 +493,7 @@ internal class VideoFeedWatchScreenFragment : SideEffectFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.boostAnimationViewStateContainer.collect { viewState ->
-                @app.cash.exhaustive.Exhaustive
+                //@app.cash.exhaustive.Exhaustive
                 when (viewState) {
                     is BoostAnimationViewState.Idle -> {}
 

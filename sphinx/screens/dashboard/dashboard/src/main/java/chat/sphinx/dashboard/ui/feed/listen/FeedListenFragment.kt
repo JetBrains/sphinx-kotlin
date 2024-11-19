@@ -40,7 +40,7 @@ internal class FeedListenFragment : SideEffectFragment<
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var imageLoader: ImageLoader<ImageView>
+    lateinit var imageLoader: ImageLoader<ImageView>
 
     override val viewModel: FeedListenViewModel by viewModels()
     override val binding: FragmentFeedListenBinding by viewBinding(FragmentFeedListenBinding::bind)

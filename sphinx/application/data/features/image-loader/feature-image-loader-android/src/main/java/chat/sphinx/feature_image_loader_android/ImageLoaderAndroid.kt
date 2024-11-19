@@ -4,7 +4,7 @@ import android.content.Context
 import android.os.Build
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_image_loader.*
 import chat.sphinx.concept_network_client.NetworkClientClearedListener
 import chat.sphinx.concept_network_client_cache.NetworkClientCache
@@ -149,7 +149,7 @@ class ImageLoaderAndroid(
                 request.placeholder(placeholderRes)
             }
             it.transformation?.let { transform ->
-                @Exhaustive
+//                @Exhaustive
                 when (transform) {
                     is Transformation.Blur -> {
                         request.transformations(
@@ -184,7 +184,7 @@ class ImageLoaderAndroid(
             }
 
             it.transition.let { transition ->
-                @Exhaustive
+//                @Exhaustive
                 when (transition) {
                     is Transition.CrossFade -> {
                         request.transition(

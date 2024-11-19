@@ -50,8 +50,8 @@ internal class AddTribeMemberFragment: SideEffectDetailFragment<
     }
 
     @Inject
-    @Suppress("ProtectedInFinal")
-    protected lateinit var imageLoader: ImageLoader<ImageView>
+//    @Suppress("ProtectedInFinal")
+    lateinit var imageLoader: ImageLoader<ImageView>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -199,7 +199,7 @@ internal class AddTribeMemberFragment: SideEffectDetailFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: AddTribeMemberViewState) {
-        @Exhaustive
+//    @Exhaustive
         when (viewState) {
             AddTribeMemberViewState.Idle -> {
                 binding.progressBarAddMember.gone

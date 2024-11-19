@@ -1,6 +1,6 @@
 package chat.sphinx.feature_network_query_chat
 
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import chat.sphinx.kotlin_response.Response
 import chat.sphinx.kotlin_response.LoadResponse
 import chat.sphinx.kotlin_response.exception
@@ -19,7 +19,7 @@ class NetworkQueryChatImplUnitTest: NetworkQueryTestHelper() {
             getCredentials()?.let {
                 nqChat.getChats().collect { loadResponse ->
 
-                    @Exhaustive
+//                    @Exhaustive
                     when (loadResponse) {
                         is Response.Error -> {
                             loadResponse.exception?.printStackTrace()

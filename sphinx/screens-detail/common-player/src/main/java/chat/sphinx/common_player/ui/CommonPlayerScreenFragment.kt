@@ -27,7 +27,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import by.kirich1409.viewbindingdelegate.viewBinding
 import chat.sphinx.common_player.R
 import chat.sphinx.common_player.adapter.RecommendedItemsAdapter
@@ -73,12 +73,12 @@ internal class CommonPlayerScreenFragment : SideEffectFragment<
         >(R.layout.fragment_common_player_screen) {
 
     @Inject
-    @Suppress("ProtectedInFinal")
-    protected lateinit var imageLoader: ImageLoader<ImageView>
+//    @Suppress("ProtectedInFinal")
+    lateinit var imageLoader: ImageLoader<ImageView>
 
     @Inject
-    @Suppress("ProtectedInFinal")
-    protected lateinit var connectivityHelper: ConnectivityHelper
+    //@Suppress("ProtectedInFinal")
+    lateinit var connectivityHelper: ConnectivityHelper
 
     override val binding: FragmentCommonPlayerScreenBinding by viewBinding(
         FragmentCommonPlayerScreenBinding::bind
@@ -309,7 +309,7 @@ internal class CommonPlayerScreenFragment : SideEffectFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: RecommendationsPodcastPlayerViewState) {
-        @Exhaustive
+//    @Exhaustive
         when (viewState) {
             is RecommendationsPodcastPlayerViewState.Idle -> {}
 
@@ -616,7 +616,7 @@ internal class CommonPlayerScreenFragment : SideEffectFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.boostAnimationViewStateContainer.collect { viewState ->
-                @Exhaustive
+//    @Exhaustive
                 when (viewState) {
                     is BoostAnimationViewState.Idle -> {}
 
@@ -660,7 +660,7 @@ internal class CommonPlayerScreenFragment : SideEffectFragment<
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.playerViewStateContainer.collect { viewState ->
                 binding.apply {
-                    @Exhaustive
+//    @Exhaustive
                     when (viewState) {
                         is PlayerViewState.Idle -> {}
 

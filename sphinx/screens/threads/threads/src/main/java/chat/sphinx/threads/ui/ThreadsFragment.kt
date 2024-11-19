@@ -11,7 +11,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import by.kirich1409.viewbindingdelegate.viewBinding
 import chat.sphinx.concept_image_loader.ImageLoader
 import chat.sphinx.concept_user_colors_helper.UserColorsHelper
@@ -42,11 +42,11 @@ internal class ThreadsFragment: SideEffectFragment<
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var imageLoader: ImageLoader<ImageView>
+    lateinit var imageLoader: ImageLoader<ImageView>
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var userColorsHelper: UserColorsHelper
+    lateinit var userColorsHelper: UserColorsHelper
 
     fun popBackStack() {
         lifecycleScope.launch(viewModel.mainImmediate) {
@@ -119,7 +119,7 @@ internal class ThreadsFragment: SideEffectFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: ThreadsViewState) {
-        @Exhaustive
+//@Exhaustive
         when (viewState) {
             is ThreadsViewState.Idle -> {}
             is ThreadsViewState.ThreadList -> {}

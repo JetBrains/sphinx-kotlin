@@ -53,7 +53,7 @@ internal class OnBoardMessageFragment: SideEffectFragment<
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var signerManager: SignerManager
+    lateinit var signerManager: SignerManager
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

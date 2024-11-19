@@ -1,6 +1,6 @@
 package chat.sphinx.feature_view_model_coordinator
 
-import app.cash.exhaustive.Exhaustive
+//import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_view_model_coordinator.RequestCancelled
 import chat.sphinx.concept_view_model_coordinator.RequestHolder
 import chat.sphinx.concept_view_model_coordinator.ResponseHolder
@@ -70,7 +70,7 @@ abstract class ViewModelCoordinatorImpl<BackType: Any, Request: Any, Success: An
                     _requestSharedFlow.emit(holder)
 
                     _responseSharedFlow.collect { responseFlow ->
-                        @Exhaustive
+//                        @Exhaustive
                         when (responseFlow) {
                             is Response.Error -> {
                                 if (responseFlow.cause.requestHolder.uuid == holder.uuid) {

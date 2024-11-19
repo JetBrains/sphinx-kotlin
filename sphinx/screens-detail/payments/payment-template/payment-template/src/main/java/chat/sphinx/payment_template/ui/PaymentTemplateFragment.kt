@@ -49,7 +49,7 @@ internal class PaymentTemplateFragment: SideEffectFragment<
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var imageLoader: ImageLoader<ImageView>
+    lateinit var imageLoader: ImageLoader<ImageView>
 
     private val args: PaymentTemplateFragmentArgs by navArgs()
     override val viewModel: PaymentTemplateViewModel by viewModels()

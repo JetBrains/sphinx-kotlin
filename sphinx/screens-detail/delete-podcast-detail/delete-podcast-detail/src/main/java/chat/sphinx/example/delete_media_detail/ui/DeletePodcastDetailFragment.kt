@@ -11,7 +11,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import by.kirich1409.viewbindingdelegate.viewBinding
 import chat.sphinx.concept_image_loader.ImageLoader
 import chat.sphinx.delete.media.detail.R
@@ -44,8 +44,8 @@ internal class DeletePodcastDetailFragment: SideEffectDetailFragment<
         >(R.layout.fragment_delete_podcast_details)
 {
     @Inject
-    @Suppress("ProtectedInFinal")
-    protected lateinit var imageLoader: ImageLoader<ImageView>
+//    @Suppress("ProtectedInFinal")
+    lateinit var imageLoader: ImageLoader<ImageView>
 
     override val binding: FragmentDeletePodcastDetailsBinding by viewBinding(FragmentDeletePodcastDetailsBinding::bind)
     override val viewModel: DeletePodcastDetailViewModel by viewModels()
@@ -155,7 +155,7 @@ internal class DeletePodcastDetailFragment: SideEffectDetailFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: DeleteMediaDetailViewState) {
-        @Exhaustive
+//    @Exhaustive
         when (viewState) {
             is DeleteMediaDetailViewState.Idle -> {}
             is DeleteMediaDetailViewState.EpisodeList -> {

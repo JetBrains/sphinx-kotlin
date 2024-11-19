@@ -21,14 +21,14 @@ internal class SphinxMediaPlayerService: MediaPlayerService() {
 
     @Inject
     @Suppress("PropertyName", "ProtectedInFinal")
-    protected lateinit var _applicationServiceTracker: ApplicationServiceTracker
+    lateinit var _applicationServiceTracker: ApplicationServiceTracker
 
     override val applicationServiceTracker: ApplicationServiceTracker
         get() = _applicationServiceTracker
 
     @Inject
     @Suppress("PropertyName", "ProtectedInFinal")
-    protected lateinit var _dispatchers: CoroutineDispatchers
+    lateinit var _dispatchers: CoroutineDispatchers
 
     override val dispatchers: CoroutineDispatchers
         get() = _dispatchers
@@ -39,35 +39,35 @@ internal class SphinxMediaPlayerService: MediaPlayerService() {
 
     @Inject
     @Suppress("PropertyName", "ProtectedInFinal")
-    protected lateinit var _foregroundStateManager: ForegroundStateManager
+    lateinit var _foregroundStateManager: ForegroundStateManager
 
     override val foregroundStateManager: ForegroundStateManager
         get() = _foregroundStateManager
 
     @Inject
     @Suppress("PropertyName", "ProtectedInFinal")
-    protected lateinit var _LOG: SphinxLogger
+    lateinit var _LOG: SphinxLogger
 
     override val LOG: SphinxLogger
         get() = _LOG
 
     @Inject
     @Suppress("PropertyName", "ProtectedInFinal")
-    protected lateinit var _mediaServiceControllerImpl: MediaPlayerServiceControllerImpl
+    lateinit var _mediaServiceControllerImpl: MediaPlayerServiceControllerImpl
 
     override val mediaServiceController: MediaPlayerServiceControllerImpl
         get() = _mediaServiceControllerImpl
 
     @Inject
     @Suppress("PropertyName", "ProtectedInFinal")
-    protected lateinit var _feedRepository: FeedRepository
+    lateinit var _feedRepository: FeedRepository
 
     override val feedRepository: FeedRepository
         get() = _feedRepository
 
     @Inject
     @Suppress("PropertyName", "ProtectedInFinal")
-    protected lateinit var _actionsRepository: ActionsRepository
+    lateinit var _actionsRepository: ActionsRepository
 
     override val actionsRepository: ActionsRepository
         get() = _actionsRepository

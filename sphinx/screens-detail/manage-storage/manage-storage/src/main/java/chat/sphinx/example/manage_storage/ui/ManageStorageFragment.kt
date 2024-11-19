@@ -11,7 +11,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import by.kirich1409.viewbindingdelegate.viewBinding
 import chat.sphinx.example.manage_storage.viewstate.DeleteTypeNotificationViewState
 import chat.sphinx.example.manage_storage.viewstate.ManageStorageViewState
@@ -182,7 +182,7 @@ internal class ManageStorageFragment: SideEffectDetailFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: ManageStorageViewState) {
-        @Exhaustive
+//    @Exhaustive
         when (viewState) {
             is ManageStorageViewState.Loading -> {
                 loadingStorage()

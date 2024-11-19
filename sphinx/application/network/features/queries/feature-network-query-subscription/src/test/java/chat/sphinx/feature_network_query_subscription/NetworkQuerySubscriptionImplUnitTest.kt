@@ -1,6 +1,6 @@
 package chat.sphinx.feature_network_query_subscription
 
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_network_query_subscription.model.SubscriptionDto
 import chat.sphinx.kotlin_response.Response
 import chat.sphinx.kotlin_response.LoadResponse
@@ -21,7 +21,7 @@ class NetworkQuerySubscriptionImplUnitTest: NetworkQueryTestHelper() {
             getCredentials()?.let {
                 nqSubscription.getSubscriptions().collect { loadResponse ->
 
-                    @Exhaustive
+//    @Exhaustive
                     when (loadResponse) {
                         is Response.Error -> {
                             // will fail on error
@@ -44,7 +44,7 @@ class NetworkQuerySubscriptionImplUnitTest: NetworkQueryTestHelper() {
 
                 nqSubscription.getSubscriptions().collect { loadResponse ->
 
-                    @Exhaustive
+//    @Exhaustive
                     when (loadResponse) {
                         is Response.Error -> {
                             // will fail on error
@@ -62,7 +62,7 @@ class NetworkQuerySubscriptionImplUnitTest: NetworkQueryTestHelper() {
                 subscription?.let { nnSub ->
                     nqSubscription.getSubscriptionById(SubscriptionId(nnSub.id)).collect { loadResponse ->
 
-                        @Exhaustive
+//    @Exhaustive
                         when (loadResponse) {
                             is Response.Error -> {
                                 // will fail on error
@@ -92,7 +92,7 @@ class NetworkQuerySubscriptionImplUnitTest: NetworkQueryTestHelper() {
 
                 nqSubscription.getSubscriptions().collect { loadResponse ->
 
-                    @Exhaustive
+//    @Exhaustive
                     when (loadResponse) {
                         is Response.Error -> {
                             // will fail on error
@@ -109,7 +109,7 @@ class NetworkQuerySubscriptionImplUnitTest: NetworkQueryTestHelper() {
 
                 nqSubscription.getSubscriptionById(SubscriptionId(lastSubIdPlus1!!)).collect { loadResponse ->
 
-                    @Exhaustive
+//    @Exhaustive
                     when (loadResponse) {
                         is Response.Error -> {
                             // an error should be returned as that Id does not exist

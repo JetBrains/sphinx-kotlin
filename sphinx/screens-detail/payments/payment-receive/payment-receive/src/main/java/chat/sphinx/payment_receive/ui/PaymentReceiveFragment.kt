@@ -60,7 +60,7 @@ internal class PaymentReceiveFragment: PaymentFragment<
         get() = R.string.payment_receive_header_name
 
     @Inject
-    protected lateinit var imageLoaderInj: ImageLoader<ImageView>
+    lateinit var imageLoaderInj: ImageLoader<ImageView>
     override val imageLoader: ImageLoader<ImageView>
         get() = imageLoaderInj
 

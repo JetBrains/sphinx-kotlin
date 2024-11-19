@@ -9,8 +9,8 @@ import javax.inject.Inject
 class SphinxApp: Application() {
 
     @Inject
-    @Suppress("ProtectedInFinal")
-    protected lateinit var sphinxAuthenticationCoreManager: SphinxAuthenticationCoreManager
+//    @Suppress("ProtectedInFinal")
+    lateinit var sphinxAuthenticationCoreManager: SphinxAuthenticationCoreManager
 
     override fun onCreate() {
         super.onCreate()

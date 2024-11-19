@@ -11,7 +11,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import by.kirich1409.viewbindingdelegate.viewBinding
 import chat.sphinx.concept_image_loader.ImageLoader
 import chat.sphinx.concept_user_colors_helper.UserColorsHelper
@@ -45,15 +45,15 @@ internal class DeleteChatMediaFragment: SideEffectDetailFragment<
         >(R.layout.fragment_delete_chat_media)
 {
     @Inject
-    @Suppress("ProtectedInFinal")
-    protected lateinit var imageLoader: ImageLoader<ImageView>
+//    @Suppress("ProtectedInFinal")
+    lateinit var imageLoader: ImageLoader<ImageView>
 
     override val binding: FragmentDeleteChatMediaBinding by viewBinding(FragmentDeleteChatMediaBinding::bind)
     override val viewModel: DeleteChatMediaViewModel by viewModels()
 
     @Inject
-    @Suppress("ProtectedInFinal")
-    protected lateinit var userColorsHelper: UserColorsHelper
+//    @Suppress("ProtectedInFinal")
+    lateinit var userColorsHelper: UserColorsHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -136,7 +136,7 @@ internal class DeleteChatMediaFragment: SideEffectDetailFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: DeleteChatMediaViewState) {
-        @Exhaustive
+//    @Exhaustive
         when (viewState) {
             is DeleteChatMediaViewState.Loading -> {}
 

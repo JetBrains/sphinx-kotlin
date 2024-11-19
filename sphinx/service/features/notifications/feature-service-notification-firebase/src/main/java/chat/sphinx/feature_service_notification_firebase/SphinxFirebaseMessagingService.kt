@@ -31,11 +31,11 @@ internal class SphinxFirebaseMessagingService: FirebaseMessagingService() {
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var dispatchers: CoroutineDispatchers
+    lateinit var dispatchers: CoroutineDispatchers
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var LOG: SphinxLogger
+    lateinit var LOG: SphinxLogger
 
     private val supervisor: Job by lazy {
         SupervisorJob()

@@ -1,6 +1,6 @@
 package chat.sphinx.feature_network_query_people
 
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_network_query_people.model.PeopleProfileDto
 import chat.sphinx.kotlin_response.LoadResponse
 import chat.sphinx.kotlin_response.Response
@@ -28,7 +28,7 @@ class NetworkQueryPeopleImplUnitTest: NetworkQueryTestHelper() {
                 var data = PeopleProfileDto(0,"https://sphinx.chat","sampleName","","", listOf(), 0,"")
                 nqSaveProfile.savePeopleProfile(data).collect { loadResponse ->
 
-                    @Exhaustive
+//    @Exhaustive
                     when (loadResponse) {
                         is Response.Error -> {
                             loadResponse.exception?.printStackTrace()

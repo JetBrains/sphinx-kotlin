@@ -17,7 +17,7 @@ import androidx.navigation.NavDestination
 import androidx.navigation.fragment.findNavController
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.viewpager2.widget.ViewPager2
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import by.kirich1409.viewbindingdelegate.viewBinding
 import chat.sphinx.concept_image_loader.Disposable
 import chat.sphinx.concept_image_loader.ImageLoader
@@ -66,11 +66,11 @@ internal class DashboardFragment : MotionLayoutFragment<
 {
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var imageLoader: ImageLoader<ImageView>
+    lateinit var imageLoader: ImageLoader<ImageView>
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var signerManager: SignerManager
+    lateinit var signerManager: SignerManager
 
     override val viewModel: DashboardViewModel by viewModels()
     private val dashboardPodcastViewModel: DashboardPodcastViewModel by viewModels()
@@ -530,7 +530,7 @@ internal class DashboardFragment : MotionLayoutFragment<
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.networkStateFlow.collect { (loadResponse, screenInit) ->
                 binding.layoutDashboardHeader.let { dashboardHeader ->
-                    @Exhaustive
+//@Exhaustive
                     when (loadResponse) {
                         is LoadResponse.Loading -> {
                             dashboardHeader.progressBarDashboardHeaderNetwork.invisibleIfFalse(screenInit)
@@ -613,7 +613,7 @@ internal class DashboardFragment : MotionLayoutFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: DashboardMotionViewState) {
-        @Exhaustive
+//@Exhaustive
         when (viewState) {
             DashboardMotionViewState.DrawerCloseNavBarHidden -> {
                 binding.layoutMotionDashboard.setTransitionDuration(150)
@@ -742,7 +742,7 @@ internal class DashboardFragment : MotionLayoutFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.deepLinkPopupViewStateContainer.collect { viewState ->
-                @Exhaustive
+//@Exhaustive
                 when (viewState) {
                     is DeepLinkPopupViewState.ExternalAuthorizePopup -> {
                         binding.layoutDashboardPopup.layoutDashboardAuthorizePopup.apply {
@@ -906,7 +906,7 @@ internal class DashboardFragment : MotionLayoutFragment<
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.chatListFooterButtonsViewStateContainer.collect { viewState ->
                 binding.layoutDashboardNavDrawer.let { navDrawer ->
-                    @Exhaustive
+//@Exhaustive
                     when (viewState) {
                         is ChatListFooterButtonsViewState.Idle -> {
                             navDrawer.layoutButtonAddFriend.layoutConstraintButtonAddFriend.gone

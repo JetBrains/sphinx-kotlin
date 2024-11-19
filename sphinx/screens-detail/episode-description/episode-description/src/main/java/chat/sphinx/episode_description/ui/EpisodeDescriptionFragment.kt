@@ -46,11 +46,11 @@ internal class EpisodeDescriptionFragment: SideEffectFragment<
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var imageLoader: ImageLoader<ImageView>
+    lateinit var imageLoader: ImageLoader<ImageView>
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var connectivityHelper: ConnectivityHelper
+    lateinit var connectivityHelper: ConnectivityHelper
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

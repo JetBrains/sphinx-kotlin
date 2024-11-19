@@ -2,7 +2,7 @@ package chat.sphinx.authentication.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.navOptions
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import chat.sphinx.authentication.R
 import io.matthewnelson.concept_authentication.state.AuthenticationState
 import io.matthewnelson.android_feature_navigation.R as R_navigation
@@ -34,7 +34,7 @@ internal class ToAuthenticationView private constructor(
             null,
             navOptions {
                 anim {
-                    @Exhaustive
+//                    @Exhaustive
                     when (authenticationStateManager.authenticationStateFlow.value) {
                         is AuthenticationState.NotRequired -> {
                             enter = R_navigation.anim.slide_in_bottom

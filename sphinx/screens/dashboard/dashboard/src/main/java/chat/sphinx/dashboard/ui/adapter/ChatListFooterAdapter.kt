@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import chat.sphinx.dashboard.databinding.LayoutChatListChatsFooterBinding
 import chat.sphinx.dashboard.ui.ChatListViewModel
 import chat.sphinx.dashboard.ui.viewstates.ChatListFooterButtonsViewState
@@ -56,7 +56,7 @@ internal class ChatListFooterAdapter(
 
             onStopSupervisor.scope.launch(viewModel.mainImmediate) {
                 viewModel.chatListFooterButtonsViewStateContainer.collect { viewState ->
-                    @Exhaustive
+//@Exhaustive
                     when (viewState) {
                         is ChatListFooterButtonsViewState.Idle -> {
                             binding.layoutButtonAddFriend.layoutConstraintButtonAddFriend.gone

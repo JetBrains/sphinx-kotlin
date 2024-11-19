@@ -1,7 +1,7 @@
 package chat.sphinx.util
 
 import android.util.Log
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import chat.sphinx.logger.LogType
 import chat.sphinx.logger.SphinxLogger
 import io.matthewnelson.build_config.BuildConfigDebug
@@ -9,7 +9,7 @@ import io.matthewnelson.build_config.BuildConfigDebug
 class SphinxLoggerImpl(private val buildConfigDebug: BuildConfigDebug): SphinxLogger() {
 
     override fun log(tag: String, message: String, type: LogType, throwable: Throwable?) {
-        @Exhaustive
+//    @Exhaustive
         when (type) {
             LogType.Debug -> {
                 if (buildConfigDebug.value) {

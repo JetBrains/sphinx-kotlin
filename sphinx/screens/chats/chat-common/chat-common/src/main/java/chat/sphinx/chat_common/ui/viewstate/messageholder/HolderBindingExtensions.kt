@@ -16,7 +16,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.updateLayoutParams
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import chat.sphinx.chat_common.R
 import chat.sphinx.chat_common.adapters.MessageListAdapter
 import chat.sphinx.chat_common.databinding.LayoutMessageHolderBinding
@@ -720,8 +720,7 @@ internal fun LayoutMessageHolderBinding.setBubbleBackground(
         bubbleWidth = bubbleWidth
             .coerceAtLeast(messageReactionsWidth)
             .coerceAtMost(bubbleFixedWidth)
-
-        @Exhaustive
+//@Exhaustive
         when (viewState) {
             is MessageHolderViewState.Received -> {
                 spaceMessageHolderLeft.updateLayoutParams {
@@ -1248,8 +1247,7 @@ internal fun LayoutMessageHolderBinding.setBubbleMessageLinkPreviewLayout(
             root.context,
             if (viewState.isReceived) R.color.secondaryText else R.color.secondaryTextSent
         )
-
-        @Exhaustive
+//@Exhaustive
         when (previewLink) {
             null -> {
                 includeMessageLinkPreviewContact.root.gone
@@ -1708,7 +1706,7 @@ internal inline fun LayoutMessageHolderBinding.setBubbleAudioAttachment(
     }
 
     currentLayout.apply {
-        @Exhaustive
+//@Exhaustive
         when (audioAttachment) {
             null -> {
                 root.gone
@@ -1766,9 +1764,7 @@ internal inline fun LayoutMessageTypeAttachmentAudioBinding.setAudioAttachmentLa
 
     seekBarAttachmentAudio.progress = state.progress.toInt()
     textViewAttachmentAudioRemainingDuration.text = state.remainingSeconds.getHHMMString()
-
-
-    @Exhaustive
+//@Exhaustive
     when (state.playState) {
         AudioPlayState.Error -> {
             textViewAttachmentAudioFailure.visible
@@ -1851,8 +1847,7 @@ internal inline fun LayoutMessageTypePodcastClipBinding.setPodcastClipLayoutForS
 
     textViewPodcastClipCurrentTime.text = state.currentMillis.getHHMMSSString()
     textViewPodcastClipDuration.text = state.durationMillis.getHHMMSSString()
-
-    @Exhaustive
+//@Exhaustive
     when (state.playState) {
         AudioPlayState.Error -> {
             textViewPodcastClipFailure.visible
@@ -1896,8 +1891,7 @@ internal inline fun LayoutMessageHolderBinding.setBubbleVideoAttachment(
     currentLayout.apply {
         imageViewAttachmentThumbnail.gone
         layoutConstraintVideoPlayButton.gone
-
-        @Exhaustive
+//@Exhaustive
         when (videoAttachment) {
             null -> {
                 root.gone
@@ -1943,8 +1937,7 @@ internal inline fun LayoutMessageHolderBinding.setBubbleFileAttachment(
     }
 
     currentLayout.apply {
-
-        @Exhaustive
+//@Exhaustive
         when (fileAttachment){
             null -> {
                 root.gone

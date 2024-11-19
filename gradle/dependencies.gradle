@@ -13,10 +13,11 @@ ext.versions = [
     'coroutines': '1.6.4',
     'insetter': '0.6.1',
     'lifecycle'  : '2.4.0',
-    'hilt'       : '2.42',
+//    'hilt'       : '2.51', //error: [Hilt] Provided Metadata instance has version 2.1.0, while maximum supported version is 2.0.0. To support newer versions, update the kotlinx-metadata-jvm library.: java.lang.IllegalArgumentException: Provided Metadata instance has version 2.1.0, while maximum supported version is 2.0.0. To support newer versions, update the kotlinx-metadata-jvm library.
+    'hilt'       : '2.52',
     'hiltJetpack': '1.0.0-alpha03',
-    'kotlin'     : '1.6.21',
-    'moshi'      : '1.13.0',
+    'kotlin': "$kotlin_version" ?: '1.9.22',
+    'moshi'      : '1.15.1',
     'navigation' : '2.5.3',
     'okhttp'     : '4.10.0',
     'sqlDelight' : '1.5.4',
@@ -176,7 +177,7 @@ ext.plugin = [
     ],
     mavenPublish: "com.vanniktech:gradle-maven-publish-plugin:0.13.0",
     square: [
-        exhaustive: "app.cash.exhaustive:exhaustive-gradle:0.2.0",
+        //exhaustive: "app.cash.exhaustive:exhaustive-gradle:0.2.0",
         sqlDelight: "com.squareup.sqldelight:gradle-plugin:${versions.sqlDelight}"
     ]
 ]
@@ -230,5 +231,9 @@ ext.kaptDeps = [
     ],
     square: [
         moshiCodegen: "com.squareup.moshi:moshi-kotlin-codegen:${versions.moshi}",
+    ],
+    kotlin: [
+            metadata: "org.jetbrains.kotlin:kotlin-metadata-jvm:${versions.kotlin}",
     ]
+
 ]

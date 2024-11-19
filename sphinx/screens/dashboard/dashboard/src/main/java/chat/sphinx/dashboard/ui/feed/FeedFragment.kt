@@ -11,7 +11,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import by.kirich1409.viewbindingdelegate.viewBinding
 import chat.sphinx.concept_image_loader.ImageLoader
 import chat.sphinx.dashboard.R
@@ -52,7 +52,7 @@ internal class FeedFragment : SideEffectFragment<
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var imageLoader: ImageLoader<ImageView>
+    lateinit var imageLoader: ImageLoader<ImageView>
 
     override val viewModel: FeedViewModel by viewModels()
     override val binding: FragmentFeedBinding by viewBinding(FragmentFeedBinding::bind)
@@ -228,7 +228,7 @@ internal class FeedFragment : SideEffectFragment<
 
     override suspend fun onViewStateFlowCollect(viewState: FeedViewState) {
         binding.layoutFeedSearch.apply {
-            @Exhaustive
+//@Exhaustive
             when (viewState) {
                 is FeedViewState.Idle -> {
                     root.gone

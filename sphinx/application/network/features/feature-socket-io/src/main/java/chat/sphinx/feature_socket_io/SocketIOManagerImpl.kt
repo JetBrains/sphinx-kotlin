@@ -1,6 +1,6 @@
 package chat.sphinx.feature_socket_io
 
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_network_client.NetworkClient
 import chat.sphinx.concept_network_client.NetworkClientClearedListener
 import chat.sphinx.concept_network_query_message.model.MessageDto
@@ -198,7 +198,7 @@ class SocketIOManagerImpl(
 
             } ?: buildSocket(relayData).let { response ->
 
-                @Exhaustive
+//                @Exhaustive
                 when (response) {
                     is Response.Error -> {
                         return response
@@ -226,7 +226,7 @@ class SocketIOManagerImpl(
     ): Response<SocketInstanceHolder, ResponseError> {
         val nnRelayData: Triple<Pair<AuthorizationToken, TransportToken?>, RequestSignature?, RelayUrl> = relayData
             ?: relayDataHandler.retrieveRelayUrlAndToken().let { response ->
-                @Exhaustive
+//                @Exhaustive
                 when (response) {
                     is Response.Error -> {
                         try {

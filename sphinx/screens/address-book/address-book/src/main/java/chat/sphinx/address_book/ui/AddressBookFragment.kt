@@ -41,11 +41,11 @@ internal class AddressBookFragment: SideEffectFragment<
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var imageLoader: ImageLoader<ImageView>
+    lateinit var imageLoader: ImageLoader<ImageView>
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var userColorsHelper: UserColorsHelper
+    lateinit var userColorsHelper: UserColorsHelper
 
     override val viewModel: AddressBookViewModel by viewModels()
     override val binding: FragmentAddressBookBinding by viewBinding(FragmentAddressBookBinding::bind)

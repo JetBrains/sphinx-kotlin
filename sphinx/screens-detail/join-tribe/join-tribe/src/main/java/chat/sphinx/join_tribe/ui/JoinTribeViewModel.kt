@@ -4,7 +4,7 @@ import android.app.Application
 import android.content.Context
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import chat.sphinx.camera_view_model_coordinator.request.CameraRequest
 import chat.sphinx.camera_view_model_coordinator.response.CameraResponse
 import chat.sphinx.concept_image_loader.ImageLoaderOptions
@@ -181,7 +181,7 @@ internal class JoinTribeViewModel @Inject constructor(
             }
 
             chatRepository.joinTribe(tribeInfo).collect { loadResponse ->
-                @Exhaustive
+//    @Exhaustive
                 when(loadResponse) {
                     LoadResponse.Loading ->
                         updateViewState(JoinTribeViewState.JoiningTribe)

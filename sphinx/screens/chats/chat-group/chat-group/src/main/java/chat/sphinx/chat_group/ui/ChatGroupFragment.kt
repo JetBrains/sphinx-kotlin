@@ -95,13 +95,13 @@ internal class ChatGroupFragment: ChatFragment<
 
     @Inject
     @Suppress("ProtectedInFinal", "PropertyName")
-    protected lateinit var _userColorsHelper: UserColorsHelper
+    lateinit var _userColorsHelper: UserColorsHelper
     override val userColorsHelper: UserColorsHelper
         get() = _userColorsHelper
 
     @Inject
     @Suppress("ProtectedInFinal", "PropertyName")
-    protected lateinit var _imageLoader: ImageLoader<ImageView>
+    lateinit var _imageLoader: ImageLoader<ImageView>
     override val imageLoader: ImageLoader<ImageView>
         get() = _imageLoader
 }

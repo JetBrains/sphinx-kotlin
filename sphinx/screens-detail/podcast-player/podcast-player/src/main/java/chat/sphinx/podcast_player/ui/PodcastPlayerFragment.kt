@@ -19,7 +19,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
-import app.cash.exhaustive.Exhaustive
+//    import app.cash.exhaustive.Exhaustive
 import by.kirich1409.viewbindingdelegate.viewBinding
 import chat.sphinx.concept_connectivity_helper.ConnectivityHelper
 import chat.sphinx.concept_image_loader.ImageLoader
@@ -75,11 +75,11 @@ internal class PodcastPlayerFragment : SideEffectFragment<
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var imageLoader: ImageLoader<ImageView>
+    lateinit var imageLoader: ImageLoader<ImageView>
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var connectivityHelper: ConnectivityHelper
+    lateinit var connectivityHelper: ConnectivityHelper
 
     private val args: PodcastPlayerFragmentArgs by navArgs()
 
@@ -374,7 +374,7 @@ internal class PodcastPlayerFragment : SideEffectFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: PodcastPlayerViewState) {
-        @Exhaustive
+//    @Exhaustive
         when (viewState) {
             is PodcastPlayerViewState.Idle -> {}
 
@@ -647,7 +647,7 @@ internal class PodcastPlayerFragment : SideEffectFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.boostAnimationViewStateContainer.collect { viewState ->
-                @Exhaustive
+//@Exhaustive
                 when (viewState) {
                     is BoostAnimationViewState.Idle -> {}
 

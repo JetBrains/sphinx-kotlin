@@ -53,7 +53,7 @@ internal class WebViewFragment: SideEffectDetailFragment<
 
     @Inject
     @Suppress("ProtectedInFinal")
-    protected lateinit var imageLoader: ImageLoader<ImageView>
+    lateinit var imageLoader: ImageLoader<ImageView>
 
     private val imageLoaderOptions: ImageLoaderOptions by lazy {
         ImageLoaderOptions.Builder()
