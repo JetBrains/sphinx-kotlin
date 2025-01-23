@@ -114,8 +114,8 @@ internal class CreateBadgeViewModel @Inject constructor(
                             ),
                             updatedBadge.isActive
                         ).collect { loadResponse ->
-                            @Exhaustive
-                            when (loadResponse) {
+// @Exhaustive
+                             when (loadResponse) {
                                 is Response.Error -> {
                                     updateViewState(CreateBadgeViewState.ToggleBadge(badge))
                                     submitSideEffect(CreateBadgeSideEffect.Notify.FailedToChangeState)

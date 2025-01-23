@@ -52,8 +52,8 @@ internal class TribeBadgesFragment: SideEffectDetailFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: TribeBadgesViewState) {
-        @Exhaustive
-        when (viewState) {
+// @Exhaustive
+         when (viewState) {
             is TribeBadgesViewState.Idle -> {}
             is TribeBadgesViewState.Loading -> {
                 binding.layoutConstraintProgressBarContainer.visible

@@ -6,7 +6,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_background_login.BackgroundLoginHandler
 import chat.sphinx.concept_network_query_crypter.NetworkQueryCrypter
 import chat.sphinx.concept_network_query_lightning.NetworkQueryLightning
@@ -703,7 +703,7 @@ internal class DashboardViewModel @Inject constructor(
         )
 
         networkQueryAuthorizeExternal.getPersonInfo(link.host, link.publicKey).collect { loadResponse ->
-            @Exhaustive
+            // @Exhaustive
             when (loadResponse) {
                 is LoadResponse.Loading -> {}
 
@@ -1039,7 +1039,7 @@ internal class DashboardViewModel @Inject constructor(
     private fun checkAppVersion() {
         viewModelScope.launch(mainImmediate) {
             networkQueryVersion.getAppVersions().collect { loadResponse ->
-                @Exhaustive
+                // @Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {
                     }
@@ -1168,7 +1168,7 @@ internal class DashboardViewModel @Inject constructor(
         viewModelScope.launch(mainImmediate) {
             val payLightningPaymentRequestDto = PayRequestDto(lightningPaymentRequest.value)
             networkQueryLightning.putLightningPaymentRequest(payLightningPaymentRequestDto).collect { loadResponse ->
-                @Exhaustive
+                // @Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {
                         submitSideEffect(
@@ -1223,7 +1223,7 @@ internal class DashboardViewModel @Inject constructor(
 
         jobNetworkRefresh = viewModelScope.launch(mainImmediate) {
             repositoryDashboard.networkRefreshBalance.collect { response ->
-                @Exhaustive
+                // @Exhaustive
                 when (response) {
                     is LoadResponse.Loading,
                     is Response.Error -> {
@@ -1238,7 +1238,7 @@ internal class DashboardViewModel @Inject constructor(
             }
 
             repositoryDashboard.networkRefreshLatestContacts.collect { response ->
-                @Exhaustive
+                // @Exhaustive
                 when (response) {
                     is LoadResponse.Loading -> {}
                     is Response.Error -> {
@@ -1260,7 +1260,7 @@ internal class DashboardViewModel @Inject constructor(
             }
 
             repositoryDashboard.networkRefreshFeedContent.collect { response ->
-                @Exhaustive
+                // @Exhaustive
                 when (response) {
                     is Response.Success -> {
                         val restoreProgress = response.value
@@ -1298,7 +1298,7 @@ internal class DashboardViewModel @Inject constructor(
                 jobPushNotificationRegistration = launch(mainImmediate) {
                     pushNotificationRegistrar
                     pushNotificationRegistrar.register().let { response ->
-                        @Exhaustive
+                        // @Exhaustive
                         when (response) {
                             is Response.Error -> {
                                 // TODO: Handle on the UI
@@ -1310,7 +1310,7 @@ internal class DashboardViewModel @Inject constructor(
             }
 
             repositoryDashboard.networkRefreshMessages.collect { response ->
-                @Exhaustive
+                // @Exhaustive
                 when (response) {
                     is Response.Success -> {
                         val restoreProgress = response.value

@@ -6,7 +6,7 @@ import android.view.View
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import by.kirich1409.viewbindingdelegate.viewBinding
 import chat.sphinx.authentication.R
 import chat.sphinx.authentication_resources.databinding.LayoutAuthenticationBinding
@@ -82,7 +82,7 @@ internal class AuthenticationFragment: SideEffectFragment<
 
     private inner class BackPressHandler(context: Context): CloseAppOnBackPress(context) {
         override fun handleOnBackPressed() {
-            @Exhaustive
+            // @Exhaustive
             when (this@AuthenticationFragment.viewModelContainer.handleDeviceBackPress()) {
                 is AuthenticationViewModelContainer.HandleBackPressResponse.Minimize -> {
                     super.handleOnBackPressed()

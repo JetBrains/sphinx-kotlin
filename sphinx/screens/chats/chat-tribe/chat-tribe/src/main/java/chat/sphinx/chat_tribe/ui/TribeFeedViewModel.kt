@@ -4,7 +4,7 @@ import android.app.Application
 import android.net.Uri
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.chat_tribe.R
 import chat.sphinx.chat_tribe.model.TribeFeedData
 import chat.sphinx.chat_tribe.ui.viewstate.BoostAnimationViewState
@@ -246,7 +246,7 @@ internal class TribeFeedViewModel @Inject constructor(
             initialized = true
         }
 
-        @Exhaustive
+        // @Exhaustive
         when (data) {
             is TribeFeedData.Result.NoFeed -> { /* no-op */}
             is TribeFeedData.Result.FeedData -> {

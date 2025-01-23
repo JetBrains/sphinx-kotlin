@@ -1,6 +1,6 @@
 package chat.sphinx.feature_crypto_rsa
 
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_crypto_rsa.*
 import chat.sphinx.kotlin_response.Response
 import chat.sphinx.kotlin_response.LoadResponse
@@ -65,7 +65,7 @@ class RSAImplUnitTest: NetworkQueryTestHelper() {
         pkcsType: PKCSType
     ): RSAKeyPair {
         rsa.generateKeyPair(keySize, dispatchers.default, pkcsType).let { response ->
-            @Exhaustive
+//            @Exhaustive
             when (response) {
                 is Response.Error -> {
                     println(response.message)
@@ -96,7 +96,7 @@ class RSAImplUnitTest: NetworkQueryTestHelper() {
             text = encryptedString,
             dispatcher = dispatchers.default
         ).let { response ->
-            @Exhaustive
+//            @Exhaustive
             when (response) {
                 is Response.Error -> {
                     println(response.message)
@@ -128,7 +128,7 @@ class RSAImplUnitTest: NetworkQueryTestHelper() {
             formatOutput = formatOutput,
             dispatcher = dispatchers.default
         ).let { response ->
-            @Exhaustive
+//            @Exhaustive
             when (response) {
                 is Response.Error -> {
                     println(response.message)
@@ -158,7 +158,7 @@ class RSAImplUnitTest: NetworkQueryTestHelper() {
             text = text,
             dispatcher = dispatchers.default
         ).let { response ->
-            @Exhaustive
+//            @Exhaustive
             when (response) {
                 is Response.Error -> {
                     println(response.message)
@@ -255,7 +255,7 @@ class RSAImplUnitTest: NetworkQueryTestHelper() {
                 val privateKey = RsaPrivateKey(creds.privKey.toCharArray())
 
                 nqMessage.getMessages(MessagePagination.instantiate(100, 500, null)).collect { response ->
-                    @Exhaustive
+//                    @Exhaustive
                     when (response) {
                         is Response.Error -> {
                             println(response.message)

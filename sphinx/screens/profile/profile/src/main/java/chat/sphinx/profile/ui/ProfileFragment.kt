@@ -16,7 +16,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import by.kirich1409.viewbindingdelegate.viewBinding
 import chat.sphinx.concept_image_loader.ImageLoader
 import chat.sphinx.concept_image_loader.ImageLoaderOptions
@@ -466,7 +466,7 @@ internal class ProfileFragment: SideEffectFragment<
     override suspend fun onViewStateFlowCollect(viewState: ProfileViewState) {
         binding.apply {
 
-            @Exhaustive
+            // @Exhaustive
             when (viewState) {
                 is ProfileViewState.Advanced -> {
                     includeProfileTabsHolder.apply {
@@ -495,7 +495,7 @@ internal class ProfileFragment: SideEffectFragment<
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.updatingImageViewStateContainer.collect { viewState ->
                 binding.includeProfileNamePictureHolder.apply {
-                    @Exhaustive
+                    // @Exhaustive
                     when (viewState) {
                         is UpdatingImageViewState.Idle -> {}
                         is UpdatingImageViewState.UpdatingImage -> {

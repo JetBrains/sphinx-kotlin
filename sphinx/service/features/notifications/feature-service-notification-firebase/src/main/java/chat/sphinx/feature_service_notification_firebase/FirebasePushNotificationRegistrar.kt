@@ -2,7 +2,7 @@ package chat.sphinx.feature_service_notification_firebase
 
 import android.app.Application
 import android.content.Context
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_repository_contact.ContactRepository
 import chat.sphinx.concept_service_notification.PushNotificationRegistrar
 import chat.sphinx.kotlin_response.Response
@@ -58,7 +58,7 @@ internal class FirebasePushNotificationRegistrar(
         try {
             // need to wait for the listener to complete
             tokenFetchResponse.collect { response ->
-                @Exhaustive
+                // @Exhaustive
                 when (response) {
                     null -> {}
                     is Response.Error,
@@ -70,7 +70,7 @@ internal class FirebasePushNotificationRegistrar(
         } catch (e: Exception) {}
 
         return tokenFetchResponse.value?.let { response ->
-            @Exhaustive
+            // @Exhaustive
             when (response) {
                 is Response.Error -> {
                     response

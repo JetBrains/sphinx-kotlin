@@ -57,8 +57,8 @@ internal class OnBoardReadyViewModel @Inject constructor(
                 pubKey,
                 lightningRouteHint
             ).collect { loadResponse ->
-                @Exhaustive
-                when (loadResponse) {
+// @Exhaustive
+                 when (loadResponse) {
                     LoadResponse.Loading ->
                         viewStateContainer.updateViewState(OnBoardReadyViewState.Saving)
                     is Response.Error -> {

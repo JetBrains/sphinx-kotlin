@@ -199,8 +199,8 @@ internal class TribeDetailViewModel @Inject constructor(
                             attachmentInfo,
                         )
 
-                        @Exhaustive
-                        when (response) {
+// @Exhaustive
+ when (response) {
                             is Response.Error -> {
                                 LOG.e(TAG, "Error update chat Profile Picture: ", response.cause.exception)
 

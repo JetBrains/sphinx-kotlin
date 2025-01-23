@@ -1,6 +1,6 @@
 package chat.sphinx.feature_network_query_lightning
 
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.kotlin_response.Response
 import chat.sphinx.kotlin_response.LoadResponse
 import chat.sphinx.kotlin_response.exception
@@ -19,7 +19,7 @@ class NetworkQueryLightningImplUnitTest: NetworkQueryTestHelper() {
             getCredentials()?.let {
                 nqLightning.getInvoices().collect { loadResponse ->
 
-                    @Exhaustive
+                    // @Exhaustive
                     when (loadResponse) {
                         is Response.Error -> {
                             loadResponse.exception?.printStackTrace()
@@ -39,7 +39,7 @@ class NetworkQueryLightningImplUnitTest: NetworkQueryTestHelper() {
             getCredentials()?.let {
                 nqLightning.getChannels().collect { loadResponse ->
 
-                    @Exhaustive
+                    // @Exhaustive
                     when (loadResponse) {
                         is Response.Error -> {
                             loadResponse.exception?.printStackTrace()
@@ -59,7 +59,7 @@ class NetworkQueryLightningImplUnitTest: NetworkQueryTestHelper() {
             getCredentials()?.let {
                 nqLightning.getBalance().collect { loadResponse ->
 
-                    @Exhaustive
+                    // @Exhaustive
                     when (loadResponse) {
                         is Response.Error -> {
                             loadResponse.exception?.printStackTrace()
@@ -79,7 +79,7 @@ class NetworkQueryLightningImplUnitTest: NetworkQueryTestHelper() {
             getCredentials()?.let {
                 nqLightning.getBalanceAll().collect { loadResponse ->
 
-                    @Exhaustive
+                    // @Exhaustive
                     when (loadResponse) {
                         is Response.Error -> {
                             loadResponse.exception?.printStackTrace()

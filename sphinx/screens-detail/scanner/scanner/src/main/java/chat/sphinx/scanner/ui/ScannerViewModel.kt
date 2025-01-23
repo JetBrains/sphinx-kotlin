@@ -3,7 +3,7 @@ package chat.sphinx.scanner.ui
 import android.content.Context
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_view_model_coordinator.RequestCancelled
 import chat.sphinx.concept_view_model_coordinator.ResponseHolder
 import chat.sphinx.feature_view_model_coordinator.RequestCatcher
@@ -65,7 +65,7 @@ internal class ScannerViewModel @Inject constructor(
                                 filter.checkData(scannerResponse.value)
                             }
 
-                            @Exhaustive
+                            // @Exhaustive
                             when (returned) {
                                 is Response.Error -> {
                                     if (returned.cause.isNotEmpty()) {

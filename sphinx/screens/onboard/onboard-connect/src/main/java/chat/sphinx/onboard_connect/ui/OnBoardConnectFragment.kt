@@ -196,8 +196,8 @@ internal class OnBoardConnectFragment: SideEffectFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: OnBoardConnectViewState) {
-        @Exhaustive
-        when (viewState) {
+// @Exhaustive
+         when (viewState) {
             is OnBoardConnectViewState.Idle -> { }
             is OnBoardConnectViewState.NewUser -> {
                 binding.apply {
@@ -221,8 +221,8 @@ internal class OnBoardConnectFragment: SideEffectFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.submitButtonViewStateContainer.collect { viewState ->
-                @Exhaustive
-                when (viewState) {
+// @Exhaustive
+                 when (viewState) {
                     is OnBoardConnectSubmitButtonViewState.Disabled -> {
                         binding.apply {
                             buttonSubmit.background.colorFilter = PorterDuffColorFilter(

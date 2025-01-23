@@ -16,7 +16,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavArgs
 import androidx.viewbinding.ViewBinding
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_image_loader.ImageLoaderOptions
 import chat.sphinx.concept_image_loader.Transformation
 import chat.sphinx.concept_user_colors_helper.UserColorsHelper
@@ -61,7 +61,7 @@ abstract class ContactFragment<
     abstract val userColorsHelper: UserColorsHelper
 
     override suspend fun onViewStateFlowCollect(viewState: ContactViewState) {
-        @Exhaustive
+        // @Exhaustive
         when (viewState) {
             is ContactViewState.Idle -> {}
 

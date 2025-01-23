@@ -81,8 +81,8 @@ internal class PaymentSendFragment: PaymentFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: PaymentSendViewState) {
-        @Exhaustive
-        when (viewState) {
+// @Exhaustive
+         when (viewState) {
             is PaymentSendViewState.Idle -> {}
 
             is PaymentSendViewState.ChatPayment -> {

@@ -2,7 +2,7 @@ package chat.sphinx.splash.ui
 
 import android.util.Log
 import androidx.lifecycle.viewModelScope
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_background_login.BackgroundLoginHandler
 import chat.sphinx.concept_relay.RelayDataHandler
 import chat.sphinx.concept_repository_actions.ActionsRepository
@@ -55,7 +55,7 @@ internal class SplashViewModel @Inject constructor(
                 updateLastLoginTimeOnSuccess = true
             )?.let {
 
-                @Exhaustive
+                // @Exhaustive
                 when (onBoardStep) {
                     is OnBoardStep.Step1_WelcomeMessage -> {
                         navigator.toOnBoardMessageScreen(onBoardStep)
@@ -82,7 +82,7 @@ internal class SplashViewModel @Inject constructor(
                     authenticationCoordinator.submitAuthenticationRequest(
                         AuthenticationRequest.LogIn()
                     ).firstOrNull().let { response ->
-                        @Exhaustive
+                        // @Exhaustive
                         when (response) {
                             null,
                             is AuthenticationResponse.Failure -> {
@@ -92,7 +92,7 @@ internal class SplashViewModel @Inject constructor(
                             }
                             is AuthenticationResponse.Success.Authenticated -> {
 
-                                @Exhaustive
+                                // @Exhaustive
                                 when (onBoardStep) {
                                     is OnBoardStep.Step1_WelcomeMessage -> {
                                         navigator.toOnBoardMessageScreen(onBoardStep)
@@ -122,7 +122,7 @@ internal class SplashViewModel @Inject constructor(
 
                 } else {
 
-                    @Exhaustive
+                    // @Exhaustive
                     when (onBoardStep) {
                         is OnBoardStep.Step1_WelcomeMessage -> {
                             navigator.toOnBoardMessageScreen(onBoardStep)

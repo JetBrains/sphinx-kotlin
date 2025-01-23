@@ -255,8 +255,8 @@ class ChatTribeViewModel @Inject constructor(
 
     override val checkRoute: Flow<LoadResponse<Boolean, ResponseError>> = flow {
         networkQueryLightning.checkRoute(chatId).collect { response ->
-            @Exhaustive
-            when (response) {
+// @Exhaustive
+             when (response) {
                 is LoadResponse.Loading -> {
                     emit(response)
                 }

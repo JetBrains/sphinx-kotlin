@@ -3,7 +3,7 @@ package chat.sphinx.onboard_picture.ui
 import android.app.Application
 import android.content.Context
 import androidx.lifecycle.viewModelScope
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.camera_view_model_coordinator.request.CameraRequest
 import chat.sphinx.camera_view_model_coordinator.response.CameraResponse
 import chat.sphinx.concept_repository_contact.ContactRepository
@@ -53,7 +53,7 @@ internal class OnBoardPictureViewModel @Inject constructor(
         refreshJob = if (refreshContacts) {
             viewModelScope.launch(mainImmediate) {
                 contactRepository.networkRefreshContacts.collect { response ->
-                    @Exhaustive
+                    // @Exhaustive
                     when (response) {
                         is LoadResponse.Loading -> {
                         }
@@ -105,7 +105,7 @@ internal class OnBoardPictureViewModel @Inject constructor(
                         contentLength = contentLength,
                     )
 
-                    @Exhaustive
+                    // @Exhaustive
                     when (response) {
                         is Response.Error -> {
                             submitSideEffect(OnBoardPictureSideEffect.NotifyUploadError)

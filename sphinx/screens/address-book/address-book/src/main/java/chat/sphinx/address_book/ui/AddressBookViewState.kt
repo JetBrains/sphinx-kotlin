@@ -88,12 +88,12 @@ internal class AddressBookViewStateContainer(
                 viewStateFlow.value.originalList
             }
 
-            @Exhaustive
-            when (filter) {
+// @Exhaustive
+ when (filter) {
                 is AddressBookFilter.UseCurrent -> {
 
-                    @Exhaustive
-                    when (val viewState = viewStateFlow.value) {
+// @Exhaustive
+                     when (val viewState = viewStateFlow.value) {
                         is AddressBookViewState.ListMode -> {
                             super.updateViewState(
                                 AddressBookViewState.ListMode(

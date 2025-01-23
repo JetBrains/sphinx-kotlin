@@ -106,8 +106,8 @@ internal class TransactionsViewModel @Inject constructor(
         ).collect { loadResponse ->
             val firstPage = (page == 0)
 
-            @Exhaustive
-            when (loadResponse) {
+// @Exhaustive
+ when (loadResponse) {
                 is LoadResponse.Loading -> {
                     updateViewState(
                         TransactionsViewState.ListMode(currentViewState.list, true, firstPage)

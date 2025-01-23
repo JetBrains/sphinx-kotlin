@@ -17,11 +17,13 @@ buildscript {
         classpath plugin.gradleVersions
         classpath plugin.node
         classpath plugin.kotlin.gradle
-        classpath plugin.square.exhaustive
+        // classpath plugin.square.exhaustive
         classpath plugin.square.sqlDelight
         classpath plugin.kotlin.serialization
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+
+//        classpath kaptDeps.kotlin.metadata
     }
 }
 
@@ -62,9 +64,11 @@ allprojects {
             jvmTarget = JavaVersion.VERSION_17
             freeCompilerArgs += [
                     "-Xinline-classes",
-                    "-Xopt-in=kotlin.RequiresOptIn",
-                    '-Xopt-in=kotlin.time.ExperimentalTime',
-                    '-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi',
+                    "-Xconsistent-data-class-copy-visibility",
+                    "-Xmetadata-version=1.8",
+                    "-opt-in=kotlin.RequiresOptIn",
+                    '-opt-in=kotlin.time.ExperimentalTime',
+                    '-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi',
             ]
         }
     }

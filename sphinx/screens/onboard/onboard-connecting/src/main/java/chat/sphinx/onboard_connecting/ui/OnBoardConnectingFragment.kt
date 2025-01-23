@@ -111,8 +111,8 @@ internal class OnBoardConnectingFragment: MotionLayoutFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: OnBoardConnectingViewState) {
-        @Exhaustive
-        when (viewState) {
+// @Exhaustive
+         when (viewState) {
             is OnBoardConnectingViewState.Connecting -> {
                 bindingAuthentication.layoutPinPad.let { pinPad ->
                     pinPad.button0.setOnClickListener(null)

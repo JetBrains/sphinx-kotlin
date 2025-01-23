@@ -1,5 +1,5 @@
 plugins {
-    id 'app.cash.exhaustive'
+    // id 'app.cash.exhaustive'
     id 'com.android.application'
     id 'dagger.hilt.android.plugin'
     id 'kotlin-android'
@@ -32,9 +32,10 @@ android {
     }
 
     packagingOptions {
-        exclude 'META-INF/*.kotlin_module'
-        exclude 'META-INF/*.version'
         jniLibs.useLegacyPackaging = true
+        resources {
+            excludes += ['META-INF/*.kotlin_module', 'META-INF/*.version']
+        }
     }
 
     buildTypes {

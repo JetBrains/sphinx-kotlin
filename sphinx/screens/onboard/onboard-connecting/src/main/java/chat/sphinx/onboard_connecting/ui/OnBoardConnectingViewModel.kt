@@ -221,8 +221,8 @@ internal class OnBoardConnectingViewModel @Inject constructor(
                 var transportKey: RsaPublicKey? = null
 
                 networkQueryRelayKeys.getRelayTransportKey(relayUrl).collect { loadResponse ->
-                    @Exhaustive
-                    when (loadResponse) {
+// @Exhaustive
+                     when (loadResponse) {
                         is LoadResponse.Loading -> {}
                         is Response.Error -> {}
 
@@ -290,8 +290,8 @@ internal class OnBoardConnectingViewModel @Inject constructor(
 
     private suspend fun redeemInvite(input: InviteString) {
         networkQueryInvite.redeemInvite(input).collect { loadResponse ->
-            @Exhaustive
-            when (loadResponse) {
+// @Exhaustive
+             when (loadResponse) {
                 is LoadResponse.Loading -> {}
                 is Response.Error -> {
                     submitSideEffect(OnBoardConnectingSideEffect.InvalidInvite)
@@ -326,8 +326,8 @@ internal class OnBoardConnectingViewModel @Inject constructor(
         var transportKey: RsaPublicKey? = null
 
         networkQueryRelayKeys.getRelayTransportKey(relayUrl).collect { loadResponse ->
-            @Exhaustive
-            when (loadResponse) {
+// @Exhaustive
+             when (loadResponse) {
                 is LoadResponse.Loading -> {}
                 is Response.Error -> {}
 
@@ -462,8 +462,8 @@ internal class OnBoardConnectingViewModel @Inject constructor(
             }
         }
 
-        @Exhaustive
-        when (generateTokenResponse) {
+// @Exhaustive
+ when (generateTokenResponse) {
             is LoadResponse.Loading -> {}
             is Response.Error -> {
                 if (tokenRetries < 3) {
@@ -533,8 +533,8 @@ internal class OnBoardConnectingViewModel @Inject constructor(
         }
 
         networkQueryRelayKeys.getRelayHMacKey().collect { loadResponse ->
-            @Exhaustive
-            when (loadResponse) {
+// @Exhaustive
+             when (loadResponse) {
                 is LoadResponse.Loading -> {}
                 is Response.Error -> {
                     createHMacKey(
@@ -597,8 +597,8 @@ internal class OnBoardConnectingViewModel @Inject constructor(
                         PostHMacKeyDto(encryptionResponse.value.value),
                         relayData
                     ).collect { loadResponse ->
-                        @Exhaustive
-                        when (loadResponse) {
+// @Exhaustive
+                         when (loadResponse) {
                             is LoadResponse.Loading -> {
                             }
                             is Response.Error -> {}

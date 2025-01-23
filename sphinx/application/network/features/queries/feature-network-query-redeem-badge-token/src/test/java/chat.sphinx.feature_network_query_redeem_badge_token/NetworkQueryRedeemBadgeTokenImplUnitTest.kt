@@ -1,6 +1,6 @@
 package chat.sphinx.feature_network_query_redeem_badge_token
 
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_network_query_redeem_badge_token.model.RedeemBadgeTokenDto
 import chat.sphinx.kotlin_response.LoadResponse
 import chat.sphinx.kotlin_response.Response
@@ -30,7 +30,7 @@ class NetworkQueryRedeemBadgeTokenImplUnitTest: NetworkQueryTestHelper() {
                 var data = RedeemBadgeTokenDto(0,"https://sphinx.chat","sampleName","","", listOf(),0,"")
                 nqRedeemBadgeToken.redeemBadgeToken(data).collect { loadResponse ->
 
-                    @Exhaustive
+                    // @Exhaustive
                     when (loadResponse) {
                         is Response.Error -> {
                             loadResponse.exception?.printStackTrace()

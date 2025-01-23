@@ -3,7 +3,7 @@ package chat.sphinx.invite_friend.ui
 import android.app.Application
 import android.content.Context
 import androidx.lifecycle.viewModelScope
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_network_query_invite.NetworkQueryInvite
 import chat.sphinx.concept_repository_contact.ContactRepository
 import chat.sphinx.invite_friend.R
@@ -38,7 +38,7 @@ internal class InviteFriendViewModel @Inject constructor(
     init {
         viewModelScope.launch(mainImmediate) {
             networkQueryInvite.getLowestNodePrice().collect { loadResponse ->
-                @Exhaustive
+                // @Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {}
 
@@ -80,7 +80,7 @@ internal class InviteFriendViewModel @Inject constructor(
             }
 
             contactRepository.createNewInvite(nickname, message).collect { loadResponse ->
-                @Exhaustive
+                // @Exhaustive
                 when (loadResponse) {
                     is LoadResponse.Loading -> {
                         updateViewState(InviteFriendViewState.InviteCreationLoading)

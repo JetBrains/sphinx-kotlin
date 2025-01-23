@@ -293,8 +293,8 @@ internal class CreateTribeFragment: SideEffectDetailFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: CreateTribeViewState) {
-        @Exhaustive
-        when (viewState) {
+// @Exhaustive
+         when (viewState) {
             CreateTribeViewState.Idle -> {
                 binding.progressBarCreateTribe.gone
                 binding.progressBarLoadTribeContainer.gone

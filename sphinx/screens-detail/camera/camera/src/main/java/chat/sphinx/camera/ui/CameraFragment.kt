@@ -23,7 +23,7 @@ import androidx.core.util.Consumer
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import by.kirich1409.viewbindingdelegate.viewBinding
 import chat.sphinx.camera.R
 import chat.sphinx.camera.databinding.FragmentCameraBinding
@@ -180,7 +180,7 @@ internal class CameraFragment: SideEffectDetailFragment<
         rotationProvider = RotationProvider(binding.root.context)
 
         binding.includeCameraFooter.imageViewCameraFooterBackFront.setOnClickListener {
-            @Exhaustive
+            // @Exhaustive
             when (currentViewState) {
                 is CameraViewState.Active.BackCamera -> {
                     viewModel.updateViewState(
@@ -202,7 +202,7 @@ internal class CameraFragment: SideEffectDetailFragment<
                 viewModel
             }
             textViewCameraMediaPreviewRetake.setOnClickListener {
-                @Exhaustive
+                // @Exhaustive
                 when (val vs = viewModel.currentCapturePreviewViewState) {
                     is CapturePreviewViewState.None -> {}
                     is CapturePreviewViewState.Preview.ImagePreview -> {
@@ -216,7 +216,7 @@ internal class CameraFragment: SideEffectDetailFragment<
                 }
             }
             textViewCameraMediaPreviewUse.setOnClickListener {
-                @Exhaustive
+                // @Exhaustive
                 when (val vs = viewModel.currentCapturePreviewViewState) {
                     is CapturePreviewViewState.None -> {}
                     is CapturePreviewViewState.Preview -> {
@@ -413,7 +413,7 @@ internal class CameraFragment: SideEffectDetailFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: CameraViewState) {
-        @Exhaustive
+        // @Exhaustive
         when (viewState) {
             is CameraViewState.Idle -> {}
             is CameraViewState.Active -> {
@@ -446,7 +446,7 @@ internal class CameraFragment: SideEffectDetailFragment<
             viewModel.collectImagePreviewViewState { viewState ->
                 binding.includeCameraMediaPreview.apply {
                     lifecycleScope.launch(viewModel.mainImmediate) {
-                        @Exhaustive
+                        // @Exhaustive
                         when (viewState) {
                             is CapturePreviewViewState.Preview.VideoPreview -> {
                                 if (viewState.media.exists()) {

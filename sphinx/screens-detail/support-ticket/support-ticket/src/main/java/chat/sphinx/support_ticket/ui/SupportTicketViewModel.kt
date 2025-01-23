@@ -36,7 +36,7 @@ internal class SupportTicketViewModel @Inject constructor(
     fun loadLogs() {
         viewModelScope.launch(mainImmediate) {
             networkQueryLightning.getLogs().collect { loadedResponse ->
-                @Exhaustive
+// @Exhaustive
                 when (loadedResponse) {
                     is LoadResponse.Loading -> {
                         updateViewState(SupportTicketViewState.LoadingLogs)

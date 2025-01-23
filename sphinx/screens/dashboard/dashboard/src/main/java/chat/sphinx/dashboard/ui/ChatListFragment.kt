@@ -12,7 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import by.kirich1409.viewbindingdelegate.viewBinding
 import chat.sphinx.concept_image_loader.ImageLoader
 import chat.sphinx.concept_user_colors_helper.UserColorsHelper
@@ -207,7 +207,7 @@ internal class ChatListFragment : SideEffectFragment<
     override suspend fun onViewStateFlowCollect(viewState: ChatListViewState) {
         viewModel.chatListFooterButtonsViewStateContainer.collect { viewState ->
             binding.layoutSearchBar.includeLayoutButtonAddTribe.apply {
-                @Exhaustive
+                // @Exhaustive
                 when (viewState) {
                     is ChatListFooterButtonsViewState.Idle -> {
                         root.gone

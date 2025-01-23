@@ -3,12 +3,12 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.google.gms:google-services:4.3.5'
+        classpath 'com.google.gms:google-services:4.3.10'
     }
 }
 
 plugins {
-    id 'app.cash.exhaustive'
+    // id 'app.cash.exhaustive'
     id 'com.android.library'
     id 'dagger.hilt.android.plugin'
     id 'kotlin-android'

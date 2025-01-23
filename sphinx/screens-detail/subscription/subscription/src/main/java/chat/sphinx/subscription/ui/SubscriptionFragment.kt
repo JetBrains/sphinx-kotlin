@@ -256,8 +256,8 @@ internal class SubscriptionFragment: SideEffectDetailFragment<
 
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.savingSubscriptionViewStateContainer.collect { viewState ->
-                @Exhaustive
-                when (viewState) {
+// @Exhaustive
+                 when (viewState) {
                     is SavingSubscriptionViewState.Idle -> {}
                     is SavingSubscriptionViewState.SavingSubscription -> {
                         binding.progressBarSubscriptionSave.visible

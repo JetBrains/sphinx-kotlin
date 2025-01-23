@@ -3,7 +3,7 @@ package chat.sphinx.chat_tribe.ui
 import android.app.Application
 import android.webkit.JavascriptInterface
 import androidx.lifecycle.viewModelScope
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.chat_tribe.R
 import chat.sphinx.chat_tribe.model.*
 import chat.sphinx.chat_tribe.model.SphinxWebViewDto.Companion.APPLICATION_NAME
@@ -178,7 +178,7 @@ internal class TribeAppViewModel @Inject constructor(
                     viewModelScope.launch(mainImmediate) {
                         networkQueryAuthorizeExternal.signBase64(challenge)
                             .collect { loadResponse ->
-                                @Exhaustive
+                                // @Exhaustive
                                 when (loadResponse) {
                                     is LoadResponse.Loading -> {}
                                     is Response.Error -> {
@@ -221,7 +221,7 @@ internal class TribeAppViewModel @Inject constructor(
                                 destination_key = destination
                             )
                         ).collect { loadResponse ->
-                            @Exhaustive
+                            // @Exhaustive
                             when (loadResponse) {
                                 is LoadResponse.Loading -> {}
                                 is Response.Error -> {
@@ -269,7 +269,7 @@ internal class TribeAppViewModel @Inject constructor(
                                     sphinxWebViewDtoStateFlow.value?.issuer
                                 )
                             ).collect { loadResponse ->
-                                @Exhaustive
+                                // @Exhaustive
                                 when (loadResponse) {
                                     is LoadResponse.Loading -> {}
                                     is Response.Error -> {

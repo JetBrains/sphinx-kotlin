@@ -1,6 +1,6 @@
 package chat.sphinx.feature_link_preview
 
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.concept_network_query_chat.NetworkQueryChat
 import chat.sphinx.kotlin_response.LoadResponse
 import chat.sphinx.wrapper_chat.ChatHost
@@ -125,7 +125,7 @@ internal class TribePreviewDataRetriever(val tribeJoinLink: TribeJoinLink): Link
             ChatHost(tribeJoinLink.tribeHost),
             ChatUUID(tribeJoinLink.tribeUUID)
         ).collect { response ->
-            @Exhaustive
+            // @Exhaustive
             when (response) {
                 is LoadResponse.Loading -> {}
                 is chat.sphinx.kotlin_response.Response.Error -> {}

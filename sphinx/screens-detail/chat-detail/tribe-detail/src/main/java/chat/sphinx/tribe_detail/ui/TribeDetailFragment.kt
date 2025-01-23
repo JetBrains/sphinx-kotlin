@@ -232,8 +232,8 @@ internal class TribeDetailFragment: SideEffectFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: TribeDetailViewState) {
-        @Exhaustive
-        when(viewState) {
+// @Exhaustive
+         when(viewState) {
             is TribeDetailViewState.Idle -> { }
 
             is TribeDetailViewState.TribeProfile -> {
@@ -300,7 +300,7 @@ internal class TribeDetailFragment: SideEffectFragment<
         onStopSupervisor.scope.launch(viewModel.mainImmediate) {
             viewModel.updatingImageViewStateContainer.collect { viewState ->
                 binding.apply {
-                    @Exhaustive
+// @Exhaustive
                     when (viewState) {
                         is UpdatingImageViewState.Idle -> {}
                         is UpdatingImageViewState.UpdatingImage -> {

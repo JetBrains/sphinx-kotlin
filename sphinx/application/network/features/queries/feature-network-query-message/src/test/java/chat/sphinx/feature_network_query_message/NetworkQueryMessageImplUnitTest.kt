@@ -1,6 +1,6 @@
 package chat.sphinx.feature_network_query_message
 
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.kotlin_response.Response
 import chat.sphinx.kotlin_response.LoadResponse
 import chat.sphinx.kotlin_response.exception
@@ -22,7 +22,7 @@ class NetworkQueryMessageImplUnitTest: NetworkQueryTestHelper() {
                 // get all available messages
                 nqMessage.getMessages(null).collect { loadResponse ->
 
-                    @Exhaustive
+                    // @Exhaustive
                     when (loadResponse) {
                         is Response.Error -> {
                             loadResponse.exception?.printStackTrace()
@@ -51,7 +51,7 @@ class NetworkQueryMessageImplUnitTest: NetworkQueryTestHelper() {
 
                 nqMessage.getMessages(paginationParams).collect { loadResponse ->
 
-                    @Exhaustive
+                    // @Exhaustive
                     when (loadResponse) {
                         is Response.Error -> {
                             loadResponse.exception?.printStackTrace()
@@ -86,7 +86,7 @@ class NetworkQueryMessageImplUnitTest: NetworkQueryTestHelper() {
 
                 nqMessage.getMessages(paginationParams).collect { loadResponse ->
 
-                    @Exhaustive
+                    // @Exhaustive
                     when (loadResponse) {
                         is Response.Error -> {
                             loadResponse.exception?.printStackTrace()
@@ -111,7 +111,7 @@ class NetworkQueryMessageImplUnitTest: NetworkQueryTestHelper() {
             getCredentials()?.let {
                 nqMessage.getPayments().collect { loadResponse ->
 
-                    @Exhaustive
+                    // @Exhaustive
                     when (loadResponse) {
                         is Response.Error -> {
                             loadResponse.exception?.printStackTrace()
@@ -131,7 +131,7 @@ class NetworkQueryMessageImplUnitTest: NetworkQueryTestHelper() {
             getCredentials()?.let {
                 nqMessage.readMessages(ChatId(1)).collect { loadResponse ->
 
-                    @Exhaustive
+                    // @Exhaustive
                     when (loadResponse) {
                         is LoadResponse.Loading -> {}
                         is Response.Error -> {

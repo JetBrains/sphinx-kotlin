@@ -17,7 +17,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
-import app.cash.exhaustive.Exhaustive
+// import app.cash.exhaustive.Exhaustive
 import chat.sphinx.onboard_common.OnBoardStepHandler
 import chat.sphinx.onboard_common.model.OnBoardInviterData
 import chat.sphinx.onboard_common.model.OnBoardStep
@@ -53,7 +53,7 @@ internal class OnBoardNameViewModel @Inject constructor(
             authenticationCoordinator.submitAuthenticationRequest(
                 AuthenticationRequest.GetEncryptionKey()
             ).firstOrNull().let { authenticationResponse ->
-                @Exhaustive
+                // @Exhaustive
                 when (authenticationResponse) {
                     null,
                     is AuthenticationResponse.Failure,
@@ -64,7 +64,7 @@ internal class OnBoardNameViewModel @Inject constructor(
 
                         contactRepository.networkRefreshContacts.collect { refreshResponse ->
 
-                            @Exhaustive
+                            // @Exhaustive
                             when (refreshResponse) {
                                 is LoadResponse.Loading -> {}
                                 is Response.Error -> {
@@ -78,7 +78,7 @@ internal class OnBoardNameViewModel @Inject constructor(
                                         authenticationResponse.encryptionKey.publicKey
                                     ).let { updateOwnerResponse ->
 
-                                        @Exhaustive
+                                        // @Exhaustive
                                         when (updateOwnerResponse) {
                                             is Response.Error -> {
                                                 updateViewState(OnBoardNameViewState.Error)

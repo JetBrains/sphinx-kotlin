@@ -76,8 +76,8 @@ internal class NewsletterDetailFragment: BaseDetailFragment<
     }
 
     override suspend fun onViewStateFlowCollect(viewState: NewsletterDetailViewState) {
-        @Exhaustive
-        when (viewState) {
+// @Exhaustive
+         when (viewState) {
             is NewsletterDetailViewState.Idle -> {}
 
             is NewsletterDetailViewState.FeedLoaded -> {

@@ -68,8 +68,8 @@ internal class OnBoardMessageViewModel @Inject constructor(
             authenticationCoordinator.submitAuthenticationRequest(
                 AuthenticationRequest.LogIn()
             ).firstOrNull().let { response ->
-                @Exhaustive
-                when (response) {
+// @Exhaustive
+                                 when (response) {
                     null,
                     is AuthenticationResponse.Failure -> {
                         // will not be returned as back press for handling
