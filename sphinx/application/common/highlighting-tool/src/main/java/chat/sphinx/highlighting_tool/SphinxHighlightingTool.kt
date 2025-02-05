@@ -92,8 +92,9 @@ object SphinxHighlightingTool {
     }
 }
 
-@Suppress("NOTHING_TO_INLINE")
-inline fun String.highlightedTexts(): List<Pair<String, IntRange>> {
+//@Suppress("NOTHING_TO_INLINE")
+//inline fun String.highlightedTexts(): List<Pair<String, IntRange>> { // WA for KT-74923
+fun String.highlightedTexts(): List<Pair<String, IntRange>> {
     val matcher = "`([^`]*)`".toRegex()
     val ranges = matcher.findAll(this).map{ it.range }.toList()
 
