@@ -214,7 +214,7 @@ index 6b18e02..00df651 100644
 +    'kotlin': '2.1.20-Beta1',
      'navigation': '2.5.3',
  ]
-
+ 
 @@ -73,7 +76,7 @@ ext.KAplugin = [
          gradle: "org.jetbrains.kotlin:kotlin-gradle-plugin:${KAversions.kotlin}",
      ],

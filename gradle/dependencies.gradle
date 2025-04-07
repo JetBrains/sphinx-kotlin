@@ -18,7 +18,7 @@ ext.versions = [
 //    'hilt'       : '2.51' metadata instance not supported + @Inject protected is forbidden
     'hiltJetpack': '1.2.0',
 //    'kotlin'     : '1.6.21',
-    'kotlin'     : '2.1.20-Beta1',
+    'kotlin': "$kotlin_version" ?: "2.3.0",
 //    'moshi'      : '1.13.0',
     'moshi'      : '1.15.2',
     'navigation' : '2.5.3',
