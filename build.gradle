@@ -65,13 +65,15 @@ allprojects {
 
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
         kotlinOptions {
+
             languageVersion = kotlin_language_version
-
-
             logger.info("""[COMMUNITY_PROJECT_BUILD] Configured Kotlin Language version: '$languageVersion' for project ${project.name} """)
+
             apiVersion = kotlin_api_version
             logger.info("""[COMMUNITY_PROJECT_BUILD] Configured Kotlin Api version: '$apiVersion' for project ${project.name} """)
+
             jvmTarget = JavaVersion.VERSION_17
+
             freeCompilerArgs += [
                     "-Xinline-classes",
                     "-Xconsistent-data-class-copy-visibility",
