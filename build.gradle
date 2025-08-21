@@ -83,8 +83,6 @@ allprojects {
                     '-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi',
                     "-Xreport-all-warnings",
                     "-Xrender-internal-diagnostic-names",
-                    "-Wextra",
-                    "-Xuse-fir-experimental-checkers"
             ]
 
             String additionalCompilerArgs = project.findProperty("kotlin_additional_cli_options")
