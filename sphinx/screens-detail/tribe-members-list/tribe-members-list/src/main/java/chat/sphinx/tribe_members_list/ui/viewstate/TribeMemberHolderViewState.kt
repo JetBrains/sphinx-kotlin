@@ -2,7 +2,7 @@ package chat.sphinx.tribe_members_list.ui.viewstate
 
 import chat.sphinx.concept_network_query_contact.model.ContactDto
 
-internal sealed class TribeMemberHolderViewState(
+sealed class TribeMemberHolderViewState(
     val memberId: Long? = null,
     val memberAlias: String? = null,
     val memberPhotoUrl: String? = null,
