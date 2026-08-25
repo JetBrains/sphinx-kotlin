@@ -225,15 +225,17 @@ index 6b18e02..00df651 100644
  ]
  
 diff --git a/gradle/wrapper/gradle-wrapper.properties b/gradle/wrapper/gradle-wrapper.properties
-index 3680949..73ae734 100644
+index 3680949..07ef0fa 100644
 --- a/gradle/wrapper/gradle-wrapper.properties
 +++ b/gradle/wrapper/gradle-wrapper.properties
-@@ -6,4 +6,4 @@ zipStorePath=wrapper/dists
+@@ -5,5 +5,5 @@ zipStoreBase=GRADLE_USER_HOME
+ zipStorePath=wrapper/dists
  
  # https://gradle.org/release-checksums/
- distributionSha256Sum=312eb12875e1747e05c2f81a4789902d7e4ec5defbd1eefeaccc08acf096505d
+-distributionSha256Sum=312eb12875e1747e05c2f81a4789902d7e4ec5defbd1eefeaccc08acf096505d
 -distributionUrl=https\://services.gradle.org/distributions/gradle-7.5-all.zip
-+distributionUrl=https\://services.gradle.org/distributions/gradle-8.11.1-all.zip
++distributionSha256Sum=62c3769155d7d17ea05084ad498067824c1804568a408a6faa78a5ef95ed67a8
++distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.5-all.zip
 diff --git a/kotlin/concepts/authentication/concept-authentication-core/build.gradle b/kotlin/concepts/authentication/concept-authentication-core/build.gradle
 index 45d3259..50feed5 100644
 --- a/kotlin/concepts/authentication/concept-authentication-core/build.gradle
