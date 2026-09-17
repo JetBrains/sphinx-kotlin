@@ -201,7 +201,7 @@ index 6b18e02..00df651 100644
 +    'compileSdk': 33,
      'minSdk': 16,
 -    'androidGradle': '7.4.2',
-+    'androidGradle': '8.8.0',
++    'androidGradle': '8.8.2',
      'coroutines': '1.6.4',
      'lifecycle': '2.4.0',
 -    'hilt': '2.42',
